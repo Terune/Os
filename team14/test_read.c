@@ -20,10 +20,8 @@ int main(int argc, char* argv[]){
     memset(buf, 0x00, BUFSIZE);
 
     //gettimeofday(&start, NULL);
-    clock_gettime(CLOCK_MONOTONIC, &starts);
     fd = open("data.txt", O_RDONLY);
     // gettimeofday(&end, NULL);
-    clock_gettime(CLOCK_MONOTONIC, &ends);
     //gettimeofday(&end, NULL);
     //elapsed = (end.tv_sec-start.tv_sec)*100000 + end.tv_usec-start.tv_usec;
     if ((ends.tv_nsec - starts.tv_nsec)<0){
@@ -35,7 +33,6 @@ int main(int argc, char* argv[]){
         temps.tv_nsec = ends.tv_nsec - starts.tv_nsec;
     }
     elapsed = 1000000000*temps.tv_sec + temps.tv_nsec;
-    printf("%ld\n", elapsed);
 
     if(fd == -1)
         puts("open() Error!");
@@ -46,10 +43,12 @@ int main(int argc, char* argv[]){
     //gettimeofday(&start, NULL);
     //read(fd, buf, len);
     //gettimeofday(&end, NULL);
+    syscall(323);
     clock_gettime(CLOCK_MONOTONIC, &starts);
     read(fd, buf, len);
     // gettimeofday(&end, NULL);
     clock_gettime(CLOCK_MONOTONIC, &ends);
+    syscall(323);
     //gettimeofday(&end, NULL);
     //elapsed = (end.tv_sec-start.tv_sec)*100000 + end.tv_usec-start.tv_usec;
     if ((ends.tv_nsec - starts.tv_nsec)<0){

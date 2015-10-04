@@ -5,6 +5,7 @@
 #include <unistd.h>
 #include <string.h>
 #include <stdio.h>
+#include <time.h>
 #include <sys/syscall.h>
     
 static inline void rdtsc(unsigned int* upper, unsigned int* lower){

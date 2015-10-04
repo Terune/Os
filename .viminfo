@@ -8,25 +8,33 @@
 # hlsearch on (H) or off (h):
 ~h
 # Last Search Pattern:
-~MSle0~/printk
+~MSle0~/open_check
 
 # Last Substitute Search Pattern:
-~MSle0&KERN_ALERT
+~MSle0&readwithwrite
 
 # Last Substitute String:
-$KERN_DEBUG
+$mkdir
 
 # Command Line History (newest to oldest):
-:q
-:w
 :wq
-:wq!
+:q
 :q!
+:.,.+1
+:67
+:31
+:30
+:29
+:w
+:Q
+:wq!
+:%s/readwithwrite/mkdir
+:%s/readwithwrite/mkdir/gc
+:set nonumber
 :e test_mkdir2.c
 :vs
 :Q!
 :27
-:Q
 :47
 :100000
 :1000
@@ -52,7 +60,6 @@ $KERN_DEBUG
 :54
 ::q:
 :e ../test.c
-:set nonumber
 :e ./namsup/test_read.c
 :vi /namsup/read_test.c
 :tj fsync
@@ -112,7 +119,26 @@ $KERN_DEBUG
 :BundleInstall
 
 # Search String History (newest to oldest):
+?/open_check
+?/check_direct
+?/ getname
+?/open_check_o
+?/dentry_open
 ?/printk
+?/open_check_o_direct
+?/do_sys_open
+?/mkdir
+? \<opensum\>
+? \<openwithwritesum\>
+? \<readsum\>
+? \<mkdirsum\>
+? \<dopen\>
+? \<dopenw\>
+? \<dmkdir\>
+? \<dread\>
+? readwithwrite
+? \<dreadw\>
+? \<readwithwritesum\>
 ?/do_sync_read
 ?/new_sync_read
 ?/open
@@ -175,170 +201,706 @@ $KERN_DEBUG
 
 # Registers:
 "0	LINE	0
-	    if ((ends.tv_nsec - starts.tv_nsec)<0){
-	        temps.tv_sec = ends.tv_sec - starts.tv_sec - 1;
-	        temps.tv_nsec = 1000000000 + ends.tv_nsec - starts.tv_nsec;
-	    }
-	    else{
-	        temps.tv_sec = ends.tv_sec - starts.tv_sec;
-	        temps.tv_nsec = ends.tv_nsec - starts.tv_nsec;
-	    }
-	    elapsed = 1000000000*temps.tv_sec + temps.tv_nsec;
-	    printf("%ld\n", elapsed);
+	echo read with write mean=${read_writemean}
+	echo read with write var=${wreadvar}
+	echo bigread mean=${bigreadmean}
+	echo bigread var=${bigreadvar}
 ""1	LINE	0
-	MIN=1
+	echo read with write mean=${read_writemean}
 "2	LINE	0
-	    # CM=`echo -e ''$_{1..2}"\b$CMON"` # *
+	
 "3	LINE	0
-	    # printf "${i}\n"
+	echo read with write var=${wreadvar}
 "4	LINE	0
-	    if ((ends.tv_nsec - starts.tv_nsec)<0){
-	        temps.tv_sec = ends.tv_sec - starts.tv_sec - 1;
-	        temps.tv_nsec = 1000000000 + ends.tv_nsec - starts.tv_nsec;
-	    }
-	    else{
-	        temps.tv_sec = ends.tv_sec - starts.tv_sec;
-	        temps.tv_nsec = ends.tv_nsec - starts.tv_nsec;
-	    }
-	    elapsed = 1000000000*temps.tv_sec + temps.tv_nsec;
-	    printf("%ld\n", elapsed);
+	
 "5	LINE	0
-	
+	    let openwithwritesum=openwithwritesum+temp
 "6	LINE	0
-	
+	    let dopenw=dopenw+\(temp\*temp\)
 "7	LINE	0
-	
+	    let dopenw=dopenw+\(temp\*temp\)
 "8	LINE	0
-	
+	    let dopenw=dopenw+\(temp\*temp\)
 "9	LINE	0
-	#include <sys/types.h>
+	    let openwithwritesum=openwithwritesum+temp
 "-	CHAR	0
 	d
 
 # File marks:
-'0  14  0  ~/team14/iter.sh
-'1  7  0  ~/team14/iter.sh
-'2  4  8  ~/team14/iter.sh
-'3  24  0  ~/iter.sh
-'4  17  5  ~/namsup/test_mkdir2.c
-'5  1  0  ~/namsup/test_mkdir.c
-'6  22  0  ~/iter.sh
-'7  30  1  ~/iter.sh
-'8  48  0  ~/yashibal.c
-'9  70  20  ~/openread.c
+'0  174  0  ~/team14/iter.sh
+'1  100  0  ~/team14/iter2.sh
+'2  172  0  ~/team14/iter.sh
+'3  52  0  ~/team14/iter2.sh
+'4  123  0  ~/team14/iter.sh
+'5  45  0  ~/team14/iter2.sh
+'6  2  0  ~/team14/iter.sh
+'7  4  0  ~/team14/iter2.sh
+'8  68  0  ~/team14/iter2.sh
+'9  36  0  ~/team14/test_read.c
 
 # Jumplist (newest first):
--'  14  0  ~/team14/iter.sh
+-'  174  0  ~/team14/iter.sh
 -'  1  0  ~/team14/iter.sh
+-'  100  0  ~/team14/iter2.sh
+-'  1  0  ~/team14/iter2.sh
+-'  172  0  ~/team14/iter.sh
+-'  52  0  ~/team14/iter2.sh
+-'  123  0  ~/team14/iter.sh
+-'  45  0  ~/team14/iter2.sh
+-'  2  0  ~/team14/iter.sh
+-'  4  0  ~/team14/iter2.sh
+-'  68  0  ~/team14/iter2.sh
+-'  36  0  ~/team14/test_read.c
+-'  1  0  ~/team14/test_read.c
+-'  51  16  ~/team14/test_read.c
+-'  23  4  ~/team14/test_read.c
+-'  29  4  ~/team14/iter2.sh
+-'  2  0  ~/team14/iter2.sh
+-'  102  29  ~/team14/iter2.sh
+-'  159  11  /usr/src/linux-3.18.21/fs/namei.c
+-'  1  0  /usr/src/linux-3.18.21/fs/namei.c
+-'  58  4  ~/team14/iter2.sh
+-'  81  13  /usr/src/linux-3.18.21/fs/open.c
+-'  1  0  /usr/src/linux-3.18.21/fs/open.c
+-'  6  1  ~/team14/NERD_tree_2
+-'  15  2  ~/team14/NERD_tree_2
+-'  1  0  ~/team14/NERD_tree_2
+-'  3  0  ~/team14/__Tag_List__
+-'  2  0  ~/team14/__Tag_List__
+-'  4  0  ~/team14/NERD_tree_1
+-'  15  2  ~/team14/NERD_tree_1
+-'  1  0  ~/team14/NERD_tree_1
+-'  70  23  ~/team14/iter2.sh
+-'  4  0  ~/team14/iter.sh
+-'  5  0  ~/team14/iter2.sh
+-'  679  26  /usr/src/linux-3.18.21/fs/open.c
+-'  874  20  /usr/src/linux-3.18.21/fs/open.c
+-'  671  34  /usr/src/linux-3.18.21/fs/open.c
+-'  660  26  /usr/src/linux-3.18.21/fs/open.c
+-'  656  4  /usr/src/linux-3.18.21/fs/open.c
+-'  1092  5  /usr/src/linux-3.18.21/fs/open.c
+-'  212  11  /usr/src/linux-3.18.21/fs/namei.c
+-'  132  0  /usr/src/linux-3.18.21/fs/namei.c
+-'  189  8  /usr/src/linux-3.18.21/fs/namei.c
+-'  1091  11  /usr/src/linux-3.18.21/fs/open.c
+-'  683  0  /usr/src/linux-3.18.21/fs/open.c
+-'  267  4  /usr/src/linux-3.18.21/fs/open.c
+-'  684  14  /usr/src/linux-3.18.21/fs/open.c
+-'  32  0  /usr/src/linux-3.18.21/fs/open.c
+-'  470  4  /usr/src/linux-3.18.21/fs/open.c
+-'  911  28  /usr/src/linux-3.18.21/fs/open.c
+-'  904  21  /usr/src/linux-3.18.21/fs/open.c
+-'  886  14  /usr/src/linux-3.18.21/fs/open.c
+-'  36  0  /usr/src/linux-3.18.21/fs/open.c
+-'  1070  5  /usr/src/linux-3.18.21/fs/open.c
+-'  914  8  /usr/src/linux-3.18.21/fs/open.c
+-'  918  12  /usr/src/linux-3.18.21/fs/open.c
+-'  909  12  /usr/src/linux-3.18.21/fs/open.c
+-'  899  8  /usr/src/linux-3.18.21/fs/open.c
+-'  830  8  /usr/src/linux-3.18.21/fs/open.c
+-'  817  8  /usr/src/linux-3.18.21/fs/open.c
+-'  785  8  /usr/src/linux-3.18.21/fs/open.c
+-'  767  8  /usr/src/linux-3.18.21/fs/open.c
+-'  710  12  /usr/src/linux-3.18.21/fs/open.c
+-'  690  8  /usr/src/linux-3.18.21/fs/open.c
+-'  93  4  /usr/src/linux-3.18.21/fs/open.c
+-'  5  4  ~/team14/iter.sh
+-'  3498  0  /usr/src/linux-3.18.21/fs/namei.c
+-'  3534  23  /usr/src/linux-3.18.21/fs/namei.c
+-'  3521  16  /usr/src/linux-3.18.21/fs/namei.c
+-'  3519  18  /usr/src/linux-3.18.21/fs/namei.c
+-'  3515  42  /usr/src/linux-3.18.21/fs/namei.c
+-'  3512  11  /usr/src/linux-3.18.21/fs/namei.c
+-'  3509  20  /usr/src/linux-3.18.21/fs/namei.c
+-'  3501  44  /usr/src/linux-3.18.21/fs/namei.c
+-'  3497  24  /usr/src/linux-3.18.21/fs/namei.c
+-'  3491  17  /usr/src/linux-3.18.21/fs/namei.c
+-'  3485  23  /usr/src/linux-3.18.21/fs/namei.c
+-'  3477  8  /usr/src/linux-3.18.21/fs/namei.c
+-'  25  0  /usr/src/linux-3.18.21/fs/read_write.c
+-'  1  0  /usr/src/linux-3.18.21/fs/read_write.c
+-'  59  2  ~/team14/NERD_tree_1
+-'  103  2  ~/team14/NERD_tree_1
+-'  917  14  /usr/src/linux-3.18.21/fs/open.c
+-'  279  4  ~/team14/NERD_tree_1
+-'  350  2  ~/team14/NERD_tree_1
+-'  406  0  ~/team14/NERD_tree_1
+-'  452  2  ~/team14/NERD_tree_1
+-'  29  0  ~/namsup/iter2.sh
+-'  12  0  ~/namsup/iter2.sh
+-'  14  0  ~/namsup/iter2.sh
+-'  15  0  ~/namsup/iter2.sh
+-'  9  11  ~/namsup/iter2.sh
+-'  1  0  ~/namsup/iter2.sh
+-'  10  10  ~/namsup/iter2.sh
+-'  5  0  ~/namsup/iter2.sh
+-'  4  47  ~/namsup/iter2.sh
 -'  7  0  ~/team14/iter.sh
--'  4  8  ~/team14/iter.sh
 -'  24  0  ~/iter.sh
 -'  1  0  ~/iter.sh
--'  17  5  ~/namsup/test_mkdir2.c
--'  18  4  ~/namsup/test_mkdir.c
--'  1  0  ~/namsup/test_mkdir.c
--'  22  0  ~/iter.sh
--'  30  1  ~/iter.sh
--'  48  0  ~/yashibal.c
--'  1  0  ~/yashibal.c
--'  70  20  ~/openread.c
--'  1  0  ~/openread.c
--'  25  0  ~/iter.sh
--'  1  0  ~/iter2.sh
--'  89  4  ~/iter.sh
--'  77  4  ~/iter.sh
--'  53  0  ~/iter2.sh
--'  73  4  ~/iter.sh
--'  54  0  ~/iter2.sh
--'  118  0  ~/iter.sh
--'  69  0  ~/iter.sh
--'  3  0  ~/iter2.sh
--'  3  0  ~/iter.sh
--'  97  0  ~/iter2.sh
--'  26  0  ~/iter.sh
--'  5  0  ~/iter.sh
--'  4  0  ~/namsup/test_mkdir
--'  1  0  ~/namsup/test_mkdir
--'  63  11  ~/namsup/test_mkdir.c
--'  66  11  ~/namsup/test_read.c
--'  1  0  ~/namsup/test_read.c
--'  38  11  ~/namsup/test_read.c
--'  50  4  ~/openread.c
--'  45  0  ~/namsup/test_read.c
--'  1  0  ~/namsup/test_read
--'  95  0  ~/iter2.sh
--'  85  4  ~/iter2.sh
--'  40  0  ~/iter2.sh
--'  80  0  ~/iter2.sh
--'  71  4  ~/iter2.sh
--'  56  3  ~/iter2.sh
--'  47  32  ~/iter2.sh
--'  505  12  /usr/src/linux-3.18.21/fs/read_write.c
--'  484  12  /usr/src/linux-3.18.21/fs/read_write.c
--'  477  12  /usr/src/linux-3.18.21/fs/read_write.c
--'  470  12  /usr/src/linux-3.18.21/fs/read_write.c
--'  461  6  /usr/src/linux-3.18.21/fs/read_write.c
--'  453  12  /usr/src/linux-3.18.21/fs/read_write.c
--'  434  6  /usr/src/linux-3.18.21/fs/read_write.c
--'  426  12  /usr/src/linux-3.18.21/fs/read_write.c
--'  409  4  /usr/src/linux-3.18.21/fs/read_write.c
--'  403  12  /usr/src/linux-3.18.21/fs/read_write.c
--'  397  12  /usr/src/linux-3.18.21/fs/read_write.c
--'  387  12  /usr/src/linux-3.18.21/fs/read_write.c
--'  374  12  /usr/src/linux-3.18.21/fs/read_write.c
--'  366  12  /usr/src/linux-3.18.21/fs/read_write.c
--'  359  12  /usr/src/linux-3.18.21/fs/read_write.c
--'  343  6  /usr/src/linux-3.18.21/fs/read_write.c
--'  44  0  /usr/src/linux-3.18.21/fs/read_write.c
--'  1  0  /usr/src/linux-3.18.21/fs/read_write.c
--'  22  32  ~/yashibal.c
--'  1  1  ~/yashibal
--'  432  7  /usr/src/linux-3.18.21/fs/read_write.c
--'  109  3  /usr/src/linux-3.18.21/fs/read_write.c
--'  32  0  ~/yashibal.c
--'  21  0  ~/yashibal.c
--'  17  3  ~/fint.c
--'  1  0  ~/fint.c
--'  29  22  ~/fint.c
--'  50  10  ~/fint.c
--'  454  2  /usr/src/linux-3.18.21/fs/read_write.c
--'  32  10  /usr/src/linux-3.18.21/fs/read_write.c
--'  1441  0  /var/log/dmesg
--'  1  0  /var/log/dmesg
--'  31  8  ~/fint.c
--'  30  31  ~/fint.c
--'  18  0  ~/fint.c
--'  1257  0  /usr/src/linux-3.18.21/fs/open.c
--'  1  0  /usr/src/linux-3.18.21/fs/open.c
--'  334  0  /usr/src/linux-3.18.21/arch/x86/syscalls/syscall_64.tbl
--'  1  0  /usr/src/linux-3.18.21/arch/x86/syscalls/syscall_64.tbl
--'  33  0  ~/fint.c
--'  10  0  ~/iter.sh
--'  8  15  ~/iter.sh
--'  37  0  ~/fint.c
--'  2  0  ~/iter.sh
--'  34  23  ~/fint.c
--'  57  0  ~/iter2.sh
--'  14  0  ~/iter.sh
--'  7  6  ~/iter.sh
--'  6  0  ~/iter.sh
--'  9  16  ~/iter.sh
--'  11  3  ~/iter.sh
--'  13  39  ~/iter.sh
--'  1319  3  /usr/src/linux-3.18.21/fs/locks.c
--'  1285  12  /usr/src/linux-3.18.21/fs/locks.c
 
 # History of marks within files (newest to oldest):
 
 > ~/team14/iter.sh
-	"	14	0
-	^	4	31191
-	.	4	31190
-	+	17	17
+	"	174	0
+	.	172	0
+	+	56	17
 	+	4	31190
+	+	6	0
+	+	62	17
+	+	63	4
+	+	6	0
+	+	7	6
+	+	63	24
+	+	64	18
+	+	7	0
+	+	8	6
+	+	64	33
+	+	67	5
+	+	14	0
+	+	8	0
+	+	43	0
+	+	8	8
+	+	10	5
+	+	12	5
+	+	68	19
+	+	71	0
+	+	12	0
+	+	72	19
+	+	14	0
+	+	43	0
+	+	15	0
+	+	43	0
+	+	56	30
+	+	44	33
+	+	32	5
+	+	62	5
+	+	45	0
+	+	52	5
+	+	5	4
+	+	32	4
+	+	62	4
+	+	36	0
+	+	37	10
+	+	37	15
+	+	67	15
+	+	37	0
+	+	34	10
+	+	64	14
+	+	5	4
+	+	75	0
+	+	123	0
+	+	123	0
+	+	123	0
+	+	123	0
+	+	172	36
+	+	172	0
+	+	172	0
+
+> ~/team14/iter2.sh
+	"	100	0
+	^	67	0
+	.	68	0
+	+	25	4
+	+	26	0
+	+	26	0
+	+	25	0
+	+	24	0
+	+	20	0
+	+	19	0
+	+	14	0
+	+	13	0
+	+	8	0
+	+	6	0
+	+	29	0
+	+	30	0
+	+	29	38
+	+	3	4
+	+	44	0
+	+	51	0
+	+	57	0
+	+	63	0
+	+	66	0
+	+	67	16
+	+	70	0
+	+	29	33
+	+	40	8
+	+	70	28
+	+	70	27
+	+	71	16
+	+	89	27
+	+	91	56
+	+	102	29
+	+	26	0
+	+	29	0
+	+	67	0
+	+	68	0
+
+> ~/team14/test_read.c
+	"	36	0
+	^	51	17
+	.	36	0
+	+	23	0
+	+	25	0
+	+	46	16
+	+	51	16
+	+	36	0
+
+> /usr/src/linux-3.18.21/fs/namei.c
+	"	159	11
+	^	3498	0
+	.	3498	0
+	+	3531	6
+	+	3537	27
+	+	3556	104
+	+	3556	0
+	+	3527	40
+	+	3529	0
+	+	3536	25
+	+	3538	24
+	+	3540	105
+	+	3559	0
+	+	3562	0
+	+	3564	0
+	+	3563	0
+	+	3565	1
+	+	3559	4
+	+	3539	0
+	+	3543	4
+	+	3564	47
+	+	3571	0
+	+	3573	44
+	+	3568	4
+	+	3574	1
+	+	6	0
+	+	6	0
+	+	3529	4
+	+	3528	0
+	+	3530	27
+	+	3532	27
+	+	3535	0
+	+	3544	0
+	+	3541	4
+	+	3547	1
+	+	3553	0
+	+	3550	4
+	+	3556	1
+	+	3483	0
+	+	3479	0
+	+	3481	0
+	+	3499	0
+	+	3495	4
+	+	3502	1
+	+	3511	0
+	+	3510	12
+	+	3511	7
+	+	3516	0
+	+	3513	7
+	+	3514	3
+	+	3515	7
+	+	3514	7
+	+	3546	47
+	+	3555	32
+	+	3515	46
+	+	3501	48
+	+	3485	39
+	+	3498	0
+
+> /usr/src/linux-3.18.21/fs/open.c
+	"	81	13
+	^	1092	6
+	.	1092	5
+	+	897	0
+	+	890	0
+	+	896	28
+	+	907	0
+	+	900	0
+	+	901	0
+	+	1007	0
+	+	879	4
+	+	1007	35
+	+	1012	0
+	+	1013	0
+	+	1015	35
+	+	884	30
+	+	885	0
+	+	891	0
+	+	890	0
+	+	886	0
+	+	888	29
+	+	886	0
+	+	892	23
+	+	893	0
+	+	893	0
+	+	903	0
+	+	903	37
+	+	927	44
+	+	928	0
+	+	933	0
+	+	929	0
+	+	931	41
+	+	936	0
+	+	942	0
+	+	937	0
+	+	980	1
+	+	980	0
+	+	1039	1
+	+	1040	32
+	+	1040	0
+	+	980	1
+	+	1047	8
+	+	1048	0
+	+	1053	0
+	+	1049	8
+	+	1049	0
+	+	1051	36
+	+	1056	0
+	+	1061	0
+	+	1057	0
+	+	1074	0
+	+	1082	0
+	+	1083	36
+	+	1089	0
+	+	1091	40
+	+	656	0
+	+	666	0
+	+	672	0
+	+	680	0
+	+	699	0
+	+	755	0
+	+	771	0
+	+	800	0
+	+	813	0
+	+	879	0
+	+	888	0
+	+	895	0
+	+	903	0
+	+	931	0
+	+	939	0
+	+	982	0
+	+	1040	0
+	+	1051	0
+	+	1059	0
+	+	1076	0
+	+	1083	0
+	+	1091	0
+	+	656	0
+	+	666	0
+	+	672	0
+	+	680	0
+	+	699	0
+	+	755	0
+	+	771	0
+	+	800	0
+	+	813	0
+	+	879	0
+	+	888	0
+	+	895	0
+	+	903	0
+	+	931	0
+	+	939	0
+	+	982	0
+	+	1040	0
+	+	1051	0
+	+	1059	0
+	+	1076	0
+	+	1083	0
+	+	1091	0
+	+	42	0
+	+	691	17
+	+	693	0
+	+	1092	5
+
+> ~/team14/NERD_tree_1
+	"	4	0
+	.	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+
+> ~/team14/__Tag_List__
+	"	3	0
+	.	4	0
+	+	4	0
+
+> ~/team14/NERD_tree_2
+	"	6	1
+	.	1	0
+	+	1	0
+
+> /usr/src/linux-3.18.21/fs/read_write.c
+	"	25	0
+	^	454	3
+	.	454	2
+	+	360	0
+	+	360	43
+	+	363	0
+	+	368	0
+	+	367	0
+	+	371	0
+	+	376	0
+	+	372	0
+	+	384	0
+	+	389	0
+	+	385	0
+	+	393	12
+	+	394	0
+	+	399	0
+	+	395	0
+	+	400	0
+	+	401	0
+	+	347	0
+	+	360	0
+	+	367	0
+	+	374	0
+	+	387	0
+	+	397	0
+	+	403	0
+	+	409	0
+	+	426	0
+	+	434	0
+	+	453	0
+	+	461	0
+	+	470	0
+	+	477	0
+	+	484	0
+	+	505	0
+	+	347	0
+	+	346	0
+	+	360	0
+	+	367	0
+	+	343	1
+	+	344	0
+	+	343	1
+	+	345	29
+	+	357	12
+	+	360	4
+	+	364	13
+	+	367	13
+	+	372	13
+	+	375	4
+	+	385	12
+	+	388	4
+	+	395	12
+	+	397	12
+	+	401	13
+	+	404	2
+	+	343	5
+	+	346	2
+	+	357	9
+	+	360	4
+	+	364	12
+	+	367	12
+	+	372	13
+	+	375	3
+	+	385	11
+	+	388	4
+	+	395	12
+	+	398	3
+	+	401	11
+	+	404	1
+	+	461	6
+	+	470	7
+	+	469	8
+	+	470	6
+	+	468	7
+	+	471	8
+	+	461	5
+	+	464	2
+	+	475	9
+	+	478	2
+	+	482	7
+	+	485	2
+	+	498	0
+	+	502	1
+	+	506	1
+	+	461	5
+	+	464	2
+	+	468	7
+	+	471	9
+	+	475	11
+	+	478	3
+	+	482	11
+	+	485	2
+	+	503	7
+	+	506	2
+	+	434	5
+	+	437	2
+	+	451	7
+	+	454	2
+	+	434	5
+	+	437	2
+	+	451	7
+	+	454	2
+	m	32	2
+
+> ~/namsup/iter2.sh
+	"	29	0
+	.	30	0
+	+	4	0
+	+	4	0
+	+	4	0
+	+	4	0
+	+	4	30
+	+	5	0
+	+	5	0
+	+	14	0
+	+	14	0
+	+	14	0
+	+	5	0
+	+	5	0
+	+	8	0
+	+	10	10
+	+	4	0
+	+	4	0
+	+	5	0
+	+	15	0
+	+	16	0
+	+	23	0
+	+	23	0
+	+	23	0
+	+	28	0
+	+	4	0
+	+	9	0
+	+	12	0
+	+	18	0
+	+	19	0
+	+	20	0
+	+	14	5
+	+	21	20
+	+	24	8
+	+	25	9
+	+	24	9
+	+	25	21
+	+	26	45
+	+	28	9
+	+	29	9
+	+	28	23
+	+	29	22
+	+	23	0
+	+	14	0
+	+	12	0
+	+	30	0
+
+> ~/team14/openread.c
+	"	30	0
+
+> ~/team14/openreadc
+	"	1	0
+
+> ~/team14/ls
+	"	1	0
+
+> ~/iter2.sh
+	"	37	0
+	.	97	0
+	+	34	44
+	+	46	21
+	+	34	57
+	+	46	16
+	+	46	18
+	+	34	42
+	+	46	4
+	+	54	4
+	+	61	4
+	+	68	4
+	+	34	10
+	+	35	19
+	+	36	10
+	+	37	19
+	+	46	24
+	+	34	0
+	+	35	0
+	+	36	0
+	+	37	0
+	+	46	24
+	+	87	16
+	+	54	4
+	+	61	23
+	+	68	41
+	+	87	24
+	+	71	0
+	+	72	19
+	+	87	20
+	+	72	24
+	+	83	36
+	+	89	40
+	+	87	20
+	+	92	13
+	+	89	9
+	+	92	26
+	+	94	42
+	+	76	37
+	+	77	8
+	+	92	21
+	+	77	21
+	+	6	8
+	+	6	9
+	+	8	0
+	+	6	43
+	+	7	4
+	+	9	0
+	+	6	2
+	+	9	9
+	+	6	10
+	+	15	0
+	+	23	0
+	+	30	0
+	+	17	0
+	+	25	0
+	+	32	0
+	+	54	7
+	+	61	7
+	+	68	8
+	+	76	34
+	+	83	34
+	+	94	43
+	+	41	8
+	+	48	32
+	+	55	0
+	+	48	0
+	+	46	28
+	+	47	32
+	+	57	0
+	+	55	20
+	+	62	18
+	+	71	0
+	+	69	20
+	+	89	13
+	+	73	4
+	+	77	29
+	+	81	23
+	+	85	24
+	+	89	45
+	+	73	23
+	+	79	0
+	+	83	0
+	+	74	42
+	+	80	0
+	+	78	0
+	+	82	0
+	+	86	0
+	+	87	0
+	+	78	60
+	+	82	36
+	+	86	22
+	+	85	9
+	+	86	56
+	+	89	23
+	+	91	36
+	+	93	23
+	+	95	23
+	+	91	23
+	+	95	36
+	+	96	0
+	+	97	0
 
 > ~/iter.sh
-	"	24	0
+	"	1	0
 	^	24	0
 	.	24	0
 	+	26	11
@@ -611,111 +1173,6 @@ $KERN_DEBUG
 > ~/namsup/test_mkdir2.c
 	"	17	5
 
-> ~/iter2.sh
-	"	54	4
-	^	97	0
-	.	96	0
-	+	34	44
-	+	34	44
-	+	46	21
-	+	34	57
-	+	46	16
-	+	46	18
-	+	34	42
-	+	46	4
-	+	54	4
-	+	61	4
-	+	68	4
-	+	34	10
-	+	35	19
-	+	36	10
-	+	37	19
-	+	46	24
-	+	34	0
-	+	35	0
-	+	36	0
-	+	37	0
-	+	46	24
-	+	87	16
-	+	54	4
-	+	61	23
-	+	68	41
-	+	87	24
-	+	71	0
-	+	72	19
-	+	87	20
-	+	72	24
-	+	83	36
-	+	89	40
-	+	87	20
-	+	92	13
-	+	89	9
-	+	92	26
-	+	94	42
-	+	76	37
-	+	77	8
-	+	92	21
-	+	77	21
-	+	6	8
-	+	6	9
-	+	8	0
-	+	6	43
-	+	7	4
-	+	9	0
-	+	6	2
-	+	9	9
-	+	6	10
-	+	15	0
-	+	23	0
-	+	30	0
-	+	17	0
-	+	25	0
-	+	32	0
-	+	54	7
-	+	61	7
-	+	68	8
-	+	76	34
-	+	83	34
-	+	94	43
-	+	41	8
-	+	48	32
-	+	55	0
-	+	48	0
-	+	46	28
-	+	47	32
-	+	57	0
-	+	55	20
-	+	62	18
-	+	71	0
-	+	69	20
-	+	89	13
-	+	73	4
-	+	77	29
-	+	81	23
-	+	85	24
-	+	89	45
-	+	73	23
-	+	79	0
-	+	83	0
-	+	74	42
-	+	80	0
-	+	78	0
-	+	82	0
-	+	86	0
-	+	87	0
-	+	78	60
-	+	82	36
-	+	86	22
-	+	85	9
-	+	86	56
-	+	89	23
-	+	91	36
-	+	93	23
-	+	95	23
-	+	91	23
-	+	95	36
-	+	96	0
-
 > /team14
 	"	9	0
 
@@ -833,112 +1290,6 @@ $KERN_DEBUG
 > ~/namsup/test_read
 	"	1	0
 
-> /usr/src/linux-3.18.21/fs/read_write.c
-	"	505	12
-	^	454	3
-	.	454	2
-	+	360	0
-	+	360	43
-	+	363	0
-	+	368	0
-	+	367	0
-	+	371	0
-	+	376	0
-	+	372	0
-	+	384	0
-	+	389	0
-	+	385	0
-	+	393	12
-	+	394	0
-	+	399	0
-	+	395	0
-	+	400	0
-	+	401	0
-	+	347	0
-	+	360	0
-	+	367	0
-	+	374	0
-	+	387	0
-	+	397	0
-	+	403	0
-	+	409	0
-	+	426	0
-	+	434	0
-	+	453	0
-	+	461	0
-	+	470	0
-	+	477	0
-	+	484	0
-	+	505	0
-	+	347	0
-	+	346	0
-	+	360	0
-	+	367	0
-	+	343	1
-	+	344	0
-	+	343	1
-	+	345	29
-	+	357	12
-	+	360	4
-	+	364	13
-	+	367	13
-	+	372	13
-	+	375	4
-	+	385	12
-	+	388	4
-	+	395	12
-	+	397	12
-	+	401	13
-	+	404	2
-	+	343	5
-	+	346	2
-	+	357	9
-	+	360	4
-	+	364	12
-	+	367	12
-	+	372	13
-	+	375	3
-	+	385	11
-	+	388	4
-	+	395	12
-	+	398	3
-	+	401	11
-	+	404	1
-	+	461	6
-	+	470	7
-	+	469	8
-	+	470	6
-	+	468	7
-	+	471	8
-	+	461	5
-	+	464	2
-	+	475	9
-	+	478	2
-	+	482	7
-	+	485	2
-	+	498	0
-	+	502	1
-	+	506	1
-	+	461	5
-	+	464	2
-	+	468	7
-	+	471	9
-	+	475	11
-	+	478	3
-	+	482	11
-	+	485	2
-	+	503	7
-	+	506	2
-	+	434	5
-	+	437	2
-	+	451	7
-	+	454	2
-	+	434	5
-	+	437	2
-	+	451	7
-	+	454	2
-	m	32	2
-
 > ~/yashibal
 	"	1	1
 
@@ -1030,111 +1381,6 @@ $KERN_DEBUG
 	^	3	0
 	.	3	0
 	+	3	0
-
-> /usr/src/linux-3.18.21/fs/open.c
-	"	1257	0
-	^	693	18
-	.	693	0
-	+	890	0
-	+	897	0
-	+	890	0
-	+	896	28
-	+	907	0
-	+	900	0
-	+	901	0
-	+	1007	0
-	+	879	4
-	+	1007	35
-	+	1012	0
-	+	1013	0
-	+	1015	35
-	+	884	30
-	+	885	0
-	+	891	0
-	+	890	0
-	+	886	0
-	+	888	29
-	+	886	0
-	+	892	23
-	+	893	0
-	+	893	0
-	+	903	0
-	+	903	37
-	+	927	44
-	+	928	0
-	+	933	0
-	+	929	0
-	+	931	41
-	+	936	0
-	+	942	0
-	+	937	0
-	+	980	1
-	+	980	0
-	+	1039	1
-	+	1040	32
-	+	1040	0
-	+	980	1
-	+	1047	8
-	+	1048	0
-	+	1053	0
-	+	1049	8
-	+	1049	0
-	+	1051	36
-	+	1056	0
-	+	1061	0
-	+	1057	0
-	+	1074	0
-	+	1082	0
-	+	1083	36
-	+	1089	0
-	+	1091	40
-	+	656	0
-	+	666	0
-	+	672	0
-	+	680	0
-	+	699	0
-	+	755	0
-	+	771	0
-	+	800	0
-	+	813	0
-	+	879	0
-	+	888	0
-	+	895	0
-	+	903	0
-	+	931	0
-	+	939	0
-	+	982	0
-	+	1040	0
-	+	1051	0
-	+	1059	0
-	+	1076	0
-	+	1083	0
-	+	1091	0
-	+	656	0
-	+	666	0
-	+	672	0
-	+	680	0
-	+	699	0
-	+	755	0
-	+	771	0
-	+	800	0
-	+	813	0
-	+	879	0
-	+	888	0
-	+	895	0
-	+	903	0
-	+	931	0
-	+	939	0
-	+	982	0
-	+	1040	0
-	+	1051	0
-	+	1059	0
-	+	1076	0
-	+	1083	0
-	+	1091	0
-	+	42	0
-	+	691	17
-	+	693	0
 
 > /usr/src/linux-3.18.21/arch/x86/syscalls/syscall_64.tbl
 	"	334	0
@@ -1394,70 +1640,8 @@ $KERN_DEBUG
 > ~/namsup/iter.sh
 	"	1	0
 
-> ~/namsup/iter2.sh
-	"	1	0
-
 > ~/.ssh/id_rsa.pub
 	"	1	0
-
-> /usr/src/linux-3.18.21/fs/namei.c
-	"	3485	39
-	^	3485	40
-	.	3485	39
-	+	3530	6
-	+	3536	27
-	+	3555	104
-	+	3555	0
-	+	3526	40
-	+	3528	0
-	+	3535	25
-	+	3537	24
-	+	3539	105
-	+	3558	0
-	+	3561	0
-	+	3563	0
-	+	3562	0
-	+	3564	1
-	+	3558	4
-	+	3538	0
-	+	3542	4
-	+	3563	47
-	+	3570	0
-	+	3572	44
-	+	3567	4
-	+	3573	1
-	+	6	0
-	+	6	0
-	+	3528	4
-	+	3527	0
-	+	3529	27
-	+	3531	27
-	+	3534	0
-	+	3543	0
-	+	3540	4
-	+	3546	1
-	+	3552	0
-	+	3549	4
-	+	3555	1
-	+	3483	0
-	+	3479	0
-	+	3481	0
-	+	3498	0
-	+	3495	4
-	+	3501	1
-	+	3510	0
-	+	3509	12
-	+	3510	7
-	+	3515	0
-	+	3512	7
-	+	3513	3
-	+	3514	7
-	+	3513	7
-	+	3545	47
-	+	3554	32
-	+	3514	46
-	+	3500	48
-	+	3485	39
 
 > ~/.ssh/id_rsa
 	"	51	0
@@ -1792,113 +1976,3 @@ $KERN_DEBUG
 
 > /usr/src/linux-3.18.21/fs/file.c
 	"	155	2
-
-> /usr/src/linux-3.18.21/fs/inode.c
-	"	1	0
-
-> /usr/include/x86_64-linux-gnu/asm/unistd_64.h
-	"	23	0
-
-> /usr/include/x86_64-linux-gnu/asm/unistd.h
-	"	1	0
-
-> /proc/sys/kernel/printk
-	"	1	0
-	^	1	4
-	.	1	3
-	+	1	0
-	+	2	0
-	+	1	1
-	+	1	3
-
-> /tmp/prac/prac.c
-	"	16	21
-	^	16	22
-	.	16	21
-	+	12	0
-	+	11	33
-	+	6	0
-	+	8	0
-	+	7	0
-	+	8	0
-	+	6	22
-	+	7	29
-	+	16	21
-
-> ~/.vimrc
-	"	98	0
-	^	89	10
-	.	89	10
-	+	1	0
-	+	101	0
-	+	61	80
-	+	40	0
-	+	38	23
-	+	37	22
-	+	36	18
-	+	34	24
-	+	30	0
-	+	42	0
-	+	44	1
-	+	45	1
-	+	46	1
-	+	47	1
-	+	48	1
-	+	49	1
-	+	50	1
-	+	51	1
-	+	52	1
-	+	52	52
-	+	52	54
-	+	53	1
-	+	54	1
-	+	55	1
-	+	56	1
-	+	57	1
-	+	58	1
-	+	58	10
-	+	58	16
-	+	45	0
-	+	58	15
-	+	59	1
-	+	59	4
-	+	59	10
-	+	60	1
-	+	60	4
-	+	60	13
-	+	60	28
-	+	61	1
-	+	61	4
-	+	61	14
-	+	59	0
-	+	59	3
-	+	59	15
-	+	60	12
-	+	60	27
-	+	61	3
-	+	61	13
-	+	61	13
-	+	101	0
-	+	40	5
-	+	2	43
-	+	3	35
-	+	28	16
-	+	2	0
-	+	1	0
-	+	2	0
-	+	41	0
-	+	61	26
-	+	100	8
-	+	62	37
-	+	87	29
-	+	59	22
-	+	98	60
-	+	89	10
-
-> /usr/src/linux-3.18.21/prac/Makefile
-	"	1	0
-
-> /usr/src/linux-3.18.21/prac/prac.c
-	"	1	0
-	.	1	0
-	+	1	0

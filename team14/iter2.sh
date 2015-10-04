@@ -1,36 +1,35 @@
 #!/bin/bash
 
-MAX=3
+MAX=1
 for i in $(seq "$MAX") 
 do
-    echo 8 4 1 6 > /proc/sys/kernel/printk 
     #echo "$i"
     eval "open$i=`./openread openread.txt open`"
-    echo 4 4 1 6 > /proc/sys/kernel/printk 
 done
 
 for i in $(seq "$MAX") 
 do
     # echo "$i"
-    echo 8 4 1 6 > /proc/sys/kernel/printk 
     eval "openwithwrite$i=`./openread openread.txt open write`"
-    echo 4 4 1 6 > /proc/sys/kernel/printk 
 done
 
 for i in $(seq "$MAX") 
 do
     # echo "$i"
-    echo 8 4 1 6 > /proc/sys/kernel/printk 
     eval "read$i=`./openread openread.txt read`"
-    echo 4 4 1 6 > /proc/sys/kernel/printk 
 done
 for i in $(seq "$MAX") 
 do
     # echo "$i"
-    echo 8 4 1 6 > /proc/sys/kernel/printk 
     eval "readwithwrite$i=`./openread openread.txt read write`"
-    echo 4 4 1 6 > /proc/sys/kernel/printk 
 done
+
+for i in $(seq "$MAX") 
+do
+    # echo "$i"
+    eval "readnum$i=`./test_read 30000`"
+done
+
 opensum=0
 openwithwritesum=0
 readsum=0
@@ -39,10 +38,10 @@ dopen=0
 dopenw=0
 dread=0
 dreadw=0
+bigread=0
 for i in $(seq "$MAX")
 do
     temp="open$i"
-    echo open=${!temp}
     let opensum=opensum+temp
     let dopen=dopen+\(temp\*temp\)
 done
@@ -50,25 +49,28 @@ done
 for i in $(seq "$MAX")
 do
     temp="openwithwrite$i"
-    echo openwithwrite=${!temp}
     let openwithwritesum=openwithwritesum+temp
     let dopenw=dopenw+\(temp\*temp\)
 done
 for i in $(seq "$MAX")
 do
     temp="read$i"
-    echo read=${!temp}
     let readsum=readsum+temp
     let dread=dread+\(temp\*temp\)
 done
 for i in $(seq "$MAX")
 do
     temp="readwithwrite$i"
-    echo readwithwrite=${!temp}
     let readwithwritesum=readwithwritesum+temp
     let dreadw=dreadw+\(temp\*temp\)
 done
 
+for i in $(seq "$MAX")
+do
+    temp="readnum$i"
+    let bigread=bigread+temp
+    let dbigread=dbigread+\(temp\*temp\)
+done
 let openmean=opensum/MAX
 let dopenmean=dopen/MAX
 let openvar=dopenmean-\(openmean\*openmean\)
@@ -85,6 +87,10 @@ let read_writemean=readwithwritesum/MAX
 let dreadw_mean=dreadw/MAX
 let wreadvar=dreadw_mean-\(read_writemean\*read_writemean\)
 
+let bigreadmean=bigread/MAX
+let dbigread_mean=dbigread/MAX
+let bigreadvar=dbigread_mean-\(bigreadmean\*bigreadmean\)
+
 echo open mean=${openmean}
 echo open var=${openvar}
 echo open with write mean=${open_writemean}
@@ -93,5 +99,6 @@ echo read mean=${read_mean}
 echo read var=${readvar}
 echo read with write mean=${read_writemean}
 echo read with write var=${wreadvar}
-
+echo bigread mean=${bigreadmean}
+echo bigread var=${bigreadvar}
 

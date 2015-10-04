@@ -51,9 +51,11 @@ int main(int argc, char* argv[])
     else
     {
         open_fd=open(argv[1],O_WRONLY|O_CREAT,0644);
+        syscall(323);
         clock_gettime(CLOCK_MONOTONIC, &starts);
         size=read(open_fd,buffer,sizeof(buffer));
         clock_gettime(CLOCK_MONOTONIC, &ends);
+        syscall(323);
     }
     if ((ends.tv_nsec - starts.tv_nsec)<0){
       temps.tv_sec = ends.tv_sec - starts.tv_sec - 1;

@@ -1,3 +1,3 @@
-ERROR 2015-10-04 22:57:43 unity <unknown>:0 atk_object_ref_state_set: assertion 'ATK_IS_OBJECT (accessible)' failed
-ERROR 2015-10-04 22:57:43 unity <unknown>:0 atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed
-ERROR 2015-10-04 22:57:43 unityy <unknown>:0 g_object_unref: assertion 'G_IS_OBJECT (object)' failed
+ERROR 2015-10-05 00:15:58 unity <unknown>:0 atk_object_ref_state_set: assertion 'ATK_IS_OBJECT (accessible)' failed
+ERROR 2015-10-05 00:15:58 unity <unknown>:0 atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed
+ERROR 2015-10-05 00:15:58 unityy <unknown>:0 g_object_unref: assertion 'G_IS_OBJECT (object)' failed

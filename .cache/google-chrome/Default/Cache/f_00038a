@@ -1,0 +1,279 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko" dir="ltr">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="/files/bluemarine_favicon.png" type="image/x-icon" />
+  <title>리눅스 커널디버거 kgdb사용해보신분? | KLDP</title>
+  <link type="text/css" rel="stylesheet" media="all" href="/sites/all/modules/codefilter/codefilter.css?f" />
+<link type="text/css" rel="stylesheet" media="all" href="/modules/aggregator/aggregator.css?f" />
+<link type="text/css" rel="stylesheet" media="all" href="/modules/book/book.css?f" />
+<link type="text/css" rel="stylesheet" media="all" href="/modules/node/node.css?f" />
+<link type="text/css" rel="stylesheet" media="all" href="/modules/poll/poll.css?f" />
+<link type="text/css" rel="stylesheet" media="all" href="/modules/system/defaults.css?f" />
+<link type="text/css" rel="stylesheet" media="all" href="/modules/system/system.css?f" />
+<link type="text/css" rel="stylesheet" media="all" href="/modules/system/system-menus.css?f" />
+<link type="text/css" rel="stylesheet" media="all" href="/modules/user/user.css?f" />
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/modules/geshifilter/geshifilter.css?f" />
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/modules/google_cse/google_cse.css?f" />
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/modules/logintoboggan/logintoboggan.css?f" />
+<link type="text/css" rel="stylesheet" media="all" href="/modules/forum/forum.css?f" />
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/modules/views/css/views.css?f" />
+<link type="text/css" rel="stylesheet" media="all" href="/modules/comment/comment.css?f" />
+<link type="text/css" rel="stylesheet" media="all" href="/modules/openid/openid.css?f" />
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/themes/kldp-bluemarine/style.css?f" />
+  <script type="text/javascript" src="/files/js/js_4726a08980847810e61a2c0ef2e9d17c.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, { "basePath": "/" });
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+var RecaptchaOptions = { "theme": "red", "lang": "ko" };
+//--><!]]>
+</script>
+  <script type="text/javascript"> </script>
+</head>
+
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" id="header">
+  <tr>
+    <td id="logo">
+      <a href="/" title="홈"><img src="/files/bluemarine_logo.png" alt="홈" /></a>      <h1 class='site-name'><a href="/" title="홈">KLDP</a></h1>      <div class='site-slogan'>Open Source, Geek, IT...</div>    </td>
+    <td id="menu">
+      <ul class="links" id="subnavlist"><li class="menu-94 first"><a href="https://wiki.kldp.org/wiki.php/KLDP" title="">about</a></li>
+<li class="menu-96"><a href="/contact">contact</a></li>
+<li class="menu-95 last"><a href="http://wiki.kldp.org/wiki.php/DrupalHandbook">help</a></li>
+</ul>      <ul class="links" id="navlist"><li class="menu-90 first"><a href="/forum">Forum (BBS)</a></li>
+<li class="menu-91"><a href="/blog">Geek Blog</a></li>
+<li class="menu-92"><a href="http://wiki.kldp.org">KLDP Wiki</a></li>
+<li class="menu-93 last"><a href="http://kldp.net">KLDP.net</a></li>
+</ul>          </td>
+  </tr>
+  <tr>
+    <td colspan="2"><div></div></td>
+  </tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="0" id="content">
+  <tr>
+        <td valign="top">
+            <div id="main">
+        <div class="breadcrumb"><a href="/">홈</a> » <a href="/forum">Forums</a> » <a href="/forum/4">공부</a> » <a href="/forum/6">설치 및 활용 QnA</a></div>        <h1 class="title">리눅스 커널디버거 kgdb사용해보신분?</h1>
+        <div class="tabs"></div>
+                        <br>
+	<div style=" border: 1px dotted #333; border-radius: 6px 6px; -moz-border-radius: 6px 6px; -webkit-border-radius: 6px 6px;">
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		<!-- ���� ��� -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:728px;height:90px"
+     data-ad-client="ca-pub-6651292044448473"
+     data-ad-slot="7606781874"></ins>
+	<script>
+		(adsbygoogle = window.adsbygoogle || []).push({});
+	</script>
+	</div>
+  <br>
+
+  <div class="node">
+    <div class="picture">
+  <a href="/user/77450" title="사용자 프로필 보기"><img src="/files/bluemarine_logo.png" alt="kbj4567의 아바타" title="kbj4567의 아바타"  /></a></div>
+        <span class="submitted">글쓴이: <a href="/user/77450" title="사용자 프로필 보기">kbj4567</a> 작성 일시: 화, 2014/01/28 - 10:13오전</span>
+    <div class="taxonomy"><ul class="links inline"><li class="taxonomy_term_6 first last"><a href="/forum/6" rel="tag" title="OS 및 애플리케이션 설치, 활용에 관한 질문/답변">설치 및 활용 QnA</a></li>
+</ul></div>
+    <div class="content"><p>연결이 잘안되서 질문 올립니다..</p>
+
+<p>qemu로 구성한 가상머신 환경에서는 gdb와 연결이 잘 되고 제어가 잘 넘어옵니다.</p>
+
+<p>그런데, 문제가</p>
+
+<p>host: PC ubuntu 12.04 </p>
+
+<p>guest: PC ubuntu 12.04</p>
+
+<p>이렇게 구성하고 시리얼포트로 연결한상황입니다.</p>
+
+<p>grub.cfg 에서 kgdbwait을 넣어주고 브레이크포인트에 잘 멈추며 연결까지는 문제없이 됩니다.</p>
+
+<p>그런데 continue하여 shell까지 부팅이 된 상태에서 </p>
+
+<p>echo g &gt; /proc/sysrq-trigger</p>
+
+<p>이렇게 입력하면 커널만 블록되고 제어가 gdb로 넘어오지 않습니다.</p>
+
+<p>특정 systemcall에 브레이크포인트를 잡아놓고 실행되게 하여도 똑같이 블럭되고 제어는 넘어오지않습니다.</p>
+
+<p>이런 경우 경험해보신 분 있으면 조언부탁드립니다.</p>  <div class="forum-topic-navigation clear-block">
+          <a href="/node/141625" class="topic-previous" title="이전 글">‹ cache 지원할 물리 디바이스들을 lvm으로 묶어서 ssd로 cache지원하려는데요...</a>
+              <a href="/node/141620" class="topic-next" title="다음 글">windows에서 armcc 사용 관련 질문입니다. ›</a>
+      </div>
+</div>
+      </div>
+<div id="comments">
+    <div class="box">
+    <h2 class="title">댓글 쓰기</h2>    <div class="content"><form action="/comment/reply/141622"  accept-charset="UTF-8" method="post" id="comment-form">
+<div><div class="form-item" id="edit-subject-wrapper">
+ <label for="edit-subject">제목: </label>
+ <input type="text" maxlength="64" name="subject" id="edit-subject" size="60" value="" class="form-text" />
+</div>
+<div class="form-item" id="edit-comment-wrapper">
+ <label for="edit-comment">댓글: <span class="form-required" title="이 항목은 반드시 입력해야 합니다.">*</span></label>
+ <textarea cols="60" rows="15" name="comment" id="edit-comment"  class="form-textarea resizable required"></textarea>
+</div>
+<fieldset class=" collapsible collapsed"><legend>입력 형식</legend><div class="form-item" id="edit-format-1-wrapper">
+ <label class="option" for="edit-format-1"><input type="radio" id="edit-format-1" name="format" value="1"  checked="checked"  class="form-radio" /> Filtered HTML</label>
+ <div class="description"><ul class="tips"><li>Web page addresses and e-mail addresses turn into links automatically.</li><li>Allowed HTML tags: &lt;p&gt;&lt;div&gt;&lt;span&gt;&lt;br&gt;&lt;a&gt;&lt;em&gt;&lt;strong&gt;&lt;del&gt;&lt;ins&gt;&lt;b&gt;&lt;i&gt;&lt;u&gt;&lt;s&gt;&lt;pre&gt;&lt;code&gt;&lt;cite&gt;&lt;blockquote&gt;&lt;ul&gt;&lt;ol&gt;&lt;li&gt;&lt;dl&gt;&lt;dt&gt;&lt;dd&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;th&gt;&lt;thead&gt;&lt;tbody&gt;&lt;h1&gt;&lt;h2&gt;&lt;h3&gt;&lt;h4&gt;&lt;h5&gt;&lt;h6&gt;&lt;img&gt;&lt;embed&gt;&lt;object&gt;&lt;param&gt;&lt;hr&gt;</li><li>You can use <a href="/filter/tips/1#filter-bbcode-0">BBCode</a> tags in the text.</li><li>You can enable syntax highlighting of source code with the following tags: <code>&lt;code&gt;</code>, <code>&lt;blockcode&gt;</code>. The supported tag styles are: <code>&lt;foo&gt;</code>, <code>[foo]</code>. PHP source code can also be enclosed in &lt;?php ... ?&gt; or &lt;% ... %&gt;.</li></ul></div>
+</div>
+<div class="form-item" id="edit-format-4-wrapper">
+ <label class="option" for="edit-format-4"><input type="radio" id="edit-format-4" name="format" value="4"   class="form-radio" /> BBCode</label>
+ <div class="description"><ul class="tips"><li>You can use <a href="/filter/tips/4#filter-bbcode-0">BBCode</a> tags in the text. URLs will automatically be converted to links.</li><li>Allowed HTML tags: &lt;p&gt;&lt;div&gt;&lt;span&gt;&lt;br&gt;&lt;a&gt;&lt;em&gt;&lt;strong&gt;&lt;del&gt;&lt;ins&gt;&lt;b&gt;&lt;i&gt;&lt;u&gt;&lt;s&gt;&lt;pre&gt;&lt;code&gt;&lt;cite&gt;&lt;blockquote&gt;&lt;ul&gt;&lt;ol&gt;&lt;li&gt;&lt;dl&gt;&lt;dt&gt;&lt;dd&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;th&gt;&lt;thead&gt;&lt;tbody&gt;&lt;h1&gt;&lt;h2&gt;&lt;h3&gt;&lt;h4&gt;&lt;h5&gt;&lt;h6&gt;&lt;img&gt;&lt;embed&gt;&lt;object&gt;&lt;param&gt;</li><li>You can enable syntax highlighting of source code with the following tags: <code>&lt;code&gt;</code>, <code>&lt;blockcode&gt;</code>. The supported tag styles are: <code>&lt;foo&gt;</code>, <code>[foo]</code>. PHP source code can also be enclosed in &lt;?php ... ?&gt; or &lt;% ... %&gt;.</li></ul></div>
+</div>
+<div class="form-item" id="edit-format-5-wrapper">
+ <label class="option" for="edit-format-5"><input type="radio" id="edit-format-5" name="format" value="5"   class="form-radio" /> Textile</label>
+ <div class="description"><ul class="tips"><li>You can use Textile markup to format text.</li><li>Allowed HTML tags: &lt;p&gt;&lt;div&gt;&lt;span&gt;&lt;br&gt;&lt;a&gt;&lt;em&gt;&lt;strong&gt;&lt;del&gt;&lt;ins&gt;&lt;b&gt;&lt;i&gt;&lt;u&gt;&lt;s&gt;&lt;pre&gt;&lt;code&gt;&lt;cite&gt;&lt;blockquote&gt;&lt;ul&gt;&lt;ol&gt;&lt;li&gt;&lt;dl&gt;&lt;dt&gt;&lt;dd&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;th&gt;&lt;thead&gt;&lt;tbody&gt;&lt;h1&gt;&lt;h2&gt;&lt;h3&gt;&lt;h4&gt;&lt;h5&gt;&lt;h6&gt;&lt;img&gt;&lt;embed&gt;&lt;object&gt;&lt;param&gt;&lt;hr&gt;</li><li>You can enable syntax highlighting of source code with the following tags: <code>&lt;code&gt;</code>, <code>&lt;blockcode&gt;</code>. The supported tag styles are: <code>&lt;foo&gt;</code>, <code>[foo]</code>. PHP source code can also be enclosed in &lt;?php ... ?&gt; or &lt;% ... %&gt;.</li></ul></div>
+</div>
+<div class="form-item" id="edit-format-6-wrapper">
+ <label class="option" for="edit-format-6"><input type="radio" id="edit-format-6" name="format" value="6"   class="form-radio" /> Markdown</label>
+ <div class="description"><ul class="tips"><li>You can use <a href="/filter/tips">Markdown syntax</a> to format and style the text. Also see <a href="http://michelf.com/projects/php-markdown/extra/">Markdown Extra</a> for tables, footnotes, and more.</li><li>Web page addresses and e-mail addresses turn into links automatically.</li><li>Allowed HTML tags: &lt;p&gt;&lt;div&gt;&lt;span&gt;&lt;br&gt;&lt;a&gt;&lt;em&gt;&lt;strong&gt;&lt;del&gt;&lt;ins&gt;&lt;b&gt;&lt;i&gt;&lt;u&gt;&lt;s&gt;&lt;pre&gt;&lt;code&gt;&lt;cite&gt;&lt;blockquote&gt;&lt;ul&gt;&lt;ol&gt;&lt;li&gt;&lt;dl&gt;&lt;dt&gt;&lt;dd&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;th&gt;&lt;thead&gt;&lt;tbody&gt;&lt;h1&gt;&lt;h2&gt;&lt;h3&gt;&lt;h4&gt;&lt;h5&gt;&lt;h6&gt;&lt;img&gt;&lt;embed&gt;&lt;object&gt;&lt;param&gt;&lt;hr&gt;</li><li>You can enable syntax highlighting of source code with the following tags: <code>&lt;code&gt;</code>, <code>&lt;blockcode&gt;</code>. The supported tag styles are: <code>&lt;foo&gt;</code>, <code>[foo]</code>. PHP source code can also be enclosed in &lt;?php ... ?&gt; or &lt;% ... %&gt;.</li></ul></div>
+</div>
+<p><a href="/filter/tips">포맷팅 옵션에 대한 추가 정보</a></p></fieldset>
+<input type="hidden" name="form_build_id" id="form-ycisfxQc4_Cjrv5060yWJzQsBMXT1bPuFvDsIjEh3J8" value="form-ycisfxQc4_Cjrv5060yWJzQsBMXT1bPuFvDsIjEh3J8"  />
+<input type="hidden" name="form_id" id="edit-comment-form" value="comment_form"  />
+<fieldset class="captcha"><legend>CAPTCHA</legend><div class="description">이것은 자동으로 스팸을 올리는 것을 막기 위해서 제공됩니다. 아래 보이는 글자를 입력해 주세요. </div><input type="hidden" name="captcha_sid" id="edit-captcha-sid" value="38518598"  />
+<input type="hidden" name="captcha_token" id="edit-captcha-token" value="90f680a3b6e5a236f310524d6e745671"  />
+<input type="hidden" name="captcha_response" id="edit-captcha-response" value="reCAPTCHA"  />
+<div class="form-item">
+ <script type="text/javascript" src="https://www.google.com/recaptcha/api/challenge?k=6LfUg74SAAAAAHJeXmBGAf814558zRf8mA79ITyJ"></script>
+
+	<noscript>
+  		<iframe src="https://www.google.com/recaptcha/api/noscript?k=6LfUg74SAAAAAHJeXmBGAf814558zRf8mA79ITyJ" height="300" width="500" frameborder="0"></iframe><br/>
+  		<textarea name="recaptcha_challenge_field" rows="3" cols="40"></textarea>
+  		<input type="hidden" name="recaptcha_response_field" value="manual_challenge"/>
+	</noscript>
+</div>
+</fieldset>
+<input type="submit" name="op" id="edit-submit" value="저장"  class="form-submit" />
+<input type="submit" name="op" id="edit-preview" value="미리보기"  class="form-submit" />
+
+</div></form>
+</div>
+ </div>
+
+</div>
+  <div class="block block-block" id="block-block-18">
+    <h2 class="title"></h2>
+    <div class="content"><div align="center">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 본문 최하단 -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:728px;height:90px"
+     data-ad-client="ca-pub-6651292044448473"
+     data-ad-slot="5990447875"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div></div>
+ </div>
+              </div>
+    </td>
+    <td id="sidebar-right">
+        <div class="block block-user" id="block-user-1">
+    <h2 class="title">둘러보기</h2>
+    <div class="content"><ul class="menu"><li class="expanded first"><a href="/node/add">콘텐츠 작성</a><ul class="menu"><li class="leaf first last"><a href="/node/add/forum" title="포럼(BBS)에 새글 올리기">포럼 주제</a></li>
+</ul></li>
+<li class="leaf last"><a href="/tracker">최근 포스트</a></li>
+</ul></div>
+ </div>
+  <div class="block block-user" id="block-user-0">
+    <h2 class="title">사용자 로그인</h2>
+    <div class="content"><form action="/node/141622?destination=node%2F141622"  accept-charset="UTF-8" method="post" id="user-login-form">
+<div><div class="form-item" id="edit-openid-identifier-wrapper">
+ <label for="edit-openid-identifier">OpenID로 로그인: </label>
+ <input type="text" maxlength="255" name="openid_identifier" id="edit-openid-identifier" size="13" value="" class="form-text" />
+ <div class="description"><a href="http://openid.net/">OpenID란?</a></div>
+</div>
+<div class="form-item" id="edit-name-wrapper">
+ <label for="edit-name">아이디: <span class="form-required" title="이 항목은 반드시 입력해야 합니다.">*</span></label>
+ <input type="text" maxlength="60" name="name" id="edit-name" size="15" value="" class="form-text required" />
+</div>
+<div class="form-item" id="edit-pass-wrapper">
+ <label for="edit-pass">비밀번호: <span class="form-required" title="이 항목은 반드시 입력해야 합니다.">*</span></label>
+ <input type="password" name="pass" id="edit-pass"  maxlength="60"  size="15"  class="form-text required" />
+</div>
+<input type="submit" name="op" id="edit-submit-1" value="로그인"  class="form-submit" />
+<input type="hidden" name="form_build_id" id="form-AFm5aMISaQuNkhSVbXTVHObgc6Lr1X8jKxEXpbWO2Ng" value="form-AFm5aMISaQuNkhSVbXTVHObgc6Lr1X8jKxEXpbWO2Ng"  />
+<input type="hidden" name="form_id" id="edit-user-login-block" value="user_login_block"  />
+<input type="hidden" name="openid.return_to" id="edit-openid.return-to" value="https://kldp.org/openid/authenticate?destination=node%2F141622"  />
+<div class="item-list"><ul><li class="openid-link first"><a href="/%2523">OpenID로 로그인</a></li>
+<li class="user-link last"><a href="/%2523">OpenID로 로그인을 취소</a></li>
+</ul></div><div class="item-list"><ul><li class="first"><a href="/user/register" title="새로운 사용자 계정을 만듭니다.">가입하기</a></li>
+<li class="last"><a href="/user/password" title="새로운 비밀번호를 이메일로 보내달라고 요청합니다.">새로운 비밀번호 요청하기</a></li>
+</ul></div>
+</div></form>
+</div>
+ </div>
+  <div class="block block-block" id="block-block-25">
+    <h2 class="title"></h2>
+    <div class="content"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 오른쪽 사이드 -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:200px;height:200px"
+     data-ad-client="ca-pub-6651292044448473"
+     data-ad-slot="2199376672"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+ </div>
+  <div class="block block-google_cse" id="block-google_cse-0">
+    <h2 class="title">찾기</h2>
+    <div class="content"><form action="/search/google"  accept-charset="UTF-8" method="get" id="google-cse-searchbox-form">
+<div><input type="hidden" name="cx" id="edit-cx" value="partner-pub-6651292044448473:jz430d1s80g"  />
+<input type="hidden" name="cof" id="edit-cof" value="FORID:11"  />
+<div class="form-item" id="edit-query-wrapper">
+ <input type="text" maxlength="128" name="query" id="edit-query" size="15" value="" title="찾고자 하는 단어를 입력하십시오" class="form-text" />
+</div>
+<input type="submit" name="op" id="edit-sa" value="찾기"  class="form-submit" />
+<input type="hidden" name="hl" id="edit-hl" value="ko"  />
+<input type="hidden" name="safe" id="edit-safe" value="medium"  />
+<input type="hidden" name="form_build_id" id="form-Jrmw15AaN001YQP6Q2x-S8WWwfa_gKmirG1833KsZ2I" value="form-Jrmw15AaN001YQP6Q2x-S8WWwfa_gKmirG1833KsZ2I"  />
+<input type="hidden" name="form_id" id="edit-google-cse-searchbox-form" value="google_cse_searchbox_form"  />
+
+</div></form>
+</div>
+ </div>
+  <div class="block block-block" id="block-block-20">
+    <h2 class="title"></h2>
+    <div class="content"><div align="right">
+<a href="//kldp.org/node/88410">홍보 제휴 안내</a>
+</div></div>
+ </div>
+    </td>  </tr>
+</table>
+
+<div id="footer">
+  <div align="center">
+<a href="http://www.ticketmonster.co.kr" title="티몬 - 상면/회선 지원"><img src="//img.kldp.org/static/tmon.png" width="88" border="0" height="31" alt="Ticketmonster" /></a><a href="http://www.cdnetworks.co.kr" title="CDNetworks - People 서버 상면/회선 지원"><img src="//img.kldp.org/static/cdnetworks.gif" width="88" border="0" height="31" alt="CDNetworks" /></a><a href="http://www.naver.com" title="NHN - KLDP Web/DB Server 기증"><img src="//img.kldp.org/static/naver.png" width="88" border="0" height="31" alt="Naver" /></a>
+
+<br /><a href="https://wiki.kldp.org/wiki.php/KLDP#s-5">전체 스폰서 목록</a>
+<br /><a href="//kldp.org/contact">사이트 관리자에게 연락하기</a>
+</div>  </div>
+<script type="text/javascript" src="/files/js/js_bc9a2afbcafd27a864ed2087fd506fa7.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, { "googleCSE": { "language": "ko" } });
+//--><!]]>
+</script>
+<script type="text/javascript">
+(function(w, d) { var a = function() { var b = d.createElement('script'); b.type = 'text/javascript';
+if (undefined !== b.setAttribute) { b.setAttribute('async', 'async'); }
+b.src = '//' + ((w.location.protocol === 'https:') ? 's3.amazonaws.com/cdx-radar/' :
+'radar.cedexis.com/') + '01-14136-radar10.min.js'; d.body.appendChild(b); };
+if (w.addEventListener) { w.addEventListener('load', a, false); }
+else if (w.attachEvent) { w.attachEvent('onload', a); }
+}(window, document));
+</script>
+</body>
+</html>

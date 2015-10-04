@@ -1,0 +1,21 @@
+status: 200
+content-length: 102
+via: 1.1 sumac.canonical.com:3128 (squid/2.7.STABLE7)
+content-location: https://rec.ubuntu.com/api/1.0/recommend_app/google-chrome-stable/
+x-cache: HIT from sumac.canonical.com
+age: 100
+expires: Thu, 24 Sep 2015 23:40:14 GMT
+server: Apache/2.2.22 (Ubuntu)
+last-modified: Thu, 24 Sep 2015 23:35:14 GMT
+etag: "18c247c495322628a2d3cecd5697e4e7"
+strict-transport-security: max-age=2592000
+cache-control: max-age=300
+date: Thu, 24 Sep 2015 23:35:14 GMT
+content-type: application/json; charset=utf-8
+x-cache-lookup: HIT from sumac.canonical.com:3128
+
+{
+    "rid": "4f1996c869941c4015f6c29c3abc3d76", 
+    "data": [], 
+    "app": "google-chrome-stable"
+}

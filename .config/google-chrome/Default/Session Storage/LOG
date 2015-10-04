@@ -1,0 +1,38 @@
+2015/10/02-12:24:25.535 25755 Reusing MANIFEST /home/haneul/.config/google-chrome/Default/Session Storage/MANIFEST-000001
+2015/10/02-12:24:25.536 25755 Recovering log #12
+2015/10/02-12:24:25.586 25755 Reusing old log /home/haneul/.config/google-chrome/Default/Session Storage/000012.log 
+2015/10/02-12:29:21.331 26127 Level-0 table #16: started
+2015/10/02-12:29:21.413 26127 Level-0 table #16: 1221094 bytes OK
+2015/10/02-12:29:21.456 26127 Delete type=0 #12
+2015/10/02-12:46:15.631 26127 Compacting 2@0 + 1@1 files
+2015/10/02-12:46:15.756 26127 Generated table #17: 221 keys, 2098929 bytes
+2015/10/02-12:46:15.824 26127 Generated table #18: 360 keys, 782920 bytes
+2015/10/02-12:46:15.824 26127 Compacted 2@0 + 1@1 files => 2881849 bytes
+2015/10/02-12:46:15.865 26127 compacted to: files[ 0 2 1 0 0 0 0 ]
+2015/10/02-12:46:15.865 26127 Delete type=2 #10
+2015/10/02-12:46:15.866 26127 Delete type=2 #16
+2015/10/02-12:46:15.867 26127 Delete type=2 #13
+2015/10/02-12:52:53.773 26127 Level-0 table #20: started
+2015/10/02-12:52:53.839 26127 Level-0 table #20: 1302860 bytes OK
+2015/10/02-12:52:53.882 26127 Delete type=0 #15
+2015/10/02-13:13:21.972 26127 Compacting 1@0 + 2@1 files
+2015/10/02-13:13:22.260 26127 Generated table #21: 314 keys, 2149421 bytes
+2015/10/02-13:13:22.357 26127 Generated table #22: 545 keys, 1244615 bytes
+2015/10/02-13:13:22.357 26127 Compacted 1@0 + 2@1 files => 3394036 bytes
+2015/10/02-13:13:22.458 26127 compacted to: files[ 0 2 1 0 0 0 0 ]
+2015/10/02-13:13:22.458 26127 Delete type=2 #20
+2015/10/02-13:13:22.472 26127 Delete type=2 #18
+2015/10/02-13:13:22.484 26127 Delete type=2 #17
+2015/10/02-13:47:47.607 26127 Expanding@1 1+1 (1244615+1981739 bytes) to 2+1 (3394036+1981739 bytes)
+2015/10/02-13:47:47.622 26127 Compacting 2@1 + 1@2 files
+2015/10/02-13:47:47.777 26127 Generated table #23: 185 keys, 2130945 bytes
+2015/10/02-13:47:47.894 26127 Generated table #24: 171 keys, 2120808 bytes
+2015/10/02-13:47:47.944 26127 Generated table #25: 176 keys, 498030 bytes
+2015/10/02-13:47:47.944 26127 Compacted 2@1 + 1@2 files => 4749783 bytes
+2015/10/02-13:47:48.002 26127 compacted to: files[ 0 0 3 0 0 0 0 ]
+2015/10/02-13:47:48.003 26127 Delete type=2 #8
+2015/10/02-13:47:48.003 26127 Delete type=2 #22
+2015/10/02-13:47:48.020 26127 Delete type=2 #21
+2015/10/02-13:50:27.333 26127 Level-0 table #27: started
+2015/10/02-13:50:27.424 26127 Level-0 table #27: 1346318 bytes OK
+2015/10/02-13:50:27.476 26127 Delete type=0 #19

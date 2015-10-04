@@ -1,0 +1,470 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko" dir="ltr">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="/files/bluemarine_favicon.png" type="image/x-icon" />
+  <title>커널 컴파일시 make menuconfig 하면 에러가 납니다.. | KLDP</title>
+  <link type="text/css" rel="stylesheet" media="all" href="/sites/all/modules/codefilter/codefilter.css?f" />
+<link type="text/css" rel="stylesheet" media="all" href="/modules/aggregator/aggregator.css?f" />
+<link type="text/css" rel="stylesheet" media="all" href="/modules/book/book.css?f" />
+<link type="text/css" rel="stylesheet" media="all" href="/modules/node/node.css?f" />
+<link type="text/css" rel="stylesheet" media="all" href="/modules/poll/poll.css?f" />
+<link type="text/css" rel="stylesheet" media="all" href="/modules/system/defaults.css?f" />
+<link type="text/css" rel="stylesheet" media="all" href="/modules/system/system.css?f" />
+<link type="text/css" rel="stylesheet" media="all" href="/modules/system/system-menus.css?f" />
+<link type="text/css" rel="stylesheet" media="all" href="/modules/user/user.css?f" />
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/modules/geshifilter/geshifilter.css?f" />
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/modules/google_cse/google_cse.css?f" />
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/modules/logintoboggan/logintoboggan.css?f" />
+<link type="text/css" rel="stylesheet" media="all" href="/modules/forum/forum.css?f" />
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/modules/views/css/views.css?f" />
+<link type="text/css" rel="stylesheet" media="all" href="/modules/comment/comment.css?f" />
+<link type="text/css" rel="stylesheet" media="all" href="/modules/openid/openid.css?f" />
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/themes/kldp-bluemarine/style.css?f" />
+  <script type="text/javascript" src="/files/js/js_4726a08980847810e61a2c0ef2e9d17c.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, { "basePath": "/" });
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+var RecaptchaOptions = { "theme": "red", "lang": "ko" };
+//--><!]]>
+</script>
+  <script type="text/javascript"> </script>
+</head>
+
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" id="header">
+  <tr>
+    <td id="logo">
+      <a href="/" title="홈"><img src="/files/bluemarine_logo.png" alt="홈" /></a>      <h1 class='site-name'><a href="/" title="홈">KLDP</a></h1>      <div class='site-slogan'>Open Source, Geek, IT...</div>    </td>
+    <td id="menu">
+      <ul class="links" id="subnavlist"><li class="menu-94 first"><a href="https://wiki.kldp.org/wiki.php/KLDP" title="">about</a></li>
+<li class="menu-96"><a href="/contact">contact</a></li>
+<li class="menu-95 last"><a href="http://wiki.kldp.org/wiki.php/DrupalHandbook">help</a></li>
+</ul>      <ul class="links" id="navlist"><li class="menu-90 first"><a href="/forum">Forum (BBS)</a></li>
+<li class="menu-91"><a href="/blog">Geek Blog</a></li>
+<li class="menu-92"><a href="http://wiki.kldp.org">KLDP Wiki</a></li>
+<li class="menu-93 last"><a href="http://kldp.net">KLDP.net</a></li>
+</ul>          </td>
+  </tr>
+  <tr>
+    <td colspan="2"><div></div></td>
+  </tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="0" id="content">
+  <tr>
+        <td valign="top">
+            <div id="main">
+        <div class="breadcrumb"><a href="/">홈</a> » <a href="/forum">Forums</a> » <a href="/forum/4">공부</a> » <a href="/forum/6">설치 및 활용 QnA</a></div>        <h1 class="title">커널 컴파일시 make menuconfig 하면 에러가 납니다..</h1>
+        <div class="tabs"></div>
+                        <br>
+	<div style=" border: 1px dotted #333; border-radius: 6px 6px; -moz-border-radius: 6px 6px; -webkit-border-radius: 6px 6px;">
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		<!-- ���� ��� -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:728px;height:90px"
+     data-ad-client="ca-pub-6651292044448473"
+     data-ad-slot="7606781874"></ins>
+	<script>
+		(adsbygoogle = window.adsbygoogle || []).push({});
+	</script>
+	</div>
+  <br>
+
+  <div class="node">
+    <div class="picture">
+  <a href="/user/19013" title="사용자 프로필 보기"><img src="/files/bluemarine_logo.png" alt="beggarstar의 아바타" title="beggarstar의 아바타"  /></a></div>
+        <span class="submitted">글쓴이: <a href="/user/19013" title="사용자 프로필 보기">beggarstar</a> 작성 일시: 목, 2006/04/06 - 10:26오후</span>
+    <div class="taxonomy"><ul class="links inline"><li class="taxonomy_term_6 first"><a href="/forum/6" rel="tag" title="OS 및 애플리케이션 설치, 활용에 관한 질문/답변">설치 및 활용 QnA</a></li>
+<li class="taxonomy_term_19 last"><a href="/taxonomy/term/19" rel="tag" title="">질문</a></li>
+</ul></div>
+    <div class="content"><p>안녕하십니까.. 초보 리눅서 입니다..<br />
+이번에 커널 컴파일 하려고 여기저기 뒤저서 컴파일 방법 읽어보고 문서 하나 정해서 따라서 하는중에<br />
+문서와는 다르게 에러가 나서 도움 부탁드립니다..</p>
+
+<p>베포판 : 우분투<br />
+현재 사용중인 커널 :  2.6.12-10-386<br />
+나머지는 거의 초보라서 씨디설정 거의 그대로입니다.</p>
+
+<p>설치하려고 하는 소스 : linux-2.6.16.tar.gz</p>
+
+<p>제가 따라서 하고있는 문서는 이겁니다.</p>
+
+<p>----------------------------------------------------------------------------------------------------------------------------------------<br />
+[root@zzem /usr/src]# rm -f linux</p>
+
+<p>  [root@zzem /usr/src]# mkdir linux-2.3.8</p>
+
+<p>  [root@zzem /usr/src]# ln -s linux-2.3.8 linux</p>
+
+<p>  [root@zzem /usr/src]# tar xvzf linux-2.3.8.tar.gz</p>
+
+<p>  [root@zzem /usr/src]# cd /usr/include</p>
+
+<p>  [root@zzem /usr/include]# ll asm linux scsi</p>
+
+<p>  [root@zzem /usr/include]# rm -rf asm</p>
+
+<p>  [root@zzem /usr/include]# ln -s /usr/src/linux/include/asm-i386<br />
+                 /usr/include/asm</p>
+
+<p>  [root@zzem /usr/include]# cd /usr/src/linux</p>
+
+<p>  [root@zzem /usr/src/linux]# make mrproper</p>
+
+<p>  [root@zzem /usr/src/linux]# make menuconfig</p>
+
+<p>  [root@zzem /usr/src/linux]# make dep</p>
+
+<p>  [root@zzem /usr/src/linux]# make clean</p>
+
+<p>  [root@zzem /usr/src/linux]# make bzImage</p>
+
+<p>  [root@zzem /usr/src/linux]# make modules</p>
+
+<p>  [root@zzem /usr/src/linux]# make modules_install</p>
+
+<p>  [root@zzem /usr/src/linux]# cd arch/i386/boot</p>
+
+<p>  [root@zzem /usr/src/linux/arch/i386/boot]# cp  bzImage   /boot/mykernel-2.3.8</p>
+
+<p>  [root@zzem /usr/src/linux/arch/i386/boot]# cd /etc</p>
+
+<p>  [root@zzem /etc] # vi lilo.conf</p>
+
+<p>---------------------------------------------------------------------------------------------------------------------------</p>
+
+<p>근데 위에 과정을 그대로 따라 하다가 </p>
+
+<p>make menuconfig를 실행하면..<br />
+이런 에러가 뜹니다.</p>
+
+<p>----------------------------------------------------------------------------------------------------------------------------<br />
+root@beggarstar:/usr/src/linux# make menuconfig<br />
+  HOSTCC  scripts/basic/fixdep<br />
+  HOSTCC  scripts/basic/split-include<br />
+In file included from /usr/include/linux/errno.h:139,<br />
+                 from /usr/include/bits/errno.h:25,<br />
+                 from /usr/include/errno.h:36,<br />
+                 from scripts/basic/split-include.c:26:<br />
+/usr/include/asm/errno.h:4:31: error: asm-generic/errno.h: 그런 파일이나 디렉토 리가 없음<br />
+make[1]: *** [scripts/basic/split-include] 오류 1<br />
+make: *** [scripts_basic] 오류 2<br />
+----------------------------------------------------------------------------------------------------------------------------</p>
+
+<p>고수님들 도움 부탁드립니다. -_-;</p>
+
+<p>우분투에서는 커널 소스를 이용해서 위의 방법과 같은 식으로 직접 컴파일해서 설치 할수 없는건가요?</p>  <div class="forum-topic-navigation clear-block">
+          <a href="/node/69243" class="topic-previous" title="이전 글">‹ gtk+-2.6 설치 중 에러</a>
+              <a href="/node/68952" class="topic-next" title="다음 글">아파치에서 파일 전송시에 파일 크기 제한이 있나요? ›</a>
+      </div>
+</div>
+      </div>
+<div id="comments">
+  <a id="comment-328151"></a>
+  <div class="comment comment-published">
+    <div class="picture">
+  <a href="/user/11130" title="사용자 프로필 보기"><img src="/files/bluemarine_logo.png" alt="커피자판기의 아바타" title="커피자판기의 아바타"  /></a></div>
+<h3 class="title"><a href="/node/69233#comment-328151" class="active">혹시...</a></h3>    <div class="submitted">글쓴이: <a href="/user/11130" title="사용자 프로필 보기">커피자판기</a> 작성 일시: 금, 2006/04/07 - 2:18오전</div>
+    <div class="content">
+     <p>gcc문제가 아닐까요?<br />
+제가 컴파일 할때 보니깐, gcc2.95 버전이상에서 2.6.9 커널 컴파일할때 이상한 에러가 뜨면서 안되더군여~ gcc를 gcc2.95로 링크걸어서 함 해 보심이...<br />
+참고로, 제가 우분투에서 커널컴파일 정리해본건데요, 이 파일 함 참고해보셔요~<br />
+근데 이건 RTLinux깔려고 한거라서, 커널에 RT패치하는 부분 만 제외하고<br />
+보시면 될꺼예요~ ^^</p>         </div>
+    <div class="links">&raquo; <ul class="links"><li class="comment_reply first last"><a href="/comment/reply/69233/328151">답글</a></li>
+</ul></div>
+  </div>
+<a id="comment-328160"></a>
+  <div class="comment comment-published">
+    <div class="picture">
+  <a href="/user/1547" title="사용자 프로필 보기"><img src="https://kldp.org/files/pictures/picture-1547.jpg" alt="moonhyunjin의 아바타" title="moonhyunjin의 아바타"  /></a></div>
+<h3 class="title"><a href="/node/69233#comment-328160" class="active">-----------------------------------/us</a></h3>    <div class="submitted">글쓴이: <a href="/user/1547" title="사용자 프로필 보기">moonhyunjin</a> 작성 일시: 금, 2006/04/07 - 8:18오전</div>
+    <div class="content">
+     <p>-----------------------------------<br />
+/usr/include/asm/errno.h:4:31: error: asm-generic/errno.h: 그런 파일이나 디렉토 리가 없음<br />
+-----------------------------------<br />
+없데요...</p>
+
+<p>그리고 곧있으면 최근 2.6 커널은 gcc 2.xx에서는 컴파일이 안될거라고 들었습니다.</p>
+
+<p>[img]<a href="http://fedora.redhat.com/images/header-fedora_logo01.png[/img]" target="_blank">http://fedora.redhat.com/images/header-fedora_logo01.png[/img]</a> &lt;- 이거면 안되는 게 없어~<br />
+<a href="http://www.ssf.or.kr/~moonhyunjin/moniwiki/wiki.php/%EC%A0%95%ED%92%88%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4" class="bb-url">정품 소프트웨어 사용 캠패인</a></p>           <div class="clear-block">
+       <div>—</div>
+       <p><img src="http://fedoraproject.org/w/uploads/2/26/Logo_UsageGuidelines_vert-logo.png" alt="" class="bb-image" /> &lt;- 이거면 안 되는 게 없어~<br />
+<a href="http://www.moonhyunjin.com/wiki/wiki.php/%EC%A0%95%ED%92%88%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4" class="bb-url">정품 소프트웨어 사용 캠패인</a></p>      </div>
+         </div>
+    <div class="links">&raquo; <ul class="links"><li class="comment_reply first last"><a href="/comment/reply/69233/328160">답글</a></li>
+</ul></div>
+  </div>
+<a id="comment-328202"></a>
+  <div class="comment comment-published">
+    <div class="picture">
+  <a href="/user/19013" title="사용자 프로필 보기"><img src="/files/bluemarine_logo.png" alt="beggarstar의 아바타" title="beggarstar의 아바타"  /></a></div>
+<h3 class="title"><a href="/node/69233#comment-328202" class="active">답변 감사합니다.</a></h3>    <div class="submitted">글쓴이: <a href="/user/19013" title="사용자 프로필 보기">beggarstar</a> 작성 일시: 금, 2006/04/07 - 1:13오후</div>
+    <div class="content">
+     <p>근데.. 위에 나와있는 자료 대로 따라하나 <br />
+[root@zzem /usr/include# rm -rf asm<br />
+[root@zzem /usr/include]# ln -s /usr/src/linux/include/asm-i386<br />
+/usr/include/asm<br />
+이부분에서  asm을 지웠는데 이게 문제가 되는거 같습니다.<br />
+다시 되살리는 방법 없나요?<br />
+백업 받아 놓은것도 없어요 --;</p>         </div>
+    <div class="links">&raquo; <ul class="links"><li class="comment_reply first last"><a href="/comment/reply/69233/328202">답글</a></li>
+</ul></div>
+  </div>
+<a id="comment-328203"></a>
+  <div class="comment comment-published">
+    <div class="picture">
+  <a href="/user/19013" title="사용자 프로필 보기"><img src="/files/bluemarine_logo.png" alt="beggarstar의 아바타" title="beggarstar의 아바타"  /></a></div>
+<h3 class="title"><a href="/node/69233#comment-328203" class="active">참.. </a></h3>    <div class="submitted">글쓴이: <a href="/user/19013" title="사용자 프로필 보기">beggarstar</a> 작성 일시: 금, 2006/04/07 - 1:26오후</div>
+    <div class="content">
+     <p>gcc  는 4.0.2 를 사용하고 있습니다.</p>         </div>
+    <div class="links">&raquo; <ul class="links"><li class="comment_reply first last"><a href="/comment/reply/69233/328203">답글</a></li>
+</ul></div>
+  </div>
+<a id="comment-328208"></a>
+  <div class="comment comment-published">
+    <div class="picture">
+  <a href="/user/4157" title="사용자 프로필 보기"><img src="/files/bluemarine_logo.png" alt="병맛의 아바타" title="병맛의 아바타"  /></a></div>
+<h3 class="title"><a href="/node/69233#comment-328208" class="active">apt-get update
+apt-get</a></h3>    <div class="submitted">글쓴이: <a href="/user/4157" title="사용자 프로필 보기">병맛</a> 작성 일시: 금, 2006/04/07 - 2:35오후</div>
+    <div class="content">
+     <p>apt-get update<br />
+apt-get build-dep linux-image-2.6.15-?</p>
+
+<p>일단 커널 컴파일에 필요한 패키지들을 마련하시구요.</p>
+
+<p>make menuconfig에는 libncurses5-dev 패키지도 필요하니 설치하고<br />
+다시 해보세요.</p>         </div>
+    <div class="links">&raquo; <ul class="links"><li class="comment_reply first last"><a href="/comment/reply/69233/328208">답글</a></li>
+</ul></div>
+  </div>
+<a id="comment-328216"></a>
+  <div class="comment comment-published">
+    <div class="picture">
+  <a href="/user/19013" title="사용자 프로필 보기"><img src="/files/bluemarine_logo.png" alt="beggarstar의 아바타" title="beggarstar의 아바타"  /></a></div>
+<h3 class="title"><a href="/node/69233#comment-328216" class="active">무달님.. 감사합니다.</a></h3>    <div class="submitted">글쓴이: <a href="/user/19013" title="사용자 프로필 보기">beggarstar</a> 작성 일시: 금, 2006/04/07 - 3:41오후</div>
+    <div class="content">
+     <p>apt-get update 는 실행이 잘 되는데..<br />
+apt-get build-dep linux-image-2.6.15-? 는 꾸러미를 찾을 수 없다는 에러가 나오네요</p>
+
+<p>-------------------------------------------------------------------------------------------------<br />
+root@beggarstar:~# apt-get build-dep linux-image-2.6.16-?<br />
+ 꾸러미 목록을 읽는 중입니다... 완료<br />
+ 의존성 트리를 만드는 중입니다... 완료<br />
+ E: linux-image-2.6.16-?의 소스 꾸러미를 찾을 수 없습니다<br />
+root@beggarstar:~# apt-get build-dep linux-image-2.6.16<br />
+ 꾸러미 목록을 읽는 중입니다... 완료<br />
+ 의존성 트리를 만드는 중입니다... 완료<br />
+ E: linux-image-2.6.16의 소스 꾸러미를 찾을 수 없습니다<br />
+root@beggarstar:~# apt-get build-dep linux-image-2.6.15-?<br />
+ 꾸러미 목록을 읽는 중입니다... 완료<br />
+ 의존성 트리를 만드는 중입니다... 완료<br />
+ E: linux-image-2.6.15-?의 소스 꾸러미를 찾을 수 없습니다<br />
+root@beggarstar:~# apt-get build-dep linux-image-2.6.16<br />
+ 꾸러미 목록을 읽는 중입니다... 완료<br />
+ 의존성 트리를 만드는 중입니다... 완료<br />
+ E: linux-image-2.6.16의 소스 꾸러미를 찾을 수 없습니다<br />
+root@beggarstar:~# apt-get build-dep linux-image-2.6.12<br />
+ 꾸러미 목록을 읽는 중입니다... 완료<br />
+ 의존성 트리를 만드는 중입니다... 완료<br />
+ E: linux-image-2.6.12의 소스 꾸러미를 찾을 수 없습니다<br />
+root@beggarstar:~# apt-get build-dep linux-image-2.6.12-?<br />
+ 꾸러미 목록을 읽는 중입니다... 완료<br />
+ 의존성 트리를 만드는 중입니다... 완료<br />
+ E: linux-image-2.6.12-?의 소스 꾸러미를 찾을 수 없습니다<br />
+-------------------------------------------------------------------------------------</p>         </div>
+    <div class="links">&raquo; <ul class="links"><li class="comment_reply first last"><a href="/comment/reply/69233/328216">답글</a></li>
+</ul></div>
+  </div>
+<form action="/node/69233"  accept-charset="UTF-8" method="post" id="comment-controls">
+<div>  <div class="box">
+    <h2 class="title">댓글 보기 옵션</h2>    <div class="content"><div class="container-inline"><input type="hidden" name="form_build_id" id="form-GVRidCJbJ-S5vQrHfLUevTsWzRC3qWgiTAtXNK6o1pY" value="form-GVRidCJbJ-S5vQrHfLUevTsWzRC3qWgiTAtXNK6o1pY"  />
+<input type="hidden" name="form_id" id="edit-comment-controls" value="comment_controls"  />
+<div class="form-item" id="edit-mode-wrapper">
+ <select name="mode" class="form-select" id="edit-mode" ><option value="1">그냥보기 - 접음</option><option value="2">그냥보기 - 펼침</option><option value="3">묶어보기 - 접음</option><option value="4" selected="selected">묶어보기 - 펼침</option></select>
+</div>
+<div class="form-item" id="edit-order-wrapper">
+ <select name="order" class="form-select" id="edit-order" ><option value="1">날짜 - 최근 것 우선</option><option value="2" selected="selected">날짜 - 예전 것 우선</option></select>
+</div>
+<div class="form-item" id="edit-comments-per-page-wrapper">
+ <select name="comments_per_page" class="form-select" id="edit-comments-per-page" ><option value="10">페이지 당 10의 댓글</option><option value="30">페이지 당 30의 댓글</option><option value="50">페이지 당 50의 댓글</option><option value="70">페이지 당 70의 댓글</option><option value="90" selected="selected">페이지 당 90의 댓글</option><option value="150">페이지 당 150의 댓글</option><option value="200">페이지 당 200의 댓글</option><option value="250">페이지 당 250의 댓글</option><option value="300">페이지 당 300의 댓글</option></select>
+</div>
+<input type="submit" name="op" id="edit-submit" value="설정 저장"  class="form-submit" />
+</div><div class="description">원하시는 댓글 전시 방법을 선택한 다음 "설정 저장"을 누르셔서 적용하십시오.</div></div>
+ </div>
+
+
+</div></form>
+  <div class="box">
+    <h2 class="title">댓글 쓰기</h2>    <div class="content"><form action="/comment/reply/69233"  accept-charset="UTF-8" method="post" id="comment-form">
+<div><div class="form-item" id="edit-subject-wrapper">
+ <label for="edit-subject">제목: </label>
+ <input type="text" maxlength="64" name="subject" id="edit-subject" size="60" value="" class="form-text" />
+</div>
+<div class="form-item" id="edit-comment-wrapper">
+ <label for="edit-comment">댓글: <span class="form-required" title="이 항목은 반드시 입력해야 합니다.">*</span></label>
+ <textarea cols="60" rows="15" name="comment" id="edit-comment"  class="form-textarea resizable required"></textarea>
+</div>
+<fieldset class=" collapsible collapsed"><legend>입력 형식</legend><div class="form-item" id="edit-format-1-wrapper">
+ <label class="option" for="edit-format-1"><input type="radio" id="edit-format-1" name="format" value="1"  checked="checked"  class="form-radio" /> Filtered HTML</label>
+ <div class="description"><ul class="tips"><li>Web page addresses and e-mail addresses turn into links automatically.</li><li>Allowed HTML tags: &lt;p&gt;&lt;div&gt;&lt;span&gt;&lt;br&gt;&lt;a&gt;&lt;em&gt;&lt;strong&gt;&lt;del&gt;&lt;ins&gt;&lt;b&gt;&lt;i&gt;&lt;u&gt;&lt;s&gt;&lt;pre&gt;&lt;code&gt;&lt;cite&gt;&lt;blockquote&gt;&lt;ul&gt;&lt;ol&gt;&lt;li&gt;&lt;dl&gt;&lt;dt&gt;&lt;dd&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;th&gt;&lt;thead&gt;&lt;tbody&gt;&lt;h1&gt;&lt;h2&gt;&lt;h3&gt;&lt;h4&gt;&lt;h5&gt;&lt;h6&gt;&lt;img&gt;&lt;embed&gt;&lt;object&gt;&lt;param&gt;&lt;hr&gt;</li><li>You can use <a href="/filter/tips/1#filter-bbcode-0">BBCode</a> tags in the text.</li><li>You can enable syntax highlighting of source code with the following tags: <code>&lt;code&gt;</code>, <code>&lt;blockcode&gt;</code>. The supported tag styles are: <code>&lt;foo&gt;</code>, <code>[foo]</code>. PHP source code can also be enclosed in &lt;?php ... ?&gt; or &lt;% ... %&gt;.</li></ul></div>
+</div>
+<div class="form-item" id="edit-format-4-wrapper">
+ <label class="option" for="edit-format-4"><input type="radio" id="edit-format-4" name="format" value="4"   class="form-radio" /> BBCode</label>
+ <div class="description"><ul class="tips"><li>You can use <a href="/filter/tips/4#filter-bbcode-0">BBCode</a> tags in the text. URLs will automatically be converted to links.</li><li>Allowed HTML tags: &lt;p&gt;&lt;div&gt;&lt;span&gt;&lt;br&gt;&lt;a&gt;&lt;em&gt;&lt;strong&gt;&lt;del&gt;&lt;ins&gt;&lt;b&gt;&lt;i&gt;&lt;u&gt;&lt;s&gt;&lt;pre&gt;&lt;code&gt;&lt;cite&gt;&lt;blockquote&gt;&lt;ul&gt;&lt;ol&gt;&lt;li&gt;&lt;dl&gt;&lt;dt&gt;&lt;dd&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;th&gt;&lt;thead&gt;&lt;tbody&gt;&lt;h1&gt;&lt;h2&gt;&lt;h3&gt;&lt;h4&gt;&lt;h5&gt;&lt;h6&gt;&lt;img&gt;&lt;embed&gt;&lt;object&gt;&lt;param&gt;</li><li>You can enable syntax highlighting of source code with the following tags: <code>&lt;code&gt;</code>, <code>&lt;blockcode&gt;</code>. The supported tag styles are: <code>&lt;foo&gt;</code>, <code>[foo]</code>. PHP source code can also be enclosed in &lt;?php ... ?&gt; or &lt;% ... %&gt;.</li></ul></div>
+</div>
+<div class="form-item" id="edit-format-5-wrapper">
+ <label class="option" for="edit-format-5"><input type="radio" id="edit-format-5" name="format" value="5"   class="form-radio" /> Textile</label>
+ <div class="description"><ul class="tips"><li>You can use Textile markup to format text.</li><li>Allowed HTML tags: &lt;p&gt;&lt;div&gt;&lt;span&gt;&lt;br&gt;&lt;a&gt;&lt;em&gt;&lt;strong&gt;&lt;del&gt;&lt;ins&gt;&lt;b&gt;&lt;i&gt;&lt;u&gt;&lt;s&gt;&lt;pre&gt;&lt;code&gt;&lt;cite&gt;&lt;blockquote&gt;&lt;ul&gt;&lt;ol&gt;&lt;li&gt;&lt;dl&gt;&lt;dt&gt;&lt;dd&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;th&gt;&lt;thead&gt;&lt;tbody&gt;&lt;h1&gt;&lt;h2&gt;&lt;h3&gt;&lt;h4&gt;&lt;h5&gt;&lt;h6&gt;&lt;img&gt;&lt;embed&gt;&lt;object&gt;&lt;param&gt;&lt;hr&gt;</li><li>You can enable syntax highlighting of source code with the following tags: <code>&lt;code&gt;</code>, <code>&lt;blockcode&gt;</code>. The supported tag styles are: <code>&lt;foo&gt;</code>, <code>[foo]</code>. PHP source code can also be enclosed in &lt;?php ... ?&gt; or &lt;% ... %&gt;.</li></ul></div>
+</div>
+<div class="form-item" id="edit-format-6-wrapper">
+ <label class="option" for="edit-format-6"><input type="radio" id="edit-format-6" name="format" value="6"   class="form-radio" /> Markdown</label>
+ <div class="description"><ul class="tips"><li>You can use <a href="/filter/tips">Markdown syntax</a> to format and style the text. Also see <a href="http://michelf.com/projects/php-markdown/extra/">Markdown Extra</a> for tables, footnotes, and more.</li><li>Web page addresses and e-mail addresses turn into links automatically.</li><li>Allowed HTML tags: &lt;p&gt;&lt;div&gt;&lt;span&gt;&lt;br&gt;&lt;a&gt;&lt;em&gt;&lt;strong&gt;&lt;del&gt;&lt;ins&gt;&lt;b&gt;&lt;i&gt;&lt;u&gt;&lt;s&gt;&lt;pre&gt;&lt;code&gt;&lt;cite&gt;&lt;blockquote&gt;&lt;ul&gt;&lt;ol&gt;&lt;li&gt;&lt;dl&gt;&lt;dt&gt;&lt;dd&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;th&gt;&lt;thead&gt;&lt;tbody&gt;&lt;h1&gt;&lt;h2&gt;&lt;h3&gt;&lt;h4&gt;&lt;h5&gt;&lt;h6&gt;&lt;img&gt;&lt;embed&gt;&lt;object&gt;&lt;param&gt;&lt;hr&gt;</li><li>You can enable syntax highlighting of source code with the following tags: <code>&lt;code&gt;</code>, <code>&lt;blockcode&gt;</code>. The supported tag styles are: <code>&lt;foo&gt;</code>, <code>[foo]</code>. PHP source code can also be enclosed in &lt;?php ... ?&gt; or &lt;% ... %&gt;.</li></ul></div>
+</div>
+<p><a href="/filter/tips">포맷팅 옵션에 대한 추가 정보</a></p></fieldset>
+<input type="hidden" name="form_build_id" id="form-wpOg3z6UYdIZsTWcTTzFtvxLEuWBw0i1ewYa1IAx2bE" value="form-wpOg3z6UYdIZsTWcTTzFtvxLEuWBw0i1ewYa1IAx2bE"  />
+<input type="hidden" name="form_id" id="edit-comment-form" value="comment_form"  />
+<fieldset class="captcha"><legend>CAPTCHA</legend><div class="description">이것은 자동으로 스팸을 올리는 것을 막기 위해서 제공됩니다. 아래 보이는 글자를 입력해 주세요. </div><input type="hidden" name="captcha_sid" id="edit-captcha-sid" value="38499793"  />
+<input type="hidden" name="captcha_token" id="edit-captcha-token" value="5e499bc577f1e68f4ba8bdc98cf0a385"  />
+<input type="hidden" name="captcha_response" id="edit-captcha-response" value="reCAPTCHA"  />
+<div class="form-item">
+ <script type="text/javascript" src="https://www.google.com/recaptcha/api/challenge?k=6LfUg74SAAAAAHJeXmBGAf814558zRf8mA79ITyJ"></script>
+
+	<noscript>
+  		<iframe src="https://www.google.com/recaptcha/api/noscript?k=6LfUg74SAAAAAHJeXmBGAf814558zRf8mA79ITyJ" height="300" width="500" frameborder="0"></iframe><br/>
+  		<textarea name="recaptcha_challenge_field" rows="3" cols="40"></textarea>
+  		<input type="hidden" name="recaptcha_response_field" value="manual_challenge"/>
+	</noscript>
+</div>
+</fieldset>
+<input type="submit" name="op" id="edit-submit-1" value="저장"  class="form-submit" />
+<input type="submit" name="op" id="edit-preview" value="미리보기"  class="form-submit" />
+
+</div></form>
+</div>
+ </div>
+
+</div>
+  <div class="block block-block" id="block-block-18">
+    <h2 class="title"></h2>
+    <div class="content"><div align="center">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 본문 최하단 -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:728px;height:90px"
+     data-ad-client="ca-pub-6651292044448473"
+     data-ad-slot="5990447875"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div></div>
+ </div>
+              </div>
+    </td>
+    <td id="sidebar-right">
+        <div class="block block-user" id="block-user-1">
+    <h2 class="title">둘러보기</h2>
+    <div class="content"><ul class="menu"><li class="expanded first"><a href="/node/add">콘텐츠 작성</a><ul class="menu"><li class="leaf first last"><a href="/node/add/forum" title="포럼(BBS)에 새글 올리기">포럼 주제</a></li>
+</ul></li>
+<li class="leaf last"><a href="/tracker">최근 포스트</a></li>
+</ul></div>
+ </div>
+  <div class="block block-user" id="block-user-0">
+    <h2 class="title">사용자 로그인</h2>
+    <div class="content"><form action="/node/69233?destination=node%2F69233"  accept-charset="UTF-8" method="post" id="user-login-form">
+<div><div class="form-item" id="edit-openid-identifier-wrapper">
+ <label for="edit-openid-identifier">OpenID로 로그인: </label>
+ <input type="text" maxlength="255" name="openid_identifier" id="edit-openid-identifier" size="13" value="" class="form-text" />
+ <div class="description"><a href="http://openid.net/">OpenID란?</a></div>
+</div>
+<div class="form-item" id="edit-name-wrapper">
+ <label for="edit-name">아이디: <span class="form-required" title="이 항목은 반드시 입력해야 합니다.">*</span></label>
+ <input type="text" maxlength="60" name="name" id="edit-name" size="15" value="" class="form-text required" />
+</div>
+<div class="form-item" id="edit-pass-wrapper">
+ <label for="edit-pass">비밀번호: <span class="form-required" title="이 항목은 반드시 입력해야 합니다.">*</span></label>
+ <input type="password" name="pass" id="edit-pass"  maxlength="60"  size="15"  class="form-text required" />
+</div>
+<input type="submit" name="op" id="edit-submit-2" value="로그인"  class="form-submit" />
+<input type="hidden" name="form_build_id" id="form-LtVUrgYxpyaWluQDEgr9qyMJ0R4YuWVcY7TIy7NfwYk" value="form-LtVUrgYxpyaWluQDEgr9qyMJ0R4YuWVcY7TIy7NfwYk"  />
+<input type="hidden" name="form_id" id="edit-user-login-block" value="user_login_block"  />
+<input type="hidden" name="openid.return_to" id="edit-openid.return-to" value="https://kldp.org/openid/authenticate?destination=node%2F69233"  />
+<div class="item-list"><ul><li class="openid-link first"><a href="/%2523">OpenID로 로그인</a></li>
+<li class="user-link last"><a href="/%2523">OpenID로 로그인을 취소</a></li>
+</ul></div><div class="item-list"><ul><li class="first"><a href="/user/register" title="새로운 사용자 계정을 만듭니다.">가입하기</a></li>
+<li class="last"><a href="/user/password" title="새로운 비밀번호를 이메일로 보내달라고 요청합니다.">새로운 비밀번호 요청하기</a></li>
+</ul></div>
+</div></form>
+</div>
+ </div>
+  <div class="block block-block" id="block-block-25">
+    <h2 class="title"></h2>
+    <div class="content"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 오른쪽 사이드 -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:200px;height:200px"
+     data-ad-client="ca-pub-6651292044448473"
+     data-ad-slot="2199376672"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+ </div>
+  <div class="block block-google_cse" id="block-google_cse-0">
+    <h2 class="title">찾기</h2>
+    <div class="content"><form action="/search/google"  accept-charset="UTF-8" method="get" id="google-cse-searchbox-form">
+<div><input type="hidden" name="cx" id="edit-cx" value="partner-pub-6651292044448473:jz430d1s80g"  />
+<input type="hidden" name="cof" id="edit-cof" value="FORID:11"  />
+<div class="form-item" id="edit-query-wrapper">
+ <input type="text" maxlength="128" name="query" id="edit-query" size="15" value="" title="찾고자 하는 단어를 입력하십시오" class="form-text" />
+</div>
+<input type="submit" name="op" id="edit-sa" value="찾기"  class="form-submit" />
+<input type="hidden" name="hl" id="edit-hl" value="ko"  />
+<input type="hidden" name="safe" id="edit-safe" value="medium"  />
+<input type="hidden" name="form_build_id" id="form-WkxaE_lKz4ZaboFbcGpmZL2sFkLavXglBf2cVO819DY" value="form-WkxaE_lKz4ZaboFbcGpmZL2sFkLavXglBf2cVO819DY"  />
+<input type="hidden" name="form_id" id="edit-google-cse-searchbox-form" value="google_cse_searchbox_form"  />
+
+</div></form>
+</div>
+ </div>
+  <div class="block block-block" id="block-block-20">
+    <h2 class="title"></h2>
+    <div class="content"><div align="right">
+<a href="//kldp.org/node/88410">홍보 제휴 안내</a>
+</div></div>
+ </div>
+    </td>  </tr>
+</table>
+
+<div id="footer">
+  <div align="center">
+<a href="http://www.ticketmonster.co.kr" title="티몬 - 상면/회선 지원"><img src="//img.kldp.org/static/tmon.png" width="88" border="0" height="31" alt="Ticketmonster" /></a><a href="http://www.cdnetworks.co.kr" title="CDNetworks - People 서버 상면/회선 지원"><img src="//img.kldp.org/static/cdnetworks.gif" width="88" border="0" height="31" alt="CDNetworks" /></a><a href="http://www.naver.com" title="NHN - KLDP Web/DB Server 기증"><img src="//img.kldp.org/static/naver.png" width="88" border="0" height="31" alt="Naver" /></a>
+
+<br /><a href="https://wiki.kldp.org/wiki.php/KLDP#s-5">전체 스폰서 목록</a>
+<br /><a href="//kldp.org/contact">사이트 관리자에게 연락하기</a>
+</div>  </div>
+<script type="text/javascript" src="/files/js/js_bc9a2afbcafd27a864ed2087fd506fa7.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, { "googleCSE": { "language": "ko" } });
+//--><!]]>
+</script>
+<script type="text/javascript">
+(function(w, d) { var a = function() { var b = d.createElement('script'); b.type = 'text/javascript';
+if (undefined !== b.setAttribute) { b.setAttribute('async', 'async'); }
+b.src = '//' + ((w.location.protocol === 'https:') ? 's3.amazonaws.com/cdx-radar/' :
+'radar.cedexis.com/') + '01-14136-radar10.min.js'; d.body.appendChild(b); };
+if (w.addEventListener) { w.addEventListener('load', a, false); }
+else if (w.attachEvent) { w.attachEvent('onload', a); }
+}(window, document));
+</script>
+</body>
+</html>

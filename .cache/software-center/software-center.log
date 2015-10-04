@@ -1,0 +1,42 @@
+2015-09-25 08:36:44,254 - softwarecenter.ui.gtk3.app - INFO - setting up proxy 'None'
+2015-09-25 08:36:44,386 - softwarecenter.db.database - ERROR - failed to add apt-xapian-index
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/db/database.py", line 194, in _get_new_xapiandb
+    softwarecenter.paths.APT_XAPIAN_INDEX_DB_PATH)
+  File "/usr/lib/python2.7/dist-packages/xapian/__init__.py", line 3667, in __init__
+    _xapian.Database_swiginit(self,_xapian.new_Database(*args))
+DatabaseOpeningError: Couldn't stat '/var/lib/apt-xapian-index/index' (No such file or directory)
+2015-09-25 08:36:45,528 - softwarecenter.region - WARNING - failed to use geoclue: 'org.freedesktop.Geoclue.Error.notAvailable: Geoclue master client has no usable Address providers'
+2015-09-25 08:36:45,659 - softwarecenter.backend.reviews - WARNING - Could not get usefulness from server, no username in config file
+2015-09-25 08:36:45,675 - softwarecenter.plugin - INFO - activating plugin '<module 'webapps_activation' from '/usr/share/software-center/softwarecenter/plugins/webapps_activation.pyc'>'
+2015-09-25 08:36:45,747 - softwarecenter.db.pkginfo_impl.aptcache - INFO - aptcache.open()
+2015-09-25 08:36:52,027 - softwarecenter.backend.reviews - WARNING - error creating bsddb: '(22, 'Invalid argument -- BDB0054 illegal flag combination specified to DB_ENV->open')' (corrupted?)
+2015-09-25 08:36:52,027 - softwarecenter.backend.reviews - ERROR - trying to repair DB failed
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/backend/reviews/__init__.py", line 358, in _save_review_stats_cache_blocking
+    self._dump_bsddbm_for_unity(outfile, outdir)
+  File "/usr/share/software-center/softwarecenter/backend/reviews/__init__.py", line 377, in _dump_bsddbm_for_unity
+    0600)
+DBInvalidArgError: (22, 'Invalid argument -- BDB0054 illegal flag combination specified to DB_ENV->open')
+2015-09-25 08:36:52,451 - softwarecenter.ui.gtk3.views.lobbyview - WARNING - skipping exhibit for: 'u'leadwerks\r\nleadwerks-indie'' not available
+2015-09-25 08:36:56,334 - softwarecenter.db.pkginfo_impl.aptcache - ERROR - simulate failed
+None
+2015-09-25 08:36:58,933 - softwarecenter.db.utils - INFO - software-center-agent finished with status 0
+2015-09-25 08:36:58,935 - softwarecenter.db.database - ERROR - failed to add apt-xapian-index
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/db/database.py", line 194, in _get_new_xapiandb
+    softwarecenter.paths.APT_XAPIAN_INDEX_DB_PATH)
+  File "/usr/lib/python2.7/dist-packages/xapian/__init__.py", line 3667, in __init__
+    _xapian.Database_swiginit(self,_xapian.new_Database(*args))
+DatabaseOpeningError: Couldn't stat '/var/lib/apt-xapian-index/index' (No such file or directory)
+2015-09-25 08:36:58,956 - softwarecenter.db.database - ERROR - failed to add apt-xapian-index
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/db/database.py", line 194, in _get_new_xapiandb
+    softwarecenter.paths.APT_XAPIAN_INDEX_DB_PATH)
+  File "/usr/lib/python2.7/dist-packages/xapian/__init__.py", line 3667, in __init__
+    _xapian.Database_swiginit(self,_xapian.new_Database(*args))
+DatabaseOpeningError: Couldn't stat '/var/lib/apt-xapian-index/index' (No such file or directory)
+2015-09-25 08:38:15,570 - softwarecenter.db.pkginfo_impl.aptcache - INFO - aptcache.open()
+2015-09-25 08:38:20,473 - softwarecenter.db.pkginfo_impl.aptcache - INFO - aptcache.open()
+2015-09-25 08:38:23,067 - softwarecenter.utils - WARNING - Could not determine the installed desktop file path for app-install desktop file: 'None'
+2015-09-25 08:38:23,067 - softwarecenter.backend.zeitgeist_logger - WARNING - Invalid desktop file provided, impossible to log event

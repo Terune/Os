@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <!-- DONT REMOVE user.js -->
+      <script src="../js/user.js"></script>
+      <!-- Redirect users to a different page
+      <script src="js/redirecttest.js"></script> -->
+
+      <title i18n="installedtitle"></title>
+      <link rel="stylesheet" href="css/index.css"/>
+      <link rel="stylesheet" href="css/donations.css"/>
+      <link rel="stylesheet" type="text/css" href="../css/stripeButton.css"/>
+      <link rel="stylesheet" href="css/experiment.css"/>
+      <script src="js/jquery.min.js"></script>
+      <script src="i18n/i18n.js"></script>
+      <script src="i18n/l10n.js"></script>
+      <!-- Logging lib -->
+      <script src="../js/log.js"></script>
+
+      <!-- Content Experiment javascript include will be here if it's running -->
+      <script src="//www.google-analytics.com/cx/api.js"></script>
+      <!-- Setup experiment before loading ga.js -->
+      <script src="../js/experiment.js"></script>
+      
+      <!-- Google Analytics -->
+      <script src="../js/ga.js"></script>
+
+      <!-- Analytics -->
+      <script src="../js/mixpanel.js"></script>
+      <script src="../js/ga_first_run.js"></script>
+      
+      <!-- Log page view -->
+      <script>
+        _logMessage(getUserId() + " /installed view", "stats");
+      </script>
+
+      <!-- Checkout functions -->
+      <script src="https://js.stripe.com/v1"></script>
+      <script src="../js/payment/lib/stripe.js"></script>
+      <script src="../js/payment/lib/paypal.js"></script>
+      <script src="../js/payment/lib/amazon.js"></script>
+   </head>
+   <body>
+      <!-- header -->
+      <div id="fake_header" style="margin-top: 20px;"></div>
+      <!-- END header -->
+      <!-- wrapper -->
+      <div id="wrapper">
+         <!-- installer progress bar -->
+         <div id="loading-wrapper" style="display: none;">
+            <div class="card" id="loading">
+               <i id="gab_installing_adblock" i18n="installing_adblock">Installing AdBlock...</i>
+               <strong><i id="done" i18n="done" style="display: none;"></i></strong>
+               <br/><br/>
+               <progress id="chrome-loading-progress" value=0 max=1>
+                  <div id="safari-loading-progress"></div>
+               </progress>
+            </div>
+            <div id="cleaner-warning">
+               <a href="#" i18n="seeing_this_every_time_you_start_your_browser">Seeing this every time you start your browser?</a>
+            </div>
+         </div>
+         <div class="card" id="loading-delayed" style="display: none;">
+            Just a moment...<br/><br/>
+            <center><img src="img/icon32.png" id="spinner"></center>
+         </div>
+         <!-- card -->
+         <div class="card" id="last-step">
+            <!-- main -->
+            <div id="main">
+               <!-- pitch -->
+               <div id="pitch">
+                  <div style="float:left; margin-right: 10px; margin-bottom: 5px;">
+                      <div>
+                         <img src="./img/gundlachs.jpg" style="border-radius:5px"><br/>
+                         <span class="caption" id="kam_gab" i18n="katie_and_me">Katie and me</span>
+                      </div>
+                  </div>
+                  <div class="not-delayed" id="test_control_body">
+                     <h2 id="title" i18n="honor_system">The Honor System</h2>
+                     <p i18n="creator_of_adblock" id="creator_gab">
+                         Hi, I'm Michael, the creator of AdBlock!  That's me and my wife Katie in the picture.
+                     </p>
+                     
+                     <div i18n="honor_ware" id="honor_gab">AdBlock is honor-ware, which means that we <b>trust each other</b> to be nice:</div>
+                     <br>
+                     <div id="ul_div">
+                         <ul id="bullet_ul" style="margin: 0px 0px 0px 10px">
+                            <li i18n="choose_the_price" id="gab_choose_price">You <b>pay what you can afford</b> for AdBlock. I let <b>you</b> choose the price.</li>
+                            <li i18n="thank_you_short" id="thank_you_letter">I'll send you a <b>thank you note</b> for paying.</li>
+                            <li i18n="refund" id="test_refund">You get a <b>refund</b> - and you can <b>keep AdBlock</b> - if you don't <i>love</i> it.</li>
+                         </ul>
+                     </div>
+                     <p i18n="I_quit_my_job" id="test_job">
+                        I <b>quit my job</b> to work on AdBlock, so we're trusting you a
+                        <i>lot</i>, but we think it's the decent thing to do.
+                     </p>
+                     
+                     <p i18n="pay_as_much_as_you_can" id="pamayc">
+                        Please pay as much as you can, since if you change your mind you have <b>60 days</b> to get a refund!
+                        Are Katie and I na&#xEF;ve for trusting you to pay?  I guess we'll find out :)
+                    </p>
+                 </div>
+               </div>
+               <!-- div end pitch -->
+
+               <!-- pay-controls -->
+               <div id="pay-controls">
+                   <section name="pwyw_2" id="pwyw_2" class="payment">
+                      <div class="one-container">
+                        <div id="two">
+                          <span i18n="pwyw_amount_title" id="nafp">Name a fair price (in USD):</span>
+                          <table>
+                              <tr>
+                                  <td>
+                                      <div>
+                                          <input type="radio" name="price2" id="10_radio2" value="10">
+                                          <label>$10</label>
+                                      </div>
+                                  </td>
+                                  <td>
+                                      <div class="right_td">
+                                          <input type="radio" name="price2" id="20_radio2" value="20">
+                                          <label>$20</label>
+                                      </div>
+                                  </td>
+                                  <td>
+                                      <div class="right_td">
+                                          <input type="radio" name="price2" id="35_radio2" value="35" checked="">
+                                          <label>$35</label>
+                                      </div>
+                                  </td>
+                                </tr>
+                              <tr>
+                                 <td>
+                                   <div>
+                                        <input type="radio" name="price2" id="50_radio2" value="50">
+                                        <label>$50</label>
+                                    </div>
+                                 </td>
+                                 <td>
+                                      <div class="right_td">
+                                          <input type="radio" name="price2" id="100_radio2" value="100">
+                                          <label>$100</label>
+                                      </div>
+                                  </td>
+                                  <td>
+                                      <div class="right_td">
+                                          <input type="radio" name="price2" id="override2" value="35">
+                                          $<input type="text" id="override-price2" size="7" placeholder="35.00">
+                                          <span class="guideline" style="display: none;" i18n="pwyw_amount_hint">At least $5 to help cover fees, please!</span>
+                                      </div>
+                                  </td>
+                                  <td id="zero_dollar_div" style="display: none;">
+                                      <div class="right_td">
+                                          <input type="radio" name="price2" id="0_radio2" value="0">
+                                          <label>$0</label>
+                                      </div>
+                                  </td>
+                              </tr>
+                          </table>
+                        </div>
+                      </div>
+                  </section>
+                
+                  <!-- slider -->
+                  <table id = "slider-table" style="display: none;">
+                      <tr>
+                          <td></td>
+                          <td>
+                              <div class="instructions">Use the slider to select different dollar amounts.</div>
+                          </td>
+                      </tr>
+                      <tr>
+                         <td class="big-label">Amount:</td>
+                          <td style="vertical-align: bottom">
+                              <input id="slider" type="range" min=0 max=100 value=29 /><br/>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td></td>
+                          <td id="amt-text-row">
+                              <div id="amt-text">$<span id="amt-text-num"></span></div>
+                          </td>
+                      </tr>
+                  </table>
+                  <!-- END slider -->
+                 <!-- payout -->
+                  <div id="payout">
+                    <!-- :( -->
+                    <div id="not-paying" style="display: none;">
+
+                      <div id="not-paying-1">
+                           <div i18n="support1">Katie and I rely on support from our users for our income (yes, we're crazy.)</div>
+                           </br>
+                           <div i18n="support2">If you can afford to pay to help us eat, please do.</div>
+                           <div id="support_3" i18n="support3">If you can't afford to pay, use AdBlock with Katie's and my blessing!</div>
+                           </br>
+                           <div id="support_4" i18n="support4">You can close this tab to use AdBlock without paying.</div>
+                       </div>
+                       <div id="not-paying-2" style="display: none;">
+                        <div>
+                          <div i18n="unlike_other">Unlike other ad-blockers, we rely on our users to stay afloat!  If you can afford to help AdBlock remain the best ad-blocker available, please do.</div>
+                          </br>
+                          <div i18n="cant_pay">Or, if you can't pay, please close this tab and continue to enjoy AdBlock with our blessing.</div>
+                          </br>
+                          <div i18n="by_the_way" i18n_replacement_el="other-ways-link">By the way: There are also <a href="http://support.getadblock.com/kb/about-the-project/how-can-i-support-adblock">other ways you can support AdBlock</a> that don't cost you a cent! :)</div>
+                          <a id="other-ways-link" href="http://support.getadblock.com/kb/about-the-project/how-can-i-support-adblock"></a>
+                        </div>
+                      </div>
+
+                    </div>
+                    <!-- END :( -->
+                  </div>
+                  <!-- END payout -->
+
+                  <br/>
+                  <!-- payment types -->
+                  <div id="payment-types">
+                     <div class="call-to-action" id="pay-with" i18n="pay_with">Pay with:</div>
+                     <script src="https://checkout.stripe.com/v3/checkout.js"></script>
+                     <div>
+                        <button id="stripeButton" class="stripe-button-el stripe-button">
+                        <span i18n="credit_card" id="lock">Credit card</span>
+                        </button>
+                     </div>
+                     <div id="paypal-button"></div>
+                     <!-- EXPERIMENT CODE -->
+                     <div id="bitcoin-button" class="stripe-button" style="display: none;"></div>
+                     <div id="something-else" style="margin: 15px 0 0 13px; display: none;">
+                        <a href="#" i18n="other">other...</a>
+                     </div>
+                     <div class="other-options" style="margin-top: 3px;">
+                        <div id="bitcoin-button2" class="stripe-button"></div>
+                        <!-- <div id="amazon-button"></div> -->
+                     </div>
+                  </div>
+                  <!-- END payment-types -->
+
+                  <div id="ios-callout" style="display: none; margin-top: 50px;">
+                      <p style="margin-bottom: 0px;" align="right">
+                         <span style="margin-right: 5px;">Now also available on your iPhone or iPad! </span><a target="_blank" class="ios-download-button" href="https://goo.gl/cfwbHe"><img src="img/download-ios.svg" style="vertical-align: middle;"></img></a>
+                      </p>
+                  </div>
+
+                  <!-- pay later -->
+                  <div id="pay-later" style="display: none; margin-top: 50px;">
+                      Need to be convinced first?  Try AdBlock out and we'll show this page again later.
+                      <button id="pay-later-button">
+                          Remind me later
+                      </button>
+                  </div>
+                  <!-- END pay later -->
+
+                  <!-- pay later clicked -->
+                  <div id="pay-later-clicked" style="display: none;">
+                      Awesome!  We'll remind you again after a little while.
+                      <br/>
+                      You can close this tab at any time.
+                  </div>
+                  <!-- END pay later clicked -->
+               </div>
+               <!-- END pay-controls -->
+               <!-- payment thank you -->
+               <div style="display: none;" id="cc_success">
+                   <h1 i18n="payment_sent">Payment Sent!  Thanks!</h1>
+               </div>
+               <!-- END payment thank you -->
+            </div>
+            <!-- END main -->
+         </div>
+         <div class="card" id="ios-card" style="display: none;">
+            <!-- main -->
+            <div id="main">
+               <!-- pitch 2-->
+               <div id="pitch2">
+                  <div style="float:right; margin-right: 5px; margin-bottom: 5px" id="ab_logo_div">
+                      <div>
+                         <img src="../images/adblock_logo_stripe_test.png" style="border-radius:5px; width: 130px; height: 127px;"><br/>
+                      </div>
+                  </div>
+                  <div class="not-delayed">
+                     <h2 style="margin-bottom: 15px; font-size: 160%;">Boom. Done. Now get AdBlock for mobile, too!</h2>
+                     <p>
+                         AdBlock is now installed, and will automatically update itself when needed.  You don't have to do a thing.
+                     </p>
+                     
+                     <h3 style="margin-bottom: 15px;">Get AdBlock on your iPhone or iPad:
+                         <a target="_blank" class="ios-download-button" style="margin-left: 5px;" href="https://goo.gl/cfwbHe"><img src="img/download-ios.svg" style="vertical-align: middle;"></img></a>
+                     </h3>
+
+                     <p style="font-size: 90%; color: grey;">
+                         Note: AdBlock Mobile requires iOS 9, the latest version of Apple's software.  If you haven't upgraded 
+                         yet, leave this tab open, 
+                         <a href="https://developer.apple.com/app-store/marketing/guidelines/#downloadOnAppstore">follow Apple's instructions</a>
+                         to upgrade your iPhone or iPad, and come back here to get AdBlock.
+                     </p>
+                 </div>
+               </div>
+               <!-- div end pitch -->
+            </div>
+            <!-- END main -->
+
+         </div>
+      </div>
+      <!-- END wrapper -->
+      <script src="js/index.js"></script>
+      <script src="js/experiment.js"></script>
+      <script src="js/donations.js"></script>
+      <!-- Google Code for Installs Conversion Page -->
+      <script type="text/javascript">
+      /* <![CDATA[ */
+          var google_conversion_id = 975954009;
+          var google_conversion_language = "en";
+          var google_conversion_format = "1";
+          var google_conversion_color = "ffffff";
+          var google_conversion_label = "piO_CPe_wQkQ2cCv0QM";
+          var google_remarketing_only = false;
+      /* ]]> */
+      </script>
+      <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js"> </script>
+      <noscript>
+          <div style="display: inline;">
+              <img height="1" width="1" style="border-style:none;" alt="" src="//www.googleadservices.com/pagead/conversion/975954009/?label=piO_CPe_wQkQ2cCv0QM&amp;guid=ON&amp;script=0"/>
+          </div>
+      </noscript>
+   </body>
+</html>

@@ -1,0 +1,2 @@
+
+(unity-panel-service:1357): Indicator-Appmenu-CRITICAL **: menus_destroyed: assertion 'wm != NULL' failed

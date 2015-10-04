@@ -1,0 +1,438 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+        "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <link rel="stylesheet" type="text/css" href="../../../style.css" title="style" />
+    <link rel="stylesheet" type="text/css" href="../style.css" title="style" />
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+
+    <title>quotactl(2) - Linux manual page</title>
+</head>
+
+<body>
+
+<div class="page-top"><a id="top_of_page"></a></div>
+<!--%%%TOP_BAR%%%-->
+    <div class="nav-bar">
+        <table class="nav-table">
+            <tr>
+                <td class="nav-cell">
+                    <p class="nav-text">
+                        <a href="../../../index.html">man7.org</a> &gt; Linux &gt; <a href="../index.html">man-pages</a>
+                    </p>
+                </td>
+                <td class="training-cell">
+                    <p class="training-text"><a class="training-link" href="http://man7.org/training/">Linux/UNIX system programming training</a></p>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+<hr class="nav-end" />
+
+<!--%%%PAGE_START%%%-->
+
+
+<table class="sec-table">
+<tr>
+    <td>
+        <p class="section-dir">
+<a href="#NAME">NAME</a> | <a href="#SYNOPSIS">SYNOPSIS</a> | <a href="#DESCRIPTION">DESCRIPTION</a> | <a href="#RETURN_VALUE">RETURN VALUE</a> | <a href="#ERRORS">ERRORS</a> | <a href="#SEE_ALSO">SEE ALSO</a> | <a href="#COLOPHON">COLOPHON</a>
+        </p>
+    </td>
+    <td class="search-box">
+        <div class="man-search-box">
+
+            <form method="get" action="http://www.google.com/search">
+                <fieldset class="man-search">
+                    <input type="text" name="q" size="10" maxlength="255" value="" />
+                    <input type="hidden" name="sitesearch" value="man7.org/linux/man-pages" />
+                    <input type="submit" name="sa" value="Search online pages" />
+                </fieldset>
+            </form>
+
+        </div>
+    </td>
+    <td> </td>
+</tr>
+</table>
+
+<pre>
+<span class="headline">QUOTACTL(2)               Linux Programmer's Manual              QUOTACTL(2)</span>
+</pre>
+<h2><a id="NAME" href="#NAME"></a>NAME  &nbsp; &nbsp; &nbsp; &nbsp; <a href="#top_of_page"><span class="top-link">top</span></a></h2><pre>
+       quotactl - manipulate disk quotas
+</pre>
+<h2><a id="SYNOPSIS" href="#SYNOPSIS"></a>SYNOPSIS  &nbsp; &nbsp; &nbsp; &nbsp; <a href="#top_of_page"><span class="top-link">top</span></a></h2><pre>
+       <b>#include &lt;sys/quota.h&gt;</b>
+       <b>#include &lt;xfs/xqm.h&gt;</b>
+
+       <b>int quotactl(int </b><i>cmd</i><b>, const char *</b><i>special</i><b>, int </b><i>id</i><b>, caddr_t </b><i>addr</i><b>);</b>
+</pre>
+<h2><a id="DESCRIPTION" href="#DESCRIPTION"></a>DESCRIPTION  &nbsp; &nbsp; &nbsp; &nbsp; <a href="#top_of_page"><span class="top-link">top</span></a></h2><pre>
+       The quota system can be used to set per-user and per-group limits on
+       the amount of disk space used on a filesystem.  For each user and/or
+       group, a soft limit and a hard limit can be set for each filesystem.
+       The hard limit can't be exceeded.  The soft limit can be exceeded,
+       but warnings will ensue.  Moreover, the user can't exceed the soft
+       limit for more than one week (by default) at a time; after this time,
+       the soft limit counts as a hard limit.
+
+       The <b>quotactl</b>() call manipulates disk quotas.  The <i>cmd</i> argument
+       indicates a command to be applied to the user or group ID specified
+       in <i>id</i>.  To initialize the <i>cmd</i> argument, use the <i>QCMD(subcmd, type)</i>
+       macro.  The <i>type</i> value is either <b>USRQUOTA</b>, for user quotas, or
+       <b>GRPQUOTA</b>, for group quotas.  The <i>subcmd</i> value is described below.
+
+       The <i>special</i> argument is a pointer to a null-terminated string
+       containing the pathname of the (mounted) block special device for the
+       filesystem being manipulated.
+
+       The <i>addr</i> argument is the address of an optional, command-specific,
+       data structure that is copied in or out of the system.  The
+       interpretation of <i>addr</i> is given with each command below.
+
+       The <i>subcmd</i> value is one of the following:
+
+       <b>Q_QUOTAON</b>
+               Turn on quotas for a filesystem.  The <i>id</i> argument is the
+               identification number of the quota format to be used.
+               Currently, there are three supported quota formats:
+
+               <b>QFMT_VFS_OLD </b>The original quota format.
+
+               <b>QFMT_VFS_V0  </b>The standard VFS v0 quota format, which can
+                            handle 32-bit UIDs and GIDs and quota limits up
+                            to 2^42 bytes and 2^32 inodes.
+
+               <b>QFMT_VFS_V1  </b>A quota format that can handle 32-bit UIDs and
+                            GIDs and quota limits of 2^64 bytes and 2^64
+                            inodes.
+
+               The <i>addr</i> argument points to the pathname of a file containing
+               the quotas for the filesystem.  The quota file must exist; it
+               is normally created with the <a href="../man8/quotacheck.8.html">quotacheck(8)</a> program.  This
+               operation requires privilege (<b>CAP_SYS_ADMIN</b>).
+
+       <b>Q_QUOTAOFF</b>
+               Turn off quotas for a filesystem.  The <i>addr</i> and <i>id</i> arguments
+               are ignored.  This operation requires privilege
+               (<b>CAP_SYS_ADMIN</b>).
+
+       <b>Q_GETQUOTA</b>
+               Get disk quota limits and current usage for user or group <i>id</i>.
+               The <i>addr</i> argument is a pointer to a <i>dqblk</i> structure defined
+               in <i>&lt;sys/quota.h&gt;</i> as follows:
+
+                   /* uint64_t is an unsigned 64-bit integer;
+                      uint32_t is an unsigned 32-bit integer */
+
+                   struct dqblk {          /* Definition since Linux 2.4.22 */
+                       uint64_t dqb_bhardlimit;   /* absolute limit on disk
+                                                     quota blocks alloc */
+                       uint64_t dqb_bsoftlimit;   /* preferred limit on
+                                                     disk quota blocks */
+                       uint64_t dqb_curspace;     /* current quota block
+                                                     count */
+                       uint64_t dqb_ihardlimit;   /* maximum number of
+                                                     allocated inodes */
+                       uint64_t dqb_isoftlimit;   /* preferred inode limit */
+                       uint64_t dqb_curinodes;    /* current number of
+                                                     allocated inodes */
+                       uint64_t dqb_btime;        /* time limit for excessive
+                                                     disk use */
+                       uint64_t dqb_itime;        /* time limit for excessive
+                                                     files */
+                       uint32_t dqb_valid;        /* bit mask of QIF_*
+                                                     constants */
+                   };
+
+                   /* Flags in dqb_valid that indicate which fields in
+                      dqblk structure are valid. */
+
+                   #define QIF_BLIMITS   1
+                   #define QIF_SPACE     2
+                   #define QIF_ILIMITS   4
+                   #define QIF_INODES    8
+                   #define QIF_BTIME     16
+                   #define QIF_ITIME     32
+                   #define QIF_LIMITS    (QIF_BLIMITS | QIF_ILIMITS)
+                   #define QIF_USAGE     (QIF_SPACE | QIF_INODES)
+                   #define QIF_TIMES     (QIF_BTIME | QIF_ITIME)
+                   #define QIF_ALL       (QIF_LIMITS | QIF_USAGE | QIF_TIMES)
+
+               The <i>dqb_valid</i> field is a bit mask that is set to indicate the
+               entries in the <i>dqblk</i> structure that are valid.  Currently,
+               the kernel fills in all entries of the <i>dqblk</i> structure and
+               marks them as valid in the <i>dqb_valid</i> field.  Unprivileged
+               users may retrieve only their own quotas; a privileged user
+               (<b>CAP_SYS_ADMIN</b>) can retrieve the quotas of any user.
+
+       <b>Q_SETQUOTA</b>
+               Set quota information for user or group <i>id</i>, using the
+               information supplied in the <i>dqblk</i> structure pointed to by
+               <i>addr</i>.  The <i>dqb_valid</i> field of the <i>dqblk</i> structure indicates
+               which entries in the structure have been set by the caller.
+               This operation supersedes the <b>Q_SETQLIM </b>and <b>Q_SETUSE</b>
+               operations in the previous quota interfaces.  This operation
+               requires privilege (<b>CAP_SYS_ADMIN</b>).
+
+       <b>Q_GETINFO</b>
+               Get information (like grace times) about quotafile.  The <i>addr</i>
+               argument should be a pointer to a <i>dqinfo</i> structure.  This
+               structure is defined in <i>&lt;sys/quota.h&gt;</i> as follows:
+
+                   /* uint64_t is an unsigned 64-bit integer;
+                      uint32_t is an unsigned 32-bit integer */
+
+                   struct dqinfo {         /* Defined since kernel 2.4.22 */
+                       uint64_t dqi_bgrace;    /* Time before block soft limit
+                                                  becomes hard limit */
+
+                       uint64_t dqi_igrace;    /* Time before inode soft limit
+                                                  becomes hard limit */
+                       uint32_t dqi_flags;     /* Flags for quotafile
+                                                  (DQF_*) */
+                       uint32_t dqi_valid;
+                   };
+
+                   /* Bits for dqi_flags */
+
+                   /* Quota format QFMT_VFS_OLD */
+
+                   #define V1_DQF_RSQUASH   1   /* Root squash enabled */
+
+                   /* Other quota formats have no dqi_flags bits defined */
+
+                   /* Flags in dqi_valid that indicate which fields in
+                      dqinfo structure are valid. */
+
+                   # define IIF_BGRACE 1
+                   # define IIF_IGRACE 2
+                   # define IIF_FLAGS  4
+                   # define IIF_ALL        (IIF_BGRACE | IIF_IGRACE | IIF_FLAGS)
+
+               The <i>dqi_valid</i> field in the <i>dqinfo</i> structure indicates the
+               entries in the structure that are valid.  Currently, the
+               kernel fills in all entries of the <i>dqinfo</i> structure and marks
+               them all as valid in the <i>dqi_valid</i> field.  The <i>id</i> argument is
+               ignored.
+
+       <b>Q_SETINFO</b>
+               Set information about quotafile.  The <i>addr</i> argument should be
+               a pointer to a <i>dqinfo</i> structure.  The <i>dqi_valid</i> field of the
+               <i>dqinfo</i> structure indicates the entries in the structure that
+               have been set by the caller.  This operation supersedes the
+               <b>Q_SETGRACE </b>and <b>Q_SETFLAGS </b>operations in the previous quota
+               interfaces.  The <i>id</i> argument is ignored.  This operation
+               requires privilege (<b>CAP_SYS_ADMIN</b>).
+
+       <b>Q_GETFMT</b>
+               Get quota format used on the specified filesystem.  The <i>addr</i>
+               argument should be a pointer to a 4-byte buffer where the
+               format number will be stored.
+
+       <b>Q_SYNC  </b>Update the on-disk copy of quota usages for a filesystem.  If
+               <i>special</i> is NULL, then all filesystems with active quotas are
+               sync'ed.  The <i>addr</i> and <i>id</i> arguments are ignored.
+
+       <b>Q_GETSTATS</b>
+               Get statistics and other generic information about the quota
+               subsystem.  The <i>addr</i> argument should be a pointer to a
+               <i>dqstats</i> structure in which data should be stored.  This
+               structure is defined in <i>&lt;sys/quota.h&gt;</i>.  The <i>special</i> and <i>id</i>
+               arguments are ignored.  This operation is obsolete and not
+               supported by recent kernels.  Files in <i>/proc/sys/fs/quota/</i>
+               carry the information instead.
+
+       For XFS filesystems making use of the XFS Quota Manager (XQM), the
+       above commands are bypassed and the following commands are used:
+
+       <b>Q_XQUOTAON</b>
+               Turn on quotas for an XFS filesystem.  XFS provides the
+               ability to turn on/off quota limit enforcement with quota
+               accounting.  Therefore, XFS expects <i>addr</i> to be a pointer to
+               an <i>unsigned int</i> that contains either the flags
+               <b>XFS_QUOTA_UDQ_ACCT </b>and/or <b>XFS_QUOTA_UDQ_ENFD </b>(for user
+               quota), or <b>XFS_QUOTA_GDQ_ACCT </b>and/or <b>XFS_QUOTA_GDQ_ENFD </b>(for
+               group quota), as defined in <i>&lt;xfs/xqm.h&gt;</i>.  This operation
+               requires privilege (<b>CAP_SYS_ADMIN</b>).
+
+       <b>Q_XQUOTAOFF</b>
+               Turn off quotas for an XFS filesystem.  As with <b>Q_QUOTAON</b>,
+               XFS filesystems expect a pointer to an <i>unsigned int</i> that
+               specifies whether quota accounting and/or limit enforcement
+               need to be turned off.  This operation requires privilege
+               (<b>CAP_SYS_ADMIN</b>).
+
+       <b>Q_XGETQUOTA</b>
+               Get disk quota limits and current usage for user <i>id</i>.  The
+               <i>addr</i> argument is a pointer to an <i>fs_disk_quota</i> structure
+               (defined in <i>&lt;xfs/xqm.h&gt;</i>).  Unprivileged users may retrieve
+               only their own quotas; a privileged user (<b>CAP_SYS_ADMIN</b>) may
+               retrieve the quotas of any user.
+
+       <b>Q_XSETQLIM</b>
+               Set disk quota limits for user <i>id</i>.  The <i>addr</i> argument is a
+               pointer to an <i>fs_disk_quota</i> structure (defined in
+               <i>&lt;xfs/xqm.h&gt;</i>).  This operation requires privilege
+               (<b>CAP_SYS_ADMIN</b>).
+
+       <b>Q_XGETQSTAT</b>
+               Returns an <i>fs_quota_stat</i> structure containing XFS filesystem-
+               specific quota information.  This is useful for finding out
+               how much space is used to store quota information, and also
+               to get quotaon/off status of a given local XFS filesystem.
+
+       <b>Q_XQUOTARM</b>
+               Free the disk space taken by disk quotas.  Quotas must have
+               already been turned off.
+
+       There is no command equivalent to <b>Q_SYNC </b>for XFS since <a href="../man1/sync.1.html">sync(1)</a> writes
+       quota information to disk (in addition to the other filesystem
+       metadata that it writes out).
+</pre>
+<h2><a id="RETURN_VALUE" href="#RETURN_VALUE"></a>RETURN VALUE  &nbsp; &nbsp; &nbsp; &nbsp; <a href="#top_of_page"><span class="top-link">top</span></a></h2><pre>
+       On success, <b>quotactl</b>() returns 0; on error -1 is returned, and <i><a href="../man3/errno.3.html">errno</a></i>
+       is set to indicate the error.
+</pre>
+<h2><a id="ERRORS" href="#ERRORS"></a>ERRORS  &nbsp; &nbsp; &nbsp; &nbsp; <a href="#top_of_page"><span class="top-link">top</span></a></h2><pre>
+       <b>EFAULT </b><i>addr</i> or <i>special</i> is invalid.
+
+       <b>EINVAL </b><i>cmd</i> or <i>type</i> is invalid.
+
+       <b>ENOENT </b>The file specified by <i>special</i> or <i>addr</i> does not exist.
+
+       <b>ENOSYS </b>The kernel has not been compiled with the <b>CONFIG_QUOTA </b>option.
+
+       <b>ENOTBLK</b>
+              <i>special</i> is not a block device.
+
+       <b>EPERM  </b>The caller lacked the required privilege (<b>CAP_SYS_ADMIN</b>) for
+              the specified operation.
+
+       <b>ESRCH  </b>No disk quota is found for the indicated user.  Quotas have
+              not been turned on for this filesystem.
+
+       If <i>cmd</i> is <b>Q_SETQUOTA</b>, <b>quotactl</b>() may also set <i><a href="../man3/errno.3.html">errno</a></i> to:
+
+       <b>ERANGE </b>Specified limits are out of range allowed by quota format.
+
+       If <i>cmd</i> is <b>Q_QUOTAON</b>, <b>quotactl</b>() may also set <i><a href="../man3/errno.3.html">errno</a></i> to:
+
+       <b>EACCES </b>The quota file pointed to by <i>addr</i> exists, but is not a regular
+              file; or, the quota file pointed to by <i>addr</i> exists, but is not
+              on the filesystem pointed to by <i>special</i>.
+
+       <b>EBUSY  Q_QUOTAON </b>attempted, but another <b>Q_QUOTAON </b>had already been
+              performed.
+
+       <b>EINVAL </b>The quota file is corrupted.
+
+       <b>ESRCH  </b>Specified quota format was not found.
+</pre>
+<h2><a id="SEE_ALSO" href="#SEE_ALSO"></a>SEE ALSO  &nbsp; &nbsp; &nbsp; &nbsp; <a href="#top_of_page"><span class="top-link">top</span></a></h2><pre>
+       <a href="../man1/quota.1.html">quota(1)</a>, <a href="../man2/getrlimit.2.html">getrlimit(2)</a>, <a href="../man8/quotacheck.8.html">quotacheck(8)</a>, <a href="../man8/quotaon.8.html">quotaon(8)</a>
+</pre>
+<h2><a id="COLOPHON" href="#COLOPHON"></a>COLOPHON  &nbsp; &nbsp; &nbsp; &nbsp; <a href="#top_of_page"><span class="top-link">top</span></a></h2><pre>
+       This page is part of release 4.02 of the Linux <i>man-pages</i> project.  A
+       description of the project, information about reporting bugs, and the
+       latest version of this page, can be found at
+       <a href="http://www.kernel.org/doc/man-pages/">http://www.kernel.org/doc/man-pages/</a>.
+
+<span class="footline">Linux                            2010-06-16                      QUOTACTL(2)</span>
+</pre>
+
+<hr class="end-man-text" />
+
+<p class="page-copyright"><a href="../man2/quotactl.2.license.html">Copyright and license for this manual page</a></p> 
+<hr class="start-footer" />
+
+<div class="footer"> 
+
+<table class="colophon-table">
+    <tr>
+    <td class="pub-info">
+        <p>
+            HTML rendering created 2015-09-22
+            by <a href="http://man7.org/mtk/index.html">Michael Kerrisk</a>, 
+            author of 
+            <a href="http://man7.org/tlpi/"><em>The Linux Programming Interface</em></a>, 
+            maintainer of the 
+            <a href="http://www.kernel.org/doc/man-pages/">Linux <em>man-pages</em> project</a>.
+        </p>
+        <p>
+            For details of in-depth
+            <strong>Linux/UNIX system programming training courses</strong>
+            that I teach, look <a href="http://man7.org/training/">here</a>.
+        </p>
+        <p>
+            Hosting by <a href="http://www.jambit.com/index_en.html">jambit GmbH</a>.
+        </p>
+        <p>
+            <a href="http://validator.w3.org/check?uri=referer">
+            <img src="http://www.w3.org/Icons/valid-xhtml11"
+                alt="Valid XHTML 1.1" height="31" width="88" />
+            </a>
+        </p>
+    </td>
+    <td class="colophon-divider">
+    </td>
+    <td class="tlpi-cover">
+        <a href="http://man7.org/tlpi/"><img src="http://man7.org/tlpi/cover/TLPI-front-cover-vsmall.png" alt="Cover of TLPI" /></a>
+    </td>
+    </tr>
+</table>
+
+</div>
+
+<hr class="end-footer" />
+
+
+
+<!--BEGIN-SITETRACKING-->
+<!-- SITETRACKING.man7.org_linux_man-pages -->
+
+<!-- Start of StatCounter Code (xhtml) -->
+
+<script type="text/javascript">
+//<![CDATA[
+var sc_project=7422636; 
+var sc_invisible=1; 
+var sc_security="9b6714ff"; 
+//]]>
+</script>
+<script type="text/javascript"
+src="http://www.statcounter.com/counter/counter_xhtml.js"></script>
+<noscript><div class="statcounter"><a title="website
+statistics" href="http://statcounter.com/"
+class="statcounter"><img class="statcounter"
+src="http://c.statcounter.com/7422636/0/9b6714ff/1/"
+alt="website statistics" /></a></div></noscript>
+
+<!-- End of StatCounter Code -->
+
+
+<!-- Start of Google Analytics Code -->
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-9830363-8']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+<!-- End of Google Analytics Code -->
+
+<!--END-SITETRACKING-->
+
+</body>
+</html>

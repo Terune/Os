@@ -1,0 +1,14 @@
+status: 200
+content-length: 2
+expires: Thu, 24 Sep 2015 23:41:55 GMT
+content-location: https://reviews.ubuntu.com/reviews/api/1.0/reviews/filter/en/any/any/any/google-chrome-stable/page/1/helpful/
+strict-transport-security: max-age=15768000; includeSubDomains; preload
+vary: Accept
+server: gunicorn/17.5
+last-modified: Thu, 24 Sep 2015 23:36:55 GMT
+x-bzr-revision-number: 305
+cache-control: max-age=300
+date: Thu, 24 Sep 2015 23:36:55 GMT
+content-type: application/json; charset=utf-8
+
+[]

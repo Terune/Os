@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html  dir="ltr" lang="ko" xml:lang="ko">
+<head>
+    <title>KLMS</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, target-densitydpi=medium-dpi" />
+    <link rel="shortcut icon" href="http://klms.kaist.ac.kr/theme/image.php/ubstrap/theme/1443058943/favicon" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="moodle, CS530 : 공지사항" />
+<script type="text/javascript">
+//<![CDATA[
+var M = {}; M.yui = {};
+M.pageloadstarttime = new Date();
+M.cfg = {"wwwroot":"http:\/\/klms.kaist.ac.kr","sesskey":"pXdEhNLq41","loadingicon":"http:\/\/klms.kaist.ac.kr\/theme\/image.php\/ubstrap\/core\/1443058943\/i\/loading_small","themerev":"1443058943","slasharguments":1,"theme":"ubstrap","jsrev":"1443058943","svgicons":true};var yui1ConfigFn = function(me) {if(/-skin|reset|fonts|grids|base/.test(me.name)){me.type='css';me.path=me.path.replace(/\.js/,'.css');me.path=me.path.replace(/\/yui2-skin/,'/assets/skins/sam/yui2-skin')}};
+var yui2ConfigFn = function(me) {var parts=me.name.replace(/^moodle-/,'').split('-'),component=parts.shift(),module=parts[0],min='-min';if(/-(skin|core)$/.test(me.name)){parts.pop();me.type='css';min=''};if(module){var filename=parts.join('-');me.path=component+'/'+module+'/'+filename+min+'.'+me.type}else me.path=component+'/'+component+'.'+me.type};
+YUI_config = {"debug":false,"base":"http:\/\/klms.kaist.ac.kr\/lib\/yuilib\/3.13.0\/","comboBase":"http:\/\/klms.kaist.ac.kr\/theme\/yui_combo.php?","combine":true,"filter":null,"insertBefore":"firstthemesheet","groups":{"yui2":{"base":"http:\/\/klms.kaist.ac.kr\/lib\/yuilib\/2in3\/2.9.0\/build\/","comboBase":"http:\/\/klms.kaist.ac.kr\/theme\/yui_combo.php?","combine":true,"ext":false,"root":"2in3\/2.9.0\/build\/","patterns":{"yui2-":{"group":"yui2","configFn":yui1ConfigFn}}},"moodle":{"name":"moodle","base":"http:\/\/klms.kaist.ac.kr\/theme\/yui_combo.php?m\/1443058943\/","combine":true,"comboBase":"http:\/\/klms.kaist.ac.kr\/theme\/yui_combo.php?","ext":false,"root":"m\/1443058943\/","patterns":{"moodle-":{"group":"moodle","configFn":yui2ConfigFn}},"filter":null,"modules":{"moodle-core-formchangechecker":{"requires":["base","event-focus"]},"moodle-core-blocks":{"requires":["base","node","io","dom","dd","dd-scroll","moodle-core-dragdrop","moodle-core-notification"]},"moodle-core-tooltip":{"requires":["base","node","io-base","moodle-core-notification","json-parse","widget-position","widget-position-align","event-outside","cache-base"]},"moodle-core-actionmenu":{"requires":["base","event","node-event-simulate"]},"moodle-core-chooserdialogue":{"requires":["base","panel","moodle-core-notification"]},"moodle-core-dock":{"requires":["base","node","event-custom","event-mouseenter","event-resize","escape","moodle-core-dock-loader"]},"moodle-core-dock-loader":{"requires":["escape"]},"moodle-core-notification":{"requires":["moodle-core-notification-dialogue","moodle-core-notification-alert","moodle-core-notification-confirm","moodle-core-notification-exception","moodle-core-notification-ajaxexception"]},"moodle-core-notification-dialogue":{"requires":["base","node","panel","event-key","dd-plugin"]},"moodle-core-notification-alert":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-notification-confirm":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-notification-exception":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-notification-ajaxexception":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-popuphelp":{"requires":["moodle-core-tooltip"]},"moodle-core-formautosubmit":{"requires":["base","event-key"]},"moodle-calendar-eventmanager":{"requires":["base","node","event-mouseenter","overlay","moodle-calendar-eventmanager-skin"]},"moodle-course-util":{"requires":["node"],"use":["moodle-course-util-base"],"submodules":{"moodle-course-util-base":{},"moodle-course-util-section":{"requires":["node","moodle-course-util-base"]},"moodle-course-util-cm":{"requires":["node","moodle-course-util-base"]}}},"moodle-course-categoryexpander":{"requires":["node","event-key"]},"moodle-course-management":{"requires":["base","node","io-base","moodle-core-notification-exception","json-parse","dd-constrain","dd-proxy","dd-drop","dd-delegate","node-event-delegate"]},"moodle-mod_quiz-autosave":{"requires":["base","node","event","event-valuechange","node-event-delegate","io-form"]},"moodle-block_navigation-navigation":{"requires":["base","io-base","node","event-synthetic","event-delegate","json-parse"]},"moodle-filter_glossary-autolinker":{"requires":["base","node","io-base","json-parse","event-delegate","overlay","moodle-core-notification-alert"]},"moodle-editor_tinymce-collapse":{"requires":["base","node","dom"]},"moodle-tool_capability-search":{"requires":["base","node"]},"moodle-theme_bootstrapbase-bootstrap":{"requires":["node","selector-css3"]},"moodle-assignfeedback_editpdf-editor":{"requires":["base","event","node","io","graphics","json","event-move","querystring-stringify-simple","moodle-core-notification-dialog","moodle-core-notification-exception","moodle-core-notification-ajaxexception"]}}}},"modules":{"core_filepicker":{"name":"core_filepicker","fullpath":"http:\/\/klms.kaist.ac.kr\/lib\/javascript.php\/1443058943\/repository\/filepicker.js","requires":["base","node","node-event-simulate","json","async-queue","io-base","io-upload-iframe","io-form","yui2-treeview","panel","cookie","datatable","datatable-sort","resize-plugin","dd-plugin","escape","moodle-core_filepicker"]},"mod_ubboard":{"name":"mod_ubboard","fullpath":"http:\/\/klms.kaist.ac.kr\/lib\/javascript.php\/1443058943\/mod\/ubboard\/module.js","requires":[]}}};
+M.yui.loader = {modules: {}};
+
+//]]>
+</script>
+<link rel="stylesheet" type="text/css" href="http://klms.kaist.ac.kr/theme/yui_combo.php?3.13.0/cssreset/cssreset-min.css&amp;3.13.0/cssfonts/cssfonts-min.css&amp;3.13.0/cssgrids/cssgrids-min.css&amp;3.13.0/cssbase/cssbase-min.css" /><link rel="stylesheet" type="text/css" href="http://klms.kaist.ac.kr/theme/yui_combo.php?rollup/3.13.0/yui-moodlesimple-min.css" /><script type="text/javascript" src="http://klms.kaist.ac.kr/theme/yui_combo.php?rollup/3.13.0/yui-moodlesimple-min.js"></script><script type="text/javascript" src="http://klms.kaist.ac.kr/theme/yui_combo.php?rollup/1443058943/mcore-min.js"></script><script type="text/javascript" src="http://klms.kaist.ac.kr/theme/jquery.php/core/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="http://klms.kaist.ac.kr/theme/jquery.php/theme_ubstrap/jquery.ui.custom.min.js"></script>
+<script type="text/javascript" src="http://klms.kaist.ac.kr/theme/jquery.php/theme_ubstrap/jquery.ui.touch-punch.min.js"></script>
+<script type="text/javascript" src="http://klms.kaist.ac.kr/theme/jquery.php/theme_ubstrap/bootstrap.min.js"></script>
+<script type="text/javascript" src="http://klms.kaist.ac.kr/theme/jquery.php/theme_ubstrap/bootstrap.hover.dropdown.js"></script>
+<script type="text/javascript" src="http://klms.kaist.ac.kr/theme/jquery.php/theme_ubstrap/jquery.cookie.js"></script>
+<script type="text/javascript" src="http://klms.kaist.ac.kr/theme/jquery.php/theme_ubstrap/jquery.validate.min.js"></script>
+<script type="text/javascript" src="http://klms.kaist.ac.kr/theme/jquery.php/theme_ubstrap/jquery.validate.methods.js"></script>
+<script type="text/javascript" src="http://klms.kaist.ac.kr/theme/jquery.php/theme_ubstrap/jquery.validate.ko.js"></script>
+<script type="text/javascript" src="http://klms.kaist.ac.kr/theme/jquery.php/theme_ubstrap/jquery.placeholder.min.js"></script>
+<script type="text/javascript" src="http://klms.kaist.ac.kr/theme/jquery.php/theme_ubstrap/jquery.mCustomScrollbar.concat.min.js"></script>
+<script type="text/javascript" src="http://klms.kaist.ac.kr/theme/jquery.php/theme_ubstrap/jquery.headroom.min.js"></script>
+<script id="firstthemesheet" type="text/css">/** Required in order to fix style inclusion problems in IE with YUI **/</script><link rel="stylesheet" type="text/css" href="http://klms.kaist.ac.kr/theme/styles.php/ubstrap/1443058943/all" />
+<link rel="stylesheet" type="text/css" href="http://klms.kaist.ac.kr/mod/ubboard/jquery.lightbox.css" />
+<script type="text/javascript" src="http://klms.kaist.ac.kr/lib/javascript.php/1443058943/lib/javascript-static.js"></script>
+<script type="text/javascript" src="http://klms.kaist.ac.kr/theme/javascript.php/ubstrap/1443058943/head"></script>
+    <link type="text/css" rel="stylesheet" href="http://klms.kaist.ac.kr/theme/ubstrap/style/theme/theme_default.css" media="all" id="user_theme" />
+    <!--[if lt IE 9]>
+         <script type="text/javascript" src="/theme/ubstrap/javascript/respond.min.js"></script>
+	<![endif]-->
+    <script type="text/javascript">
+		$(function() {
+			// 왼쪽 메뉴 tooltip
+			$("#page-ubstrap-side ul.left_menu a").tooltip({placement:'right'});
+
+			// sections scroll 적용
+			$("#page-content #region-pre .course_sections .section_scroll, #page-content #region-pre .activities .section_scroll").mCustomScrollbar({
+				theme:"ubstrap",
+				scrollInertia:500
+			});
+
+
+			
+			// activity 숨김/표시
+			$("#page-content #region-pre .section_scoll_showhide").click(function() {
+				image_src = $(this).attr('src');
+				li = $(this).parent().parent().parent();
+				cookiename = li.attr('data-name');
+
+				if(image_src.indexOf('switch_minus') >= 0) {
+					image_src = image_src.replace("switch_minus", "switch_plus");
+					$.cookie('coursemos-' + cookiename, 'hide', { path:'/' });
+
+					//$(this).parent().parent().parent().find('.section_scroll').hide();
+					li.addClass('hide_section_scroll');
+				} else {
+					image_src = image_src.replace("switch_plus", "switch_minus");
+					$.cookie('coursemos-' + cookiename, 'show', { path:'/' });
+
+					//$(this).parent().parent().parent().find('.section_scroll').show();
+					li.removeClass('hide_section_scroll');
+				}
+
+				$(this).attr('src', image_src);
+
+				// 주차, 학습활동 열고 닫을때마다 scroll도 update되어야 함.
+				$("#page-content #region-pre .course_sections .section_scroll, #page-content #region-pre .activities .section_scroll").mCustomScrollbar('update');
+
+				return false;
+			});
+
+			// activity 메뉴 자체를 클릭했을 때에도 section_scroll_showhide 효과내기
+			$("#page-content #region-pre .course_sections .activities .title").click(function() {
+				$("#page-content #region-pre .course_sections .activities .section_scoll_showhide").trigger('click');
+				return false;
+			});
+		});
+    </script>
+</head>
+<body id="page-mod-ubboard-view" class="format-ubsweeks  path-mod path-mod-ubboard safari dir-ltr lang-ko yui-skin-sam yui3-skin-sam klms-kaist-ac-kr pagelayout-incourse course-38819 context-357190 cmid-107731 category-521 device_default side-pre-only ">
+	<div id="page">
+		<div class="skiplinks"><a class="skip" href="#maincontent">주 내용으로 가기</a></div>
+<script type="text/javascript">
+//<![CDATA[
+document.body.className += ' jsenabled';
+//]]>
+</script>
+
+
+		    <div id="page-header">
+		<div class="navbar navbar-fixed-top headroom headroom--unpinned headroom--pinned">
+			<div class="navbar-inner">
+				<div class="my_courses">
+									<div class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#">My Courses</a>
+						<ul class="dropdown-menu">
+							<li><a href="http://klms.kaist.ac.kr">HOME</a></li>
+							<li>
+								진행강좌								<div class="courses">
+									<ul>
+								<li class="curriculum">정규 강좌</li><li><a href="http://klms.kaist.ac.kr/course/view.php?id=36633" title="윤리 및 안전 I (CC020(A))">윤리 및 안전 I (CC020(A))</a></li><li><a href="http://klms.kaist.ac.kr/course/view.php?id=38818" title="프로그래밍언어이론 (CS520)">프로그래밍언어이론 (CS520)</a></li><li><a href="http://klms.kaist.ac.kr/course/view.php?id=38819" title="운영체제 (CS530)">운영체제 (CS530)</a></li><li><a href="http://klms.kaist.ac.kr/course/view.php?id=38822" title="데이타베이스시스템 (CS560)">데이타베이스시스템 (CS560)</a></li><li><a href="http://klms.kaist.ac.kr/course/view.php?id=38919" title="세미나(석사) (CS966)">세미나(석사) (CS966)</a></li>									</ul>
+								</div>
+							</li>
+							<li><a href="http://klms.kaist.ac.kr/blocks/ubion_shortcut/past.php">과거강좌</a></li>
+														<li>
+								<a href="http://klms.kaist.ac.kr/blocks/ubion_assistant/index.php" >조교/청강생 신청</a>
+							</li>
+													</ul>
+					</div>
+								</div>
+
+				<div class="my_logininfo"><div class="dropdown userinfo">		<a href="#"  data-toggle="dropdown"><img src="http://klms.kaist.ac.kr/theme/image.php/ubstrap/core/1443058943/u/f2" alt="유충모" /></a>		<div class="dropdown-menu">			<dl class="dl-horizontal">				<dt>성명 : </dt>				<dd><strong>유충모</strong></dd>				<dt>학번 : </dt>				<dd><strong>20154473</strong></dd>				<dt>학과 : </dt>				<dd><strong title="전산학부">전산학부</strong></dd>			<dt>스킨 설정</dt>			<dd class="sub">				<ul class="skin">				<li><a href="#" class="default current"><span>Mint</span></a></li>				<li><a href="#" class="type_1"><span>Sky blue</span></a></li>				<li><a href="#" class="type_2"><span>Orange</span></a></li>				<li><a href="#" class="type_3"><span>Green</span></a></li>				<li><a href="#" class="type_4"><span>Brown</span></a></li>				<li><a href="#" class="type_5"><span>Gray</span></a></li>				</ul>			</dd>			</dl>			<hr/>			<div class="userbutton">				<a href="http://klms.kaist.ac.kr/user/files.php" class="btn btn-ub-default btn-small">개인파일</a>				<a href="http://klms.kaist.ac.kr/user/edit.php?id=89470" class="btn btn-ub-point btn-small">개인정보 수정</a>			</div>		</div></div> <ul class="user_menu"><li><a href="http://klms.kaist.ac.kr/login/logout.php?sesskey=pXdEhNLq41">로그아웃</a></li><li class="language dropdown">		<a  data-toggle="dropdown" href="#">한국어 (ko) <b class="caret"></b></a> 	<ul class="dropdown-menu">		<li><a href="http://klms.kaist.ac.kr/mod/ubboard/article.php?id=107731&amp;bwid=37011&amp;lang=en" title="English (en)">English (en)</a><span class="natinal_flag"><img src="http://klms.kaist.ac.kr/theme/image.php/ubstrap/theme_ubstrap/1443058943/flag/en" alt="en" /></span></li>		<li><a href="http://klms.kaist.ac.kr/mod/ubboard/article.php?id=107731&amp;bwid=37011&amp;lang=ko" title="한국어 (ko)">한국어 (ko)</a><span class="natinal_flag"><img src="http://klms.kaist.ac.kr/theme/image.php/ubstrap/theme_ubstrap/1443058943/flag/ko" alt="ko" /></span></li>		<li><a href="http://klms.kaist.ac.kr/mod/ubboard/article.php?id=107731&amp;bwid=37011&amp;lang=zh_cn" title="简体中文 (zh_cn)">简体中文 (zh_cn)</a><span class="natinal_flag"><img src="http://klms.kaist.ac.kr/theme/image.php/ubstrap/theme_ubstrap/1443058943/flag/zh_cn" alt="zh_cn" /></span></li>		</ul></li></ul></div><div class="dropdown top_notification pull-right"><a class="dropdown-toggle nn_link" data-toggle="dropdown" href="#"><div class="icons"></div><span class="badge badge-important">3</span></a><div class="dropdown-menu "><ul class="notification_list"><li class="new_nn"><a href="http://klms.kaist.ac.kr/mod/ubfile/view.php?id=113921" title=" File Systems 1 (5 Week [28 September - 4 October]) [CS530]"><img src="http://klms.kaist.ac.kr/theme/image.php/ubstrap/ubfile/1443058943/icon" alt="" /> File Systems 1 (5 Week [28 September - 4 October]) [CS530]</a></li><li class="new_nn"><a href="http://klms.kaist.ac.kr/mod/ubfile/view.php?id=113921" title=" File Systems 1 (5 Week [28 September - 4 October]) [CS530]"><img src="http://klms.kaist.ac.kr/theme/image.php/ubstrap/ubfile/1443058943/icon" alt="" /> File Systems 1 (5 Week [28 September - 4 October]) [CS530]</a></li><li class="new_nn"><a href="http://klms.kaist.ac.kr/mod/ubfile/view.php?id=113872" title=" File Systems 1 (5 Week [28 September - 4 October]) [CS530]"><img src="http://klms.kaist.ac.kr/theme/image.php/ubstrap/ubfile/1443058943/icon" alt="" /> File Systems 1 (5 Week [28 September - 4 October]) [CS530]</a></li><li class=""><a href="http://klms.kaist.ac.kr/mod/ubboard/article.php?id=107731&bwid=39226" title=" Project specification (very important) (공지사항) [CS530]"><img src="http://klms.kaist.ac.kr/theme/image.php/ubstrap/ubboard/1443058943/icon" alt="" /> Project specification (very important) (공지사항) [CS530]</a></li><li class=""><a href="http://klms.kaist.ac.kr/mod/ubboard/article.php?id=107731&bwid=39221" title=" Team information (공지사항) [CS530]"><img src="http://klms.kaist.ac.kr/theme/image.php/ubstrap/ubboard/1443058943/icon" alt="" /> Team information (공지사항) [CS530]</a></li><li class=""><a href="http://klms.kaist.ac.kr/mod/assign/view.php?id=113846" title=" Project #1 (5 Week [28 September - 4 October]) [CS530]"><img src="http://klms.kaist.ac.kr/theme/image.php/ubstrap/assign/1443058943/icon" alt="" /> Project #1 (5 Week [28 September - 4 October]) [CS530]</a></li></ul><div class="notification_more"><a href="http://klms.kaist.ac.kr/local/ubion/message/notification.php">모두 보기</a></div></div></div>				<div class="course_name">
+					<h1 title="운영체제">운영체제</h1>
+				</div>
+							</div>
+		</div>
+    </div>
+		<hr class="hide" />
+		<div id="page-ubstrap-content" class="clearfix">
+			<div id="page-ubstrap-side">
+				
+<ul class="left_menu">
+	<li class="current">
+		<a href="http://klms.kaist.ac.kr" title="HOME" class="lnb_icon lnb_icon_home">
+			<span class="menu_name">HOME</span>
+		</a>
+	</li>
+	<li class="">
+		<a href="http://klms.kaist.ac.kr/local/ubion/message/index.php" title="메시지" class="lnb_icon lnb_icon_message">
+			<span class="menu_name">메시지</span>
+					</a>
+	</li>
+	<li class="">
+		<a href="http://klms.kaist.ac.kr/calendar/view.php?view=month" title="일정" class="lnb_icon lnb_icon_calendar">
+			<span class="menu_name">일정</span>
+		</a>
+	</li>
+
+	<li class="">
+		<a href="http://klms.kaist.ac.kr/blocks/ubion_assistant/open.php" title="공개강좌" class="lnb_icon lnb_icon_assistant_open">
+			<span class="menu_name">공개강좌</span>
+		</a>
+	</li>
+	<li class="">
+		<a href="http://klms.kaist.ac.kr/mod/ubboard/view.php?id=32044" title="커뮤니티" class="lnb_icon lnb_icon_community">
+			<span class="menu_name">커뮤니티</span>
+		</a>
+	</li>
+		<li class="">
+		<a href="http://klms.kaist.ac.kr/user/edit.php" title="내정보관리" class="lnb_icon lnb_icon_myinfo">
+			<span class="menu_name">내정보관리</span>
+		</a>
+	</li>
+		</ul>			</div>
+			<hr class="hide" />
+			<div id="page-ubstrap-container">
+				<div id="page-ubstrap-main">
+					<div id="page-content" class="clearfix">
+	                    <div id="region-main">
+	                        <div class="region-container">
+	                        	<div class="navigation">
+	                        		<div class="navbar"><ul class="breadcrumb"><li><a href="http://klms.kaist.ac.kr"><img src="http://klms.kaist.ac.kr/theme/image.php/ubstrap/theme_ubstrap/1443058943/layout/nav_home" alt="HOME" /></a><span class="divider">&gt;</span></li><li><a href="http://klms.kaist.ac.kr/course/view.php?id=38819" title="CS530">CS530</a><span class="divider">&gt;</span></li><li><a href="http://klms.kaist.ac.kr/mod/ubboard/view.php?id=107731" title="공지사항">공지사항</a></li></ul></div>
+	                				<div class="navbutton"> </div>
+	                        	</div>
+	                        	<div class="region-content">
+	                        		<div class="section_progress">
+	<div class="pull-left">
+		<a href="http://klms.kaist.ac.kr/course/view.php?id=38819" class="btn section-all">All</a>
+	</div>
+
+	<div class="progress">
+<div class="bar " style="width: 6.25%;"><a href="http://klms.kaist.ac.kr/course/view.php?id=38819#section-1" title="1 주 [8월31일 - 9월6일]">1</a></div><div class="bar " style="width: 6.25%;"><a href="http://klms.kaist.ac.kr/course/view.php?id=38819#section-2" title="2 주 [9월7일 - 9월13일]">2</a></div><div class="bar " style="width: 6.25%;"><a href="http://klms.kaist.ac.kr/course/view.php?id=38819#section-3" title="3 주 [9월14일 - 9월20일]">3</a></div><div class="bar " style="width: 6.25%;"><a href="http://klms.kaist.ac.kr/course/view.php?id=38819#section-4" title="4 주 [9월21일 - 9월27일]">4</a></div><div class="bar  bar-section-ing " style="width: 6.25%;"><a href="http://klms.kaist.ac.kr/course/view.php?id=38819#section-5" title="5 주 [9월28일 - 10월4일]">5</a></div><div class="bar " style="width: 6.25%;"><a href="http://klms.kaist.ac.kr/course/view.php?id=38819#section-6" title="6 주 [10월5일 - 10월11일]">6</a></div><div class="bar " style="width: 6.25%;"><a href="http://klms.kaist.ac.kr/course/view.php?id=38819#section-7" title="7 주 [10월12일 - 10월18일]">7</a></div><div class="bar " style="width: 6.25%;"><a href="http://klms.kaist.ac.kr/course/view.php?id=38819#section-8" title="8 주 [10월19일 - 10월25일]">8</a></div><div class="bar " style="width: 6.25%;"><a href="http://klms.kaist.ac.kr/course/view.php?id=38819#section-9" title="9 주 [10월26일 - 11월1일]">9</a></div><div class="bar " style="width: 6.25%;"><a href="http://klms.kaist.ac.kr/course/view.php?id=38819#section-10" title="10 주 [11월2일 - 11월8일]">10</a></div><div class="bar " style="width: 6.25%;"><a href="http://klms.kaist.ac.kr/course/view.php?id=38819#section-11" title="11 주 [11월9일 - 11월15일]">11</a></div><div class="bar " style="width: 6.25%;"><a href="http://klms.kaist.ac.kr/course/view.php?id=38819#section-12" title="12 주 [11월16일 - 11월22일]">12</a></div><div class="bar " style="width: 6.25%;"><a href="http://klms.kaist.ac.kr/course/view.php?id=38819#section-13" title="13 주 [11월23일 - 11월29일]">13</a></div><div class="bar " style="width: 6.25%;"><a href="http://klms.kaist.ac.kr/course/view.php?id=38819#section-14" title="14 주 [11월30일 - 12월6일]">14</a></div><div class="bar " style="width: 6.25%;"><a href="http://klms.kaist.ac.kr/course/view.php?id=38819#section-15" title="15 주 [12월7일 - 12월13일]">15</a></div><div class="bar " style="width: 6.25%;"><a href="http://klms.kaist.ac.kr/course/view.php?id=38819#section-16" title="16 주 [12월14일 - 12월20일]">16</a></div>	</div>
+</div>
+
+		                            		                            <div role="main"><span id="maincontent"></span><div class="ubboard">
+	<div class="h_main_title">
+		<h3 class="main">공지사항</h3>
+	</div>
+
+<div class="ubboard_view">
+	<div class="subject">
+		<h3>TA session on Tuesday</h3>
+	</div>
+	<div class="info">
+		<div class="writer">
+			<span class="title">작성자</span>
+			:
+			서재백
+		</div>
+		<div class="date">
+			<span class="title">작성일</span>
+			:
+			2015년 9월 5일(토요일) 오후 8:43
+		</div>
+		<div class="hit">
+			<span class="title">조회수</span>
+			:
+			141
+		</div>
+	</div>
+	<div class="info">
+		<div class="file">첨부파일</div>
+		<div class="files">
+			<ul class="files">
+				<li>
+					<img src="http://klms.kaist.ac.kr/theme/image.php/ubstrap/core/1443058943/f/pdf" alt="application/pdf" />
+					<a href="http://klms.kaist.ac.kr/pluginfile.php/357190/mod_ubboard/attachment/37011/cs530%20project%20overview.pdf?forcedownload=1">cs530 project overview.pdf</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+
+	<div class="content">
+		<div class="text_to_html">There will be a TA session on Tuesday.<br />It will be about the term project.<br /><br />When: same with the lecture i.e. 1:00 ~ 2:15 p.m.<br />Where: same with the lecture i.e. E3 2443</div>
+
+	</div>
+
+
+
+	<div class="pre_next">
+		<div class="title">
+			<span class="preface">다음글 : </span>
+			<a href="http://klms.kaist.ac.kr/mod/ubboard/article.php?id=107731&amp;bwid=37283">
+				Project Team Information
+			</a>
+		</div>
+		<div class="date">2015-09-08</div>
+		<div class="writer">서재백</div>
+	</div>
+
+
+	<div class="button_area">
+		<a href="http://klms.kaist.ac.kr/mod/ubboard/view.php?id=107731" class="btn btn-ub-list">목록</a>
+
+	</div>
+
+
+	<div class="ubboard_comment">
+
+		<div class="ubboard_comment_form well">
+			<form method="post" action="action.php" class="form-horizontal frm_ubboard_cmt">
+				<div class="ubboard_comment_editor">
+					<div class="control-group">
+						<textarea name="comment" id="comment" class="required" rows="4" cols="50" placeholder="코멘트"></textarea>
+						<input type="hidden" name="id" value="107731" />
+						<input type="hidden" name="cid" value="38819" />
+						<input type="hidden" name="bid" value="10174" />
+						<input type="hidden" name="bwid" value="37011" />
+						<input type="hidden" name="type" value="comment_write" />
+						<input type="hidden" name="bcid" value="" />
+					</div>
+					<div class="comment_button">
+						<div class="btn-group">
+							<button type="submit" class="btn btn-ub-default">저장</button>
+							<button type="button" class="btn btn-ub-action cancel">취소</button>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+
+	<div id="password_confirm" class="modal hide fade" tabindex="-1" role="dialog" aria-hidden="true">
+		<form id="password_confirm_form" method="post" action="action.php" class="form-horizontal">
+			<div class="modal-header">
+		    	<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+		    	<h3 id="myModalLabel">비밀번호 입력</h3>
+		  	</div>
+
+		  	<div class="modal-body">
+		  		<div class="control-group">
+					<label class="control-label">비밀번호</label>
+					<div class="controls">
+						<input type="hidden" name="id" value="107731" />
+						<input type="hidden" name="cid" value="38819" />
+						<input type="hidden" name="bid" value="10174" />
+						<input type="hidden" name="bwid" value="37011" />
+						<input type="hidden" name="type" value="" />
+						<input type="hidden" name="bcid" value="" />
+						<input type="password" name="password_check" id="password_check" class="required password" placeholder="비밀번호" />
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<input type="submit" class="btn btn-ub-default" value="확인" />
+				<a href="#" class="btn btn-cancel" data-dismiss="modal" aria-hidden="true">닫기</a>
+			</div>
+		</form>
+	</div>
+</div>
+</div></div>		                            	                            </div>
+	                        </div>
+	                    </div>
+						<hr class="hide" />
+		                <div id="region-pre" class="block-region clearfix">
+		                    <div class="region-content">
+								<ul class="course_sections">
+		<li class="sections " data-name="sections">
+			<div class="title">
+				<div class="pull-right"><img src="http://klms.kaist.ac.kr/theme/image.php/ubstrap/theme_ubstrap/1443058943/icon/switch_minus" alt="감추기" class="section_scoll_showhide" /></div>				<a href="http://klms.kaist.ac.kr/course/view.php?id=38819" class="">
+					강의실 홈				</a>
+			</div>
+			<div class="section_scroll">
+<ul><li><a href="http://klms.kaist.ac.kr/course/view.php?id=38819#section-1" class="sectionname sectionname1 " title="1 주 [8월31일 - 9월6일]">1 주 [8월31일 - 9월6일]</a></li><li><a href="http://klms.kaist.ac.kr/course/view.php?id=38819#section-2" class="sectionname sectionname2 " title="2 주 [9월7일 - 9월13일]">2 주 [9월7일 - 9월13일]</a></li><li><a href="http://klms.kaist.ac.kr/course/view.php?id=38819#section-3" class="sectionname sectionname3 " title="3 주 [9월14일 - 9월20일]">3 주 [9월14일 - 9월20일]</a></li><li><a href="http://klms.kaist.ac.kr/course/view.php?id=38819#section-4" class="sectionname sectionname4 " title="4 주 [9월21일 - 9월27일]">4 주 [9월21일 - 9월27일]</a></li><li><a href="http://klms.kaist.ac.kr/course/view.php?id=38819#section-5" class="sectionname sectionname5 " title="5 주 [9월28일 - 10월4일]">5 주 [9월28일 - 10월4일]</a></li><li><a href="http://klms.kaist.ac.kr/course/view.php?id=38819#section-6" class="sectionname sectionname6 " title="6 주 [10월5일 - 10월11일]">6 주 [10월5일 - 10월11일]</a></li><li><a href="http://klms.kaist.ac.kr/course/view.php?id=38819#section-7" class="sectionname sectionname7 " title="7 주 [10월12일 - 10월18일]">7 주 [10월12일 - 10월18일]</a></li><li><a href="http://klms.kaist.ac.kr/course/view.php?id=38819#section-8" class="sectionname sectionname8 " title="8 주 [10월19일 - 10월25일]">8 주 [10월19일 - 10월25일]</a></li><li><a href="http://klms.kaist.ac.kr/course/view.php?id=38819#section-9" class="sectionname sectionname9 " title="9 주 [10월26일 - 11월1일]">9 주 [10월26일 - 11월1일]</a></li><li><a href="http://klms.kaist.ac.kr/course/view.php?id=38819#section-10" class="sectionname sectionname10 " title="10 주 [11월2일 - 11월8일]">10 주 [11월2일 - 11월8일]</a></li><li><a href="http://klms.kaist.ac.kr/course/view.php?id=38819#section-11" class="sectionname sectionname11 " title="11 주 [11월9일 - 11월15일]">11 주 [11월9일 - 11월15일]</a></li><li><a href="http://klms.kaist.ac.kr/course/view.php?id=38819#section-12" class="sectionname sectionname12 " title="12 주 [11월16일 - 11월22일]">12 주 [11월16일 - 11월22일]</a></li><li><a href="http://klms.kaist.ac.kr/course/view.php?id=38819#section-13" class="sectionname sectionname13 " title="13 주 [11월23일 - 11월29일]">13 주 [11월23일 - 11월29일]</a></li><li><a href="http://klms.kaist.ac.kr/course/view.php?id=38819#section-14" class="sectionname sectionname14 " title="14 주 [11월30일 - 12월6일]">14 주 [11월30일 - 12월6일]</a></li><li><a href="http://klms.kaist.ac.kr/course/view.php?id=38819#section-15" class="sectionname sectionname15 " title="15 주 [12월7일 - 12월13일]">15 주 [12월7일 - 12월13일]</a></li><li><a href="http://klms.kaist.ac.kr/course/view.php?id=38819#section-16" class="sectionname sectionname16 " title="16 주 [12월14일 - 12월20일]">16 주 [12월14일 - 12월20일]</a></li></ul>			</div>
+		</li>
+		<li>
+
+		<div class="activities hide_section_scroll" data-name="activities"><div class="title"><div class="pull-right"><img src="http://klms.kaist.ac.kr/theme/image.php/ubstrap/theme_ubstrap/1443058943/icon/switch_plus" alt="보기" class="section_scoll_showhide" /></div><div>학습 활동</div></div><div class="section_scroll"><ul><li><a href="http://klms.kaist.ac.kr/mod/resource/index.php?id=38819">강의콘텐츠</a></li><li><a href="http://klms.kaist.ac.kr/mod/ubboard/index.php?id=38819">게시판</a></li><li><a href="http://klms.kaist.ac.kr/mod/assign/index.php?id=38819">과제</a></li><li><a href="http://klms.kaist.ac.kr/mod/ubfile/index.php?id=38819">파일</a></li></ul></div></div>	</li>
+<li><a title="참여자 목록" href="http://klms.kaist.ac.kr/user/users.php?id=38819" class="arrow show-participants ">참여자 목록</a></li><li><a href="https://cais.kaist.ac.kr/syllabusInfo?year=2015&term=3&subject_no=36.530&lecture_class=&dept_id=4421" title="강의계획서" class="arrow show-participants " target="_blank">강의계획서</a></li>	</ul>
+<a href="#sb-1" class="skip-block">강좌 관리 건너 뜀</a><div id="inst99379" class="block_ubion_shortcut  block" role="complementary" data-block="ubion_shortcut" aria-labelledby="instance-99379-header"><div class="header"><div class="title"><div class="block_action"></div><h2 id="instance-99379-header">강좌 관리</h2></div></div><div class="content"><ul class="course_menu"><li><a href="http://klms.kaist.ac.kr/blocks/ubion_shortcut/progress.php?id=38819" >진도 현황</a></li><li><a href="http://klms.kaist.ac.kr/blocks/ubion_attendance/index.php?id=38819" >출석</a></li><li><a href="http://klms.kaist.ac.kr/grade/report/index.php?id=38819" >성적</a></li><li><a href="http://klms.kaist.ac.kr/blocks/ubion_shortcut/group.php?id=38819" >그룹 구성원</a></li><li><a href="http://klms.kaist.ac.kr/blocks/ubion_shortcut/message/index.php?id=38819" >메시지 보내기</a></li></ul></div></div><span id="sb-1" class="skip-block-to"></span><a href="#sb-2" class="skip-block">고급 설정 건너 뜀</a><div id="inst5" class="block_settings  block hidden" role="navigation" data-block="settings" aria-labelledby="instance-5-header"><div class="header"><div class="title"><div class="block_action"></div><h2 id="instance-5-header">고급 설정</h2></div></div><div class="content"><div id="settingsnav" class="box block_tree_box"><ul class="block_tree list"><li class="type_course collapsed contains_branch" aria-expanded="false"><p class="tree_item branch root_node"><span tabindex="0">고급 강좌 관리</span></p><ul><li class="type_setting collapsed item_with_icon"><p class="tree_item leaf"><a href="http://klms.kaist.ac.kr/grade/report/index.php?id=38819"><img alt="" class="smallicon navicon" title="" src="http://klms.kaist.ac.kr/theme/image.php/ubstrap/core/1443058943/i/grades" />성적</a></p></li></ul></li></ul></div></div></div><span id="sb-2" class="skip-block-to"></span>
+		                    </div>
+		                </div>
+
+		                					</div>
+				</div>
+			</div>
+		</div>
+	<!-- START OF FOOTER -->
+<hr class="hide" />
+<div id="page-footer" class="clearfix">
+
+	<div class="pull-right dropup family_site">
+		<button class="btn btn-family" data-toggle="dropdown">패밀리 사이트 <span class="caret"></span></button>
+	  	<ul class="dropdown-menu">
+			<li><a href="http://www.kaist.ac.kr">[[fs_kaist]]</a></li>
+			<li><a href="http://edu3.kaist.ac.kr">[[fs_edu3]]</a></li>
+			<li><a href="#">Facebook</a></li>
+			<li><a href="#">Twitter</a></li>
+	  	</ul>
+  	</div>
+
+	<div class="copyright">
+		Coursemos
+	</div>
+
+	<div class="clearfix"></div>
+	
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-38985636-2', 'auto');
+  ga('send', 'pageview');
+
+</script></div>
+
+
+
+
+<div class="clearfix"></div>
+
+<div id="ajax_loading_submit">&nbsp;</div>
+<div id="ajax_loading_container">
+	<div id="ajax_loading_submit_img">
+		<img src="http://klms.kaist.ac.kr/theme/image.php/ubstrap/theme_ubstrap/1443058943/ajax-loader" alt="loading..." /> Loading...
+	</div>
+	<div id="ajax_loading_message">
+		<p class="save_msg">데이터를 저장하고 있습니다. 잠시만 기다려주십시오.</p>
+		<p class="refresh_msg">장시간 페이지 로딩 중이면 새로고침(F5) 해주시기 바랍니다.</p>
+	</div>
+</div>
+<div id="back-top">
+	<a href="#top"><span></span></a>
+</div>
+
+<script type="text/javascript" src="http://klms.kaist.ac.kr/lib/javascript.php/1443058943/mod/ubboard/kakao.js"></script>
+<script type="text/javascript" src="http://klms.kaist.ac.kr/lib/javascript.php/1443058943/mod/ubboard/jquery.lightbox.min.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+M.str = {"moodle":{"lastmodified":"\ucd5c\uc885 \uc218\uc815","name":"\uc81c\ubaa9","error":"\uc624\ub958","info":"\uc815\ubcf4","morehelp":"\ub3c4\uc6c0\uae00 \ub354","loadinghelp":"\ub85c\ub529 \uc911 ...","cancel":"\ucde8\uc18c","yes":"\uc608"},"repository":{"type":"\uc720\ud615","size":"\ud06c\uae30","invalidjson":"\uc798\ubabb\ub41c JSON \ubb38\uc790\uc5f4","nofilesattached":"\ucca8\ubd80\ubb3c \uc5c6\uc74c","filepicker":"\ud30c\uc77c \uc120\ud0dd\ub3c4\uad6c","logout":"\ub098\uac00\uae30","nofilesavailable":"\uc4f8 \uc218 \uc788\ub294 \ud30c\uc77c\uc774 \uc5c6\uc74c","norepositoriesavailable":"\uc8c4\uc1a1\ud569\ub2c8\ub2e4. \ud604\uc7ac \uc800\uc7a5\uc18c\uc911\uc5d0\uc11c \ud544\uc694\ud55c \ud3ec\ub9f7\uc73c\ub85c \ud30c\uc77c\uc744 \ubcf4\ub0b4\uc8fc\ub294 \uc800\uc7a5\uc18c\uac00 \uc5c6\uc2b5\ub2c8\ub2e4.","fileexistsdialogheader":"\ud30c\uc77c\uc774 \uc874\uc7ac\ud569\ub2c8\ub2e4.","fileexistsdialog_editor":"\uac19\uc740 \uc774\ub984\uc758 \ud30c\uc77c\uc774 \ud3b8\uc9d1\ud558\uace0 \uc788\ub294 \ubb38\uc7a5\uc5d0 \uc774\ubbf8 \ucca8\ubd80\ub418\uc5c8\uc2b5\ub2c8\ub2e4.","fileexistsdialog_filemanager":"\uac19\uc740 \uc774\ub984\uc758 \ud30c\uc77c\uc774 \uc774\ubbf8 \ucca8\ubd80\ub418\uc5b4 \uc788\uc2b5\ub2c8\ub2e4.","renameto":"\"{$a}\"\ub85c \uc774\ub984 \ubcc0\uacbd","referencesexist":"\uc774\ud30c\uc77c\uc744 \uc18c\uc2a4\ub85c \uc0ac\uc6a9\ud558\ub294 {$a} \ubcc4\uce6d \/ \ubc14\ub85c\uac00\uae30 \ud30c\uc77c\uc774 \uc788\uc2b5\ub2c8\ub2e4.","select":"\uc120\ud0dd"},"admin":{"confirmation":"\ud655\uc778"}};
+//]]>
+</script>
+<script type="text/javascript">
+//<![CDATA[
+YUI().use('node', function(Y) {
+M.util.load_flowplayer();
+setTimeout("fix_column_widths()", 20);
+ M.util.js_pending('random560d08ef770081'); Y.use('mod_ubboard', function(Y) { M.mod_ubboard.init(Y, {"is_admin":false,"is_category":"0","is_comment":"1","is_secret":"0","is_sns":"0","is_anonymous":"0","is_mobile":false,"www":"http:\/\/klms.kaist.ac.kr"});  M.util.js_complete('random560d08ef770081'); });
+ M.util.js_pending('random560d08ef770082'); Y.use('mod_ubboard', function(Y) { M.mod_ubboard.article(Y, {"i8n":{"password_input":"\ube44\ubc00\ubc88\ud638 \uc785\ub825","confirm_article_delete":"\ud574\ub2f9 \uac8c\uc2dc\ubb3c\uc744 \uc815\ub9d0\ub85c \uc0ad\uc81c\ud558\uc2dc\uaca0\uc2b5\ub2c8\uae4c?","confirm_comment_delete":"\ucf54\uba58\ud2b8\ub97c \uc0ad\uc81c\ud558\uc2dc\uaca0\uc2b5\ub2c8\uae4c?"},"lightbox":{"loading":"http:\/\/klms.kaist.ac.kr\/theme\/image.php\/ubstrap\/ubboard\/1443058943\/lightbox\/lightbox-ico-loading","prev":"http:\/\/klms.kaist.ac.kr\/theme\/image.php\/ubstrap\/ubboard\/1443058943\/lightbox\/lightbox-btn-prev","next":"http:\/\/klms.kaist.ac.kr\/theme\/image.php\/ubstrap\/ubboard\/1443058943\/lightbox\/lightbox-btn-next","close":"http:\/\/klms.kaist.ac.kr\/theme\/image.php\/ubstrap\/ubboard\/1443058943\/lightbox\/lightbox-btn-close","block":"http:\/\/klms.kaist.ac.kr\/theme\/image.php\/ubstrap\/ubboard\/1443058943\/lightbox\/lightbox-blank"}});  M.util.js_complete('random560d08ef770082'); });
+M.yui.galleryversion="2010.04.08-12-35";Y.use("moodle-block_navigation-navigation",function() {M.block_navigation.init_add_tree({"id":"5","instance":"5","candock":false});
+});
+M.util.help_popups.setup(Y);
+M.yui.galleryversion="2010.04.08-12-35";Y.use("moodle-core-popuphelp",function() {M.core.init_popuphelp();
+});
+M.util.init_block_hider(Y, {"id":"inst99379","title":"\uac15\uc88c \uad00\ub9ac","preference":"block99379hidden","tooltipVisible":"\uac15\uc88c \uad00\ub9ac \ube14\ub85d \uac10\ucd94\uae30","tooltipHidden":"\uac15\uc88c \uad00\ub9ac \ube14\ub85d \ubcf4\uc774\uae30"});
+M.util.init_block_hider(Y, {"id":"inst5","title":"\uace0\uae09 \uc124\uc815","preference":"block5hidden","tooltipVisible":"\uace0\uae09 \uc124\uc815 \ube14\ub85d \uac10\ucd94\uae30","tooltipHidden":"\uace0\uae09 \uc124\uc815 \ube14\ub85d \ubcf4\uc774\uae30"});
+ M.util.js_pending('random560d08ef770086'); Y.on('domready', function() { M.util.js_complete("init");  M.util.js_complete('random560d08ef770086'); });
+
+});
+//]]>
+</script>
+	</div>
+</body>
+</html>

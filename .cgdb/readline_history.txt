@@ -1,0 +1,59 @@
+exit
+q
+q
+./test
+q
+n
+next
+run
+b 22
+run
+n
+b
+b
+s
+s
+clear 23
+n
+s
+q
+y
+b 22
+run
+n
+s
+c
+q
+y
+b 23
+run
+s
+catch syscall 81
+quit
+y
+target remote localhost:1234
+target remote 110.76.96.74:1234
+b start_kernel
+y
+c
+list
+exit
+q
+y
+quit 
+./test
+q
+q
+c
+run
+q
+y
+c
+run
+print start
+print end
+c
+print start
+print end
+q
+y

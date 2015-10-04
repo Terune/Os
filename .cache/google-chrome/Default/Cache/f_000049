@@ -1,0 +1,350 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="ko" dir="ltr">
+<head>
+<title>물품 구매 - DBLAB Wiki</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="generator" content="MediaWiki 1.16.1" />
+<link rel="alternate" type="application/x-wiki" title="편집" href="/wiki/index.php?title=%EB%AC%BC%ED%92%88_%EA%B5%AC%EB%A7%A4&amp;action=edit" />
+<link rel="edit" title="편집" href="/wiki/index.php?title=%EB%AC%BC%ED%92%88_%EA%B5%AC%EB%A7%A4&amp;action=edit" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="/wiki/opensearch_desc.php" title="DBLAB Wiki (ko)" />
+<link rel="alternate" type="application/atom+xml" title="DBLAB Wiki Atom 피드" href="/wiki/index.php?title=%ED%8A%B9%EC%88%98%EA%B8%B0%EB%8A%A5:%EC%B5%9C%EA%B7%BC%EB%B0%94%EB%80%9C&amp;feed=atom" />
+<link rel="stylesheet" href="/wiki/skins/common/shared.css?270" media="screen" />
+<link rel="stylesheet" href="/wiki/skins/common/commonPrint.css?270" media="print" />
+<link rel="stylesheet" href="/wiki/skins/monobook/main.css?270" media="screen" />
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/wiki/skins/monobook/IE50Fixes.css?270" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/wiki/skins/monobook/IE55Fixes.css?270" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/wiki/skins/monobook/IE60Fixes.css?270" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/wiki/skins/monobook/IE70Fixes.css?270" media="screen" /><![endif]-->
+<link rel="stylesheet" href="/wiki/index.php?title=%EB%AF%B8%EB%94%94%EC%96%B4%EC%9C%84%ED%82%A4:Common.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=18000&amp;action=raw&amp;maxage=18000" />
+<link rel="stylesheet" href="/wiki/index.php?title=%EB%AF%B8%EB%94%94%EC%96%B4%EC%9C%84%ED%82%A4:Print.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=18000&amp;action=raw&amp;maxage=18000" media="print" />
+<link rel="stylesheet" href="/wiki/index.php?title=%EB%AF%B8%EB%94%94%EC%96%B4%EC%9C%84%ED%82%A4:Monobook.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=18000&amp;action=raw&amp;maxage=18000" />
+<link rel="stylesheet" href="/wiki/index.php?title=-&amp;action=raw&amp;maxage=18000&amp;gen=css" />
+<script>
+var skin="monobook",
+stylepath="/wiki/skins",
+wgUrlProtocols="http\\:\\/\\/|https\\:\\/\\/|ftp\\:\\/\\/|irc\\:\\/\\/|gopher\\:\\/\\/|telnet\\:\\/\\/|nntp\\:\\/\\/|worldwind\\:\\/\\/|mailto\\:|news\\:|svn\\:\\/\\/",
+wgArticlePath="/wiki/index.php/$1",
+wgScriptPath="/wiki",
+wgScriptExtension=".php",
+wgScript="/wiki/index.php",
+wgVariantArticlePath=false,
+wgActionPaths={},
+wgServer="http://dbserver.kaist.ac.kr",
+wgCanonicalNamespace="",
+wgCanonicalSpecialPageName=false,
+wgNamespaceNumber=0,
+wgPageName="물품_구매",
+wgTitle="물품 구매",
+wgAction="view",
+wgArticleId=4,
+wgIsArticle=true,
+wgUserName=null,
+wgUserGroups=null,
+wgUserLanguage="ko",
+wgContentLanguage="ko",
+wgBreakFrames=false,
+wgCurRevisionId=2341,
+wgVersion="1.16.1",
+wgEnableAPI=true,
+wgEnableWriteAPI=true,
+wgSeparatorTransformTable=["", ""],
+wgDigitTransformTable=["", ""],
+wgMainPageTitle="대문",
+wgFormattedNamespaces={"-2": "미디어", "-1": "특수기능", "0": "", "1": "토론", "2": "사용자", "3": "사용자토론", "4": "DBLAB Wiki", "5": "DBLAB Wiki토론", "6": "파일", "7": "파일토론", "8": "미디어위키", "9": "미디어위키토론", "10": "틀", "11": "틀토론", "12": "도움말", "13": "도움말토론", "14": "분류", "15": "분류토론"},
+wgNamespaceIds={"미디어": -2, "특수기능": -1, "": 0, "토론": 1, "사용자": 2, "사용자토론": 3, "dblab_wiki": 4, "dblab_wiki토론": 5, "파일": 6, "파일토론": 7, "미디어위키": 8, "미디어위키토론": 9, "틀": 10, "틀토론": 11, "도움말": 12, "도움말토론": 13, "분류": 14, "분류토론": 15, "특": -1, "mediawiki토론": 9, "그림": 6, "image": 6, "image_talk": 7},
+wgSiteName="DBLAB Wiki",
+wgCategories=[],
+wgRestrictionEdit=[],
+wgRestrictionMove=[];
+</script><script src="/wiki/skins/common/wikibits.js?270"></script>
+<script src="/wiki/skins/common/ajax.js?270"></script>
+<script src="/wiki/index.php?title=-&amp;action=raw&amp;gen=js&amp;useskin=monobook&amp;270"></script>
+
+</head>
+<body class="mediawiki ltr ns-0 ns-subject page-물품_구매 skin-monobook">
+<div id="globalWrapper">
+<div id="column-content"><div id="content" >
+	<a id="top"></a>
+	
+	<h1 id="firstHeading" class="firstHeading">물품 구매</h1>
+	<div id="bodyContent">
+		<h3 id="siteSub">DBLAB Wiki</h3>
+		<div id="contentSub"></div>
+		<div id="jump-to-nav">이동: <a href="#column-one">둘러보기</a>, <a href="#searchInput">찾기</a></div>
+		<!-- start content -->
+<ul><li> 물품 구매 담당자: <b>김태연</b>
+</li><li> 물품코드
+<ul><li> 크리넥스(98218400), 연구 노트(98111080)
+</li></ul>
+</li><li> 아래에 구매하고자 하는 물품, 코드 개수, 신청자를 추가해 주세요.
+<ul><li> 예:
+</li></ul>
+</li></ul>
+<table class="wikitable example">
+
+<tr>
+<th> 물품 </th><th> 코드 </th><th> 종류 </th><th> 개수 </th><th> 신청자
+</th></tr>
+<tr>
+<td> 크리넥스 </td><td> 98218400 </td><td>  </td><td> 2 </td><td> 이경하
+</td></tr>
+<tr>
+<td> 물티슈 </td><td> 98218401 </td><td>  </td><td> 1 </td><td> 진희성
+</td></tr>
+<tr>
+<td> 연구 노트 </td><td> 98111080 </td><td>  </td><td> 1 </td><td> 서정혁
+</td></tr>
+<tr>
+<td> 크리넥스 </td><td> 98218400 </td><td>  </td><td> 1 </td><td> 김수형
+</td></tr>
+<tr>
+<td> 꿀유자차 </td><td> 98448500 </td><td>  </td><td> 1 </td><td> 3410호
+</td></tr>
+</table>
+<ul><li> 중앙창고 페이지
+<ul><li> <a href="http://www.ddls.co.kr/" class="external free" rel="nofollow">http://www.ddls.co.kr/</a>
+</li></ul>
+</li></ul>
+<h3><span class="editsection">[<a href="/wiki/index.php?title=%EB%AC%BC%ED%92%88_%EA%B5%AC%EB%A7%A4&amp;action=edit&amp;section=1" title="부분 편집: 물품 구매 신청란">편집</a>]</span> <span class="mw-headline" id=".EB.AC.BC.ED.92.88_.EA.B5.AC.EB.A7.A4_.EC.8B.A0.EC.B2.AD.EB.9E.80"> 물품 구매 신청란 </span></h3>
+<ul><li> 이 내용은 프로그램이 읽어 자동으로 처리합니다. 코드를 정확히 적어주시고 물품의 이름 및 <b>띄어쓰기</b>를 유의해 주시기 부탁드립니다.
+</li></ul>
+<table class="wikitable real">
+
+<tr>
+<th> 물품 </th><th> 코드 </th><th> 종류 </th><th> 개수 </th><th> 신청자
+</th></tr>
+<tr>
+<td> 물티슈 </td><td> 98218401 </td><td>  </td><td> 1 </td><td> 서버실
+</td></tr>
+</table>
+<h3><span class="editsection">[<a href="/wiki/index.php?title=%EB%AC%BC%ED%92%88_%EA%B5%AC%EB%A7%A4&amp;action=edit&amp;section=2" title="부분 편집: 공용 물품 (수정하지마세요)">편집</a>]</span> <span class="mw-headline" id=".EA.B3.B5.EC.9A.A9_.EB.AC.BC.ED.92.88_.28.EC.88.98.EC.A0.95.ED.95.98.EC.A7.80.EB.A7.88.EC.84.B8.EC.9A.94.29"> 공용 물품 (수정하지마세요) </span></h3>
+<table class="wikitable real">
+
+<tr>
+<td> 꿀유자차 770g (계절상품:여름판매중단) </td><td> 98448500 </td><td>  </td><td> 0 </td><td> 공용
+</td></tr>
+<tr>
+<td> 커피믹스 (초이스) </td><td> 98446400 </td><td>  </td><td> 0 </td><td> 공용
+</td></tr>
+<tr>
+<td> 핫초코 (미떼오리지널) </td><td> 98446650 </td><td> 오리지날(초콜릿) </td><td> 0 </td><td> 공용
+</td></tr>
+<tr>
+<td> 맥심 모카골드 (100개입) </td><td> 98446550 </td><td> 맥심모카골드 </td><td> 0 </td><td> 공용
+</td></tr>
+<tr>
+<td> 화이트골드 커피  </td><td> 98446553 </td><td>  </td><td> 0 </td><td> 공용
+</td></tr>
+<tr>
+<td> 맥심 모카골드 (100개입) </td><td> 98446550 </td><td> 블랙믹스 </td><td> 0 </td><td> 공용
+</td></tr>
+<tr>
+<td> 맥심 디카페인 (20개입) </td><td> 98446450 </td><td> </td><td> 0 </td><td> 공용
+</td></tr>
+<tr>
+<td> 프렌치카페 (20개입) </td><td> 98446552 </td><td>  </td><td> 0 </td><td> 공용
+</td></tr>
+<tr>
+<td> 종이컵 </td><td> 98226500 </td><td>  </td><td> 0 </td><td> 공용
+</td></tr>
+<tr>
+<td> 둥굴레차 (25TB) </td><td> 98448200 </td><td>  </td><td> 0 </td><td> 공용
+</td></tr>
+<tr>
+<td> 율무차 (15개입) </td><td> 98448300 </td><td>  </td><td> 0 </td><td> 공용
+</td></tr>
+<tr>
+<td> FX 스피드펜 (0.7mm/1.0mm) </td><td> 98145030 </td><td> 검정, 0.7mm </td><td> 0 </td><td> 공용
+</td></tr>
+<tr>
+<td> BATTERY 1.5V (알카라인AA/2EA) </td><td> 93231020 </td><td>  </td><td> 0 </td><td> 공용
+</td></tr>
+<tr>
+<td> BATTERY 1.5V (알카라인AAA/2EA) </td><td> 93231010 </td><td>  </td><td> 0 </td><td> 공용
+</td></tr>
+<tr>
+<td> 제본표지 (A4, 100장) </td><td> 98125300 </td><td> 빗살무늬 </td><td> 0 </td><td> 공용
+</td></tr>
+<tr>
+<td> 설록차 </td><td> 98448850 </td><td>  </td><td> 0 </td><td> 공용
+</td></tr>
+<tr>
+<td> 모나미 형광펜 </td><td> 98144640 </td><td> 연노랑, 낱개 </td><td> 0 </td><td> 공용
+</td></tr>
+<tr>
+<td> 모나미 형광펜 </td><td> 98144640 </td><td> 초록, 낱개 </td><td> 0 </td><td> 공용
+</td></tr>
+<tr>
+<td> 모나미 형광펜 </td><td> 8144640 </td><td> 파랑, 낱개 </td><td> 0 </td><td> 공용
+</td></tr>
+<tr>
+<td> 제논집게(소) </td><td> 98176900 </td><td>  </td><td> 0 </td><td> 공용
+</td></tr>
+<tr>
+<td> 모나미 153볼펜 0.7mm </td><td> 98145061 </td><td> 검정 </td><td> 0 </td><td> 공용
+</td></tr>
+<tr>
+<td> 크리넥스 </td><td> 98218400 </td><td>  </td><td> 0 </td><td>
+</td></tr>
+<tr>
+<td> 스카치 투명 테이프 2인치 </td><td> 98178150 </td><td>  </td><td> 0 </td><td>
+</td></tr>
+<tr>
+<td> 스카치 다용도 테이프 </td><td> 98178160 </td><td>  </td><td> 0 </td><td>
+</td></tr>
+<tr>
+<td> 레몬홍차 280G(20개입) </td><td> 98448710 </td><td>  </td><td> 0 </td><td> 공용
+</td></tr>
+<tr>
+<td> 복숭아홍차 280G(20개입) </td><td> 98448720 </td><td>  </td><td> 0 </td><td> 공용
+</td></tr>
+<tr>
+<td> 네임펜 </td><td> 98144260 </td><td> 검정, 중간글씨 </td><td> 0 </td><td> 공용
+</td></tr>
+<tr>
+<td> 네임펜 </td><td> 98144260 </td><td> 빨강, 중간글씨 </td><td> 0 </td><td> 공용
+</td></tr>
+<tr>
+<td> Double A 복사용지 (500SH/PK) </td><td> 98136250 </td><td>  </td><td> 0 </td><td> 공용
+</td></tr>
+<tr>
+<td> 아이스믹스 (20개입) </td><td> 98446700 </td><td>  </td><td> 0 </td><td> 공용
+</td></tr>
+<tr>
+<td> 가위 (대) </td><td> 98170150 </td><td>  </td><td> 0 </td><td> 공용
+</td></tr>
+<tr>
+<td> 면봉/이쑤시개 </td><td> 98226600 </td><td> 이쑤시개 </td><td> 0 </td><td> 공용
+</td></tr>
+<tr>
+<td> HP TONER 1015 [Q2612A]* </td><td> 91632380 </td><td>  </td><td> 0 </td><td>
+</td></tr>
+<tr>
+<td> 클리어홀더(PP) </td><td> 98615150 </td><td> 마크있음 </td><td> 0 </td><td> 공용
+</td></tr>
+<tr>
+<td> 화스너 책철 </td><td> 98179100 </td><td> </td><td> 0 </td><td> 공용
+</td></tr>
+<tr>
+<td> 칼날(소) 10EA/CS </td><td> 98177611 </td><td>  </td><td> 0 </td><td> 공용
+</td></tr>
+<tr>
+<td> 제본링 19mm </td><td> 98125319 </td><td>  </td><td> 0 </td><td> 공용
+</td></tr>
+<tr>
+<td> 제본링 25mm </td><td> 98125325 </td><td>  </td><td> 0 </td><td> 공용
+</td></tr>
+<tr>
+<td> 사무용 지우개 </td><td> 98176700 </td><td>  </td><td> 0 </td><td> 공용
+</td></tr>
+<tr>
+<td> 갈색 대봉투 </td><td> 98611100 </td><td> </td><td> 0 </td><td> 공용
+</td></tr>
+<tr>
+<td> 하이테크 펜 0.5mm </td><td> 98144650 </td><td> 검정 </td><td> 0 </td><td> 공용
+</td></tr>
+<tr>
+<td> 동아-유노크 0.5mm </td><td> 98144810 </td><td> 검정 </td><td> 0 </td><td> 공용
+</td></tr>
+<tr>
+<td> 빅볼펜 1.0mm </td><td> 98144800 </td><td> 검정 </td><td> 0 </td><td> 공용
+</td></tr>
+<tr>
+<td> 빅볼펜 1.0mm </td><td> 98144800 </td><td> 파랑 </td><td> 0 </td><td> 공용
+</td></tr>
+<tr>
+<td> 샤프 0.5mm </td><td> 98147020 </td><td> </td><td> 0 </td><td> 공용
+</td></tr>
+</table>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 10/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key db_wiki-mw_:pcache:idhash:4-0!1!0!!ko!2 and timestamp 20150924082615 -->
+<div class="printfooter">
+원본 주소 ‘<a href="http://dbserver.kaist.ac.kr/wiki/index.php/%EB%AC%BC%ED%92%88_%EA%B5%AC%EB%A7%A4">http://dbserver.kaist.ac.kr/wiki/index.php/%EB%AC%BC%ED%92%88_%EA%B5%AC%EB%A7%A4</a>’</div>
+		<div id='catlinks' class='catlinks catlinks-allhidden'></div>		<!-- end content -->
+				<div class="visualClear"></div>
+	</div>
+</div></div>
+<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>보기</h5>
+		<div class="pBody">
+			<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/index.php/%EB%AC%BC%ED%92%88_%EA%B5%AC%EB%A7%A4" title="문서 내용을 봅니다. [c]" accesskey="c">문서</a></li>
+				 <li id="ca-talk" class="new"><a href="/wiki/index.php?title=%ED%86%A0%EB%A1%A0:%EB%AC%BC%ED%92%88_%EA%B5%AC%EB%A7%A4&amp;action=edit&amp;redlink=1" title="문서의 내용에 대한 토론 문서 [t]" accesskey="t">토론</a></li>
+				 <li id="ca-edit"><a href="/wiki/index.php?title=%EB%AC%BC%ED%92%88_%EA%B5%AC%EB%A7%A4&amp;action=edit" title="문서를 편집할 수 있습니다. 저장하기 전에 미리보기를 해 주세요. [e]" accesskey="e">편집</a></li>
+				 <li id="ca-history"><a href="/wiki/index.php?title=%EB%AC%BC%ED%92%88_%EA%B5%AC%EB%A7%A4&amp;action=history" title="문서의 과거 버전들 [h]" accesskey="h">역사</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>개인 도구</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="/wiki/index.php?title=%ED%8A%B9%EC%88%98%EA%B8%B0%EB%8A%A5:%EB%A1%9C%EA%B7%B8%EC%9D%B8&amp;returnto=%EB%AC%BC%ED%92%88_%EA%B5%AC%EB%A7%A4" title="꼭 로그인해야 하는 것은 아니지만, 로그인을 권장합니다. [o]" accesskey="o">로그인 / 계정 만들기</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/logo.jpg);" href="/wiki/index.php/%EB%8C%80%EB%AC%B8" title="대문"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class='generated-sidebar portlet' id='p-navigation'>
+		<h5>둘러보기</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage-description"><a href="/wiki/index.php/%EB%8C%80%EB%AC%B8" title="대문으로 [z]" accesskey="z">대문</a></li>
+				<li id="n-portal"><a href="/wiki/index.php/DBLAB_Wiki:%EC%82%AC%EC%9A%A9%EC%9E%90_%EB%AA%A8%EC%9E%84" title="이 프로젝트에 대해">사용자 모임</a></li>
+				<li id="n-currentevents"><a href="/wiki/index.php/DBLAB_Wiki:%EC%9A%94%EC%A6%98_%ED%99%94%EC%A0%9C" title="최근의 소식을 봅니다.">요즘 화제</a></li>
+				<li id="n-recentchanges"><a href="/wiki/index.php/%ED%8A%B9%EC%88%98%EA%B8%B0%EB%8A%A5:%EC%B5%9C%EA%B7%BC%EB%B0%94%EB%80%9C" title="이 위키에서 최근 바뀐 점의 목록입니다. [r]" accesskey="r">최근 바뀜</a></li>
+				<li id="n-randompage"><a href="/wiki/index.php/%ED%8A%B9%EC%88%98%EA%B8%B0%EB%8A%A5:%EC%9E%84%EC%9D%98%EB%AC%B8%EC%84%9C" title="임의 문서로 갑니다. [x]" accesskey="x">임의 문서로</a></li>
+				<li id="n-help"><a href="/wiki/index.php/%EB%8F%84%EC%9B%80%EB%A7%90:%EB%AA%A9%EC%B0%A8" title="도움말">도움말</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">찾기</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/index.php" id="searchform">
+				<input type='hidden' name="title" value="특수기능:찾기"/>
+				<input id="searchInput" title="DBLAB Wiki 찾기" accesskey="f" type="search" name="search" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="가기" title="이 이름의 문서가 존재하면 그 문서로 바로가기" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" id="mw-searchButton" value="찾기" title="이 문자열이 포함된 문서 찾기" />
+			</form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>도구모음</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="/wiki/index.php/%ED%8A%B9%EC%88%98%EA%B8%B0%EB%8A%A5:%EA%B0%80%EB%A6%AC%ED%82%A4%EB%8A%94%EB%AC%B8%EC%84%9C/%EB%AC%BC%ED%92%88_%EA%B5%AC%EB%A7%A4" title="여기로 연결된 모든 문서의 목록 [j]" accesskey="j">여기를 가리키는 문서</a></li>
+				<li id="t-recentchangeslinked"><a href="/wiki/index.php/%ED%8A%B9%EC%88%98%EA%B8%B0%EB%8A%A5:%EB%A7%81%ED%81%AC%EC%B5%9C%EA%B7%BC%EB%B0%94%EB%80%9C/%EB%AC%BC%ED%92%88_%EA%B5%AC%EB%A7%A4" title="여기로 연결된 모든 문서의 변경 내역 [k]" accesskey="k">가리키는 글의 바뀜</a></li>
+<li id="t-upload"><a href="/wiki/index.php/%ED%8A%B9%EC%88%98%EA%B8%B0%EB%8A%A5:%ED%8C%8C%EC%9D%BC%EC%98%AC%EB%A6%AC%EA%B8%B0" title="파일을 올립니다. [u]" accesskey="u">파일 올리기</a></li>
+<li id="t-specialpages"><a href="/wiki/index.php/%ED%8A%B9%EC%88%98%EA%B8%B0%EB%8A%A5:%ED%8A%B9%EC%88%98%EA%B8%B0%EB%8A%A5" title="모든 특수 문서의 목록입니다. [q]" accesskey="q">특수 문서 목록</a></li>
+				<li id="t-print"><a href="/wiki/index.php?title=%EB%AC%BC%ED%92%88_%EA%B5%AC%EB%A7%A4&amp;printable=yes" rel="alternate" title="이 문서의 인쇄용 버전 [p]" accesskey="p">인쇄용 문서</a></li>				<li id="t-permalink"><a href="/wiki/index.php?title=%EB%AC%BC%ED%92%88_%EA%B5%AC%EB%A7%A4&amp;oldid=2341" title="문서의 현재 버전에 대한 고유링크">고유링크</a></li>			</ul>
+		</div>
+	</div>
+</div><!-- end of the left (by default at least) column -->
+<div class="visualClear"></div>
+<div id="footer">
+	<div id="f-poweredbyico"><a href="http://www.mediawiki.org/"><img src="/wiki/skins/common/images/poweredby_mediawiki_88x31.png" height="31" width="88" alt="Powered by MediaWiki" /></a></div>
+	<ul id="f-list">
+		<li id="lastmod"> 이 문서는 2015년 9월 2일 (수) 14:23 에 마지막으로 바뀌었습니다.</li>
+		<li id="viewcount">이 문서는 2,487번 읽혔습니다.</li>
+		<li id="privacy"><a href="/wiki/index.php/DBLAB_Wiki:%EA%B0%9C%EC%9D%B8%EC%A0%95%EB%B3%B4_%EC%A0%95%EC%B1%85" title="DBLAB Wiki:개인정보 정책">개인정보 정책</a></li>
+		<li id="about"><a href="/wiki/index.php/DBLAB_Wiki:%EC%86%8C%EA%B0%9C" title="DBLAB Wiki:소개">DBLAB Wiki 소개</a></li>
+		<li id="disclaimer"><a href="/wiki/index.php/DBLAB_Wiki:%EB%A9%B4%EC%B1%85_%EC%A1%B0%ED%95%AD" title="DBLAB Wiki:면책 조항">면책 조항</a></li>
+	</ul>
+</div>
+</div>
+
+<script>if (window.runOnloadHook) runOnloadHook();</script>
+<!-- Served in 1.441 secs. --></body></html>

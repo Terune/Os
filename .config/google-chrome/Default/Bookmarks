@@ -1,0 +1,67 @@
+{
+   "checksum": "e3d6adac01f25a98b2924186a9a0d120",
+   "roots": {
+      "bookmark_bar": {
+         "children": [ {
+            "date_added": "13077093797188070",
+            "id": "8",
+            "meta_info": {
+               "stars.id": "ssc_f5479b1d38a2d1a5",
+               "stars.isSynced": "true"
+            },
+            "name": "Bookmarks",
+            "type": "url",
+            "url": "chrome://bookmarks/"
+         } ],
+         "date_added": "13087611519877582",
+         "date_modified": "13077093797188070",
+         "id": "1",
+         "name": "Bookmarks bar",
+         "type": "folder"
+      },
+      "other": {
+         "children": [ {
+            "date_added": "13076534601797000",
+            "id": "6",
+            "meta_info": {
+               "stars.id": "c_5o9gi9vo58vp",
+               "stars.isSynced": "true",
+               "stars.note": "",
+               "stars.pageData": "Ig4xVUY5ZlNXUHQ3MDZETQ==",
+               "stars.type": "2"
+            },
+            "name": "대학원입학준비위원회 - Daum 카페",
+            "type": "url",
+            "url": "http://cafe.daum.net/goMS"
+         }, {
+            "date_added": "13076616225133000",
+            "id": "7",
+            "meta_info": {
+               "stars.id": "c_b1gci9x0qprq",
+               "stars.imageData": "Cg52SW1kQ2Ywa3ZjNWhhTRI2Ci5odHRwczovL2NvZGlsaXR5LmNvbS9zdGF0aWMvbnV4LWltZy9jaG9zZW4ucG5nEJAFGKYEGmMKW2h0dHA6Ly90MC5nc3RhdGljLmNvbS9pbWFnZXM/cT10Ym46QU5kOUdjVFJtTUdmQ1ZPZFNhZWFHMWhyR3dZdzBNN0s1OTRqMkgyS1hfT0l0V1k0enlXYkRLRUwQ9QEYzgEiHggBEPUBGM4BIOoiQgYSBIAAAABKCWltYWdlL3BuZw==",
+               "stars.isSynced": "true",
+               "stars.note": "",
+               "stars.pageData": "EvgBQ29kaWxpdHkgc2F2ZXMgdGltZSBvZiBzb2Z0d2FyZSB0YWxlbnQgcmVjcnVpdGVycyBieSBmaWx0ZXJpbmcgb3V0IGpvYiBjYW5kaWRhdGVzIHdobyBjYW5ub3Qgd3JpdGUgY29ycmVjdCBwcm9ncmFtcy4gVXNlIG91ciBhdXRvbWF0ZWQgdG9vbCBmb3IgYXNzZXNzbWVudCBvZiBwcm9ncmFtbWluZyBza2lsbHMgYW5kIGNoZWNrIGlmIHlvdXIgc29mdHdhcmUgZGV2ZWxvcGVycyBhbmQgY29kZXJzIHNraWxscyBhcmUgcm9jayBzb2xpZC4iDmN3eDNWUHdGZW5LQ0xN",
+               "stars.type": "2"
+            },
+            "name": "Codility - we test coders and help improve programming skills worldwide",
+            "type": "url",
+            "url": "https://codility.com/"
+         } ],
+         "date_added": "13087611519877585",
+         "date_modified": "13076616225133000",
+         "id": "2",
+         "name": "Other bookmarks",
+         "type": "folder"
+      },
+      "synced": {
+         "children": [  ],
+         "date_added": "13087611519877586",
+         "date_modified": "0",
+         "id": "3",
+         "name": "Mobile bookmarks",
+         "type": "folder"
+      }
+   },
+   "version": 1
+}

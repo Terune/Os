@@ -1,184 +1,3 @@
-uname -help
-uname -h
-uname --h
-uname --help
-uname -n
-uname -m
-google-chrome
-sudo apt-get update
-sudo apt-get upgrade
-gedit
-gksu gedit /etc/default/grub 
-sudo apt-get install gksu
-gksu gedit /etc/default/grub 
-sudo su
-cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_driver
-sudo gedit /etc/default/grub 
-sudo update-grub
-gedit
-sudo apt-get install indicator-cpufreq
-setsid indicator-cpufreq
-uname -r
-sudo apt-get install build-essential bin86 kernel-package wget libncurses5
-sudo su
-uname -r
-ssh haneul@110.76.96.74
-ssh haneul@110.76.96.75
-ssh haneul@110.76.96.74
-sudo apt-get install ssh
-sudo dpkg --configure -a
-sudo rm /var/lib/dpkg/lock
-sudo dpkg --configure -a
-vi test.c
-gcc -o test test.c
-vi test.c
-vim test.c
-vi test.c
-vim test.c
-gcc -o test test.c
-./test
-ls
-vi test.txt 
-./test
-nano test.c
-gcc -o test test.c
-nano test.c
-gcc -o test test.c
-nano test.c
-gcc -o test test.c
-./test
-gcc -o test test.c
-nano test.c
-gcc -o test test.c
-nano test.c
-gcc -o test test.c
-./test
-nano test.c
-gcc -o test test.c
-./test
-nano test.c
-gcc -o test test.c
-./test
-nano test.c
-gcc -o test test.c
-./test
-gcc -o test test.c
-./test
-strace quota
-quotoa
-quota
-gedit
-./test
-vi test.txt 
-nano test.c
-gcc -o test test.c
-nano test.c
-gcc -o test test.c
-nano test.c
-gcc -o test test.c
-nano test.c
-ps -ef
-sudo su
-ls
-./test
-nano test.c
-gcc -o test test.c
-./test
-uname -r
-sudo su
-uname -r
-update-initramfs -c -k all
-sudo su
-uname -r
-sudo apt-get install ssh
-sudo gedit /boot/grub/grub.cfg 
-grub-customizer
-sudo add-apt-repository
-sudo add-apt-repository ppa:danielrichter2007/grub-customizer && sudo apt-get update && sudo apt-get install grub-customizer
-grub-customizer 
-uname -r
-fsync
-cd /usr/src/linux-3.18.21/
-ls
-cd fs/ext2/
-ls
-cd /usr/src/linux-3.18.21/fs/ext3
-ls
-nano fsync.c 
-cd ~
-ls
-strace test
-strace ./test
-strace fsync
-ls
-gdb ./test
-sudo apt-get install cgdb
-vi /usr/src/linux-3.18.21/fs/open.c
-cgdb
-cgdb test
-cgdb ./test
-gcc -o -g test test.c
-gcc -g -o test test.c
-cgdb ./test
-kgdb ./test
-vi /usr/src/linux-3.18.21/fs/open.c
-ls
-sudo su
-cgdb -q ./test
-kgdb
-sudo apt-get install kgdb
-sudo apt-get install kdbg
-sudo su
-history
-cgdb ./test
-itrace ./test
-sudo apt-get install irpas
-itrace ./test
-itrace -i ./test
-itrace -d ./test
-ltrace
-ltrace ./test
-history
-cgdb ./test
-trace 15 foo
-sudo su
-./test
-cd /sys/kernel/debug/tracing
-sudo su
-exit
-ls
-nano test.c
-gcc -g -o test test.c
-./test
-gcc -g -o test test.c
-./test
-gcc -g -o test test.c
-./test
-nano test.c
-gcc -g -o test test.c
-./test
-cat test.txt
-./test
-cat test.txt
-./test
-cat test.txt
-nano test.c
-./test
-nano test.c
-gcc -g -o test test.c
-./test
-nano test.c
-gcc -g -o test test.c
-nano test.c
-./test
-nano test.c
-./test
-gcc -g -o test test.c
-./test
-gcc -g -o test test.c
-nano test.c
-gcc -g -o test test.c
-./test
 cat test.txt 
 ls
 cd /usr/src/linux-3.18.21/
@@ -1410,3 +1229,772 @@ vi open.c
 sudo vi read_write.c 
 cd ..
 tmux
+grub-controller
+grub-customizer
+
+grub-customizer
+make-kpkg clean
+sudo make-kpkg --initrd --revision=1116 kernel_image kernel_headers linux_source modules_image && cd /usr/src &&sudo dpkg -i linux-headers-3.18.21+_1116_amd64.deb && dpkg -i linux-image-3.18.21+_1116_amd64.deb && reboot
+ls
+cd ..
+ls
+sudo dpkg -i linux-headers-3.18.21+_1116_amd64.deb && dpkg -i linux-image-3.18.21+_1116_amd64.deb && reboot
+sudo dpkg -i linux-headers-3.18.21+_1116_amd64.deb &&sudo dpkg -i linux-image-3.18.21+_1116_amd64.deb && reboot
+cd linux-3.18.21/
+ls
+sudo reboot
+ls
+./iter.sh
+ls
+vi fint.c
+vi test.c
+vi fint.c
+cp fint.c syf.c
+vi syf.c 
+vi test.c
+vi syf.c 
+ls
+dmesg
+ls
+last
+ls -al
+cd /var
+ls
+cd log
+ls
+ls -al
+ls
+ls -al
+ls
+ls -al
+ls
+ls -al
+vi dmesg
+df
+ls
+cls -al
+ls -al;
+vi kern.log.1 
+vi dmesg.0
+vi /usr/src/linux-3.18.21/fs/open.c
+ls
+cd /var/log/
+ls
+ls -al
+rm kern.log
+sudo rm kern.log
+rm syslog
+sudo rm syslog
+ls
+ls -al
+rm syslog.1
+sudo rm syslog.1
+sudo rm syslog.2
+ls -al
+sudo rm dpkg.log.1 
+ls
+ls -al
+du
+du -k
+df -m
+df .
+cd /
+df .
+df -h
+df . -h
+cd /var/log/
+ls
+ls -al
+cd ..
+du
+du -h
+du -a
+du -a -h
+cd lo
+cd log
+du -h
+ks
+ls
+ls -al
+rm syslog.2.gz 
+sudo rm syslog.2.gz 
+ls
+ls -al
+vi dmesg
+cd ..
+du *
+du .
+du -h
+dh -h
+df .
+df . -h
+cat /proc/sys/kernel/printk
+df . -h
+cd /home/haneul/
+ls
+df . -h
+ls
+cd /usr/src/linux-3.18.21/
+ls
+cd fs/
+ls
+vi open
+vi open.c 
+sudo vi open.c 
+vi locks.c 
+sudo vi locks.c 
+sudo vi read_write.c 
+ls
+cd ..
+ls
+uname -v
+uname -r
+nano /proc/sys/kernel/printk
+sudo nano /proc/sys/kernel/printk
+ls
+ls -al
+vi .config
+ls
+cd fs/
+vi open.c 
+vi readdir.c 
+vi open.c 
+cat /proc/sys/kernel/printk
+ls
+cd /
+cd home/
+ls
+cd haneul/
+ls
+du * -h
+git init
+git commit -m "first"
+git config user.name "Terune"
+git commit -m "first"
+git config user.email "sbj009@naver.com"
+git commit
+git add --all
+sudo git add --all
+ls
+git remote origin git@github.com:Terune/Os.git
+git remote -add  origin git@github.com:Terune/Os.git
+git remote -a origin git@github.com:Terune/Os.git
+git remote add origin git@github.com:Terune/Os.git
+git push
+ls -al ~/.ssh/
+ssh-keygen -t rsa -b 4096 -C "sbj009@naver.com"
+ssh-add ~/.ssh/id_rsa
+sudo ssh-add ~/.ssh/id_rsa
+cd ~/.ssh/
+sudo ssh-add ~/.ssh/id_rsa
+ls
+sudo ssh-add ~/.ssh/id_rsa.
+sudo ssh-add ~/.ssh/id_rsa.pub 
+eval "$(ssh-agent -s)"
+sudo ssh-add ~/.ssh/id_rsa.pub 
+sudo ssh-add ~/.ssh/id_rsa
+pbcopy < ~/.ssh/id_rsa.pub
+ls
+vi id_rsa.pub 
+vi id_rsa
+vi id_rsa.pub 
+ssh-add ~/.ssh/id_rsa.pub 
+ssh-add ~/.ssh/id_rsa
+cd /usr/src/
+ls
+make-kpkg clean
+sudo make-kpkg clean
+cd linux-3.18.21/
+sudo make-kpkg clean
+tmux
+cd /home/haneul/
+ls
+ssh -T git@github.com
+sudo ssh -T git@github.com
+sudo apt-get install xclip
+xclip -sel clip < ~/.ssh/id_rsa.pub
+vi ~/.ssh/id_rsa.pub 
+cat ~/.ssh/id_rsa.pub 
+git push
+git brach
+git commit -m "first"
+git brach
+git branch
+git push
+git push origin 
+git config push.default origin
+git push
+clean
+clear
+git push
+git push upstream
+tmux a -t 0
+git push
+git remote add origin https://github.com/Terune/Os.git
+git remote add origin2 https://github.com/Terune/Os.git
+git push origin2
+git
+git status
+ls
+git init
+vi .git/config 
+git push
+git push upstream
+git push -force
+git push --force
+git push --force origin2
+git push --force origin
+vi .git/config 
+git push --force origin
+vi .git/config 
+dmesg
+dh 
+dh *
+dh -h
+du
+dh -h
+tmux a -t 0
+ls
+vi iter.sh 
+ls
+pw
+pwd
+ls
+git push
+vi .git/config 
+git push
+git push master
+git push origin master
+ls
+vi iter2.sh 
+./iter2.sh 
+vi iter2.sh 
+./iter2.sh 
+vi iter2.sh 
+./iter2.sh 
+vi iter2.sh 
+./iter2.sh 
+vi iter2.sh 
+./iter2.sh 
+clear
+./iter2.sh 
+vi iter2.sh 
+./iter2.sh 
+vi iter2.sh 
+./iter2.sh 
+vi iter2.sh 
+./iter2.sh 
+vi iter2.sh 
+./iter2.sh 
+vi iter2.sh 
+./iter2.sh 
+vi iter2.sh 
+./iter2.sh 
+vi iter2.sh 
+./iter2.sh 
+vi iter2.sh 
+./iter2.sh 
+vi iter2.sh 
+./iter2.sh 
+tmux a -t 0
+./iter2.sh 
+vi iter2.sh 
+./iter2.sh 
+tmux a -t 0
+vi iter2.sh 
+./iter2.sh 
+vi iter2.sh 
+./iter2.sh 
+vi iter2.sh 
+./iter2.sh 
+vi iter2.sh 
+./iter2.sh 
+vi iter2.sh 
+./iter2.sh 
+vi iter2.sh 
+tmux a -t 0
+vi iter2.sh 
+./iter2.sh 
+vi iter2.sh 
+./iter2.sh 
+vi iter2.sh 
+./iter2.sh 
+vi iter2.sh 
+./iter2.sh 
+tmux a -t 0
+ls
+cd namsup/
+cd nam
+ls
+cd ..
+tmux a -t 0
+git checkout master /namsup
+git checkout master ./namsup
+cd namsup/
+ls
+cd .
+cd ..
+tmux a -t 0
+ls
+vi /usr/src/linux-3.18.21/fs/namei.c
+vi a.c
+vi b.c
+fg
+sudo vi namei.c
+su
+sudo vi /usr/src/linux-3.18.21/fs/namei.c
+ls
+vi openread.c
+ls
+cd namsup/
+ls
+vi test_read.c
+vi iter.sh
+vi iter2.sh
+vi iter.sh
+ls
+cd ..
+ls
+vi iter.sh
+vi fint.c
+vi iter.sh
+./iter.sh
+vi iter.sh
+cat /proc/cpuinfo
+getconf LONG_BIT
+uname -r
+ls
+vi test.c
+vi openread.c
+last
+ls
+cd namsup/
+ls
+vi test_mkdir_version2.c
+gcc -o test_mkdir_v2 test_mkdir_version2.c 
+vi test_mkdir_version2.c
+gcc -o test_mkdir_v2 test_mkdir_version2.c 
+vi test_mkdir_version2.c
+gcc -o test_mkdir_v2 test_mkdir_version2.c 
+./test_mkdir_v2
+ls
+rm -r ?*
+ls
+cd ..
+ls
+sudo apt-get install testdick
+sudo apt-get install testdisk
+ls
+cd name
+cd namsup
+cd ..
+ls
+cat /etc/fstab
+ls
+cd namsup
+ls
+vi test_mkdir_v2.c
+ls
+dmesg
+ls
+./iter2.sh 
+dmesg
+A
+dmesg
+sudo shutdown -h now
+make localmodconfig 
+sudo make localmodconfig 
+man make-kpkg
+sudo make localmodconfig 
+sudo make-kpkg -j 4 --initrd --revision=1117 kernel_image kernel_headers linux_source modules_image && cd /usr/src &&sudo dpkg -i linux-headers-3.18.21+_1117_amd64.deb && sudo dpkg -i linux-image-3.18.21+_1117_amd64.deb && reboot
+cd ..
+ls
+sudo dpkg -i linux-headers-3.18.21+_1117_amd64.deb && sudo dpkg -i linux-image-3.18.21+_1117_amd64.deb && reboot
+sudo reboot
+ls
+vi fint.c 
+vi iter.sj
+vi iter.sh 
+./iter.sh 
+vi iter.sh 
+cd /var/log
+ls
+ls -al
+ls
+ls -al
+rm syslog
+sudo rm syslog
+ls
+ls -al
+sudo rm kern.log
+ls
+ls -al
+df
+ls al
+ls -al
+sudo rm dmesg.0
+sudo rm kern.log.1
+sudo rm lastlog
+ls -al
+sudo rm dmesg.1.gz
+sudo rm dmesg.2.gz
+sudo rm dmesg.3.gz
+sudo rm dmesg.4.gz
+ls
+cd ..
+ls
+cd ..
+ls
+dmesg
+ls
+cd ..
+ls
+cd /home
+ls
+cd haneul/
+ls
+vi iter2.sh
+ls
+ls
+du
+df *
+df /.
+ls
+df / *
+df * /
+df / *
+df 
+df
+cd /usr/src/linux-3.18.21/
+ls
+df 
+cd fs/
+ls
+vi open.c
+cd ext3/
+ls
+vi fsync.c 
+sudo vi fsync.c 
+cd ..
+ls
+vi open.c 
+vi sync.c 
+sudo vi sync.c 
+dmesg
+vi sync.c 
+vi open.c 
+cd ..
+git add -all
+git add --all
+sudo git add --all
+cd fs
+ls
+cd ext3/
+ls
+vi fsync.c 
+cd ..
+ls
+cd open.
+cd open.c
+vi open.c 
+cd ..
+sudo ctags -R *
+cat /proc/sys/kernel/printk
+sudo nano /proc/sys/kernel/printk
+ls
+cd /home/haneul/
+ls
+vi iter2.sh 
+dmesg
+cd /usr/src/linux-3.18.21/
+ls
+dmesg
+tmux
+dh 
+df
+tmux a -t 0
+htop
+tmux a -t 0
+ps
+ps -ef
+tmux a -t 0
+ls
+cd ..
+ls
+cd /usr/src/linux-3.18.21/
+ls
+cd fs/
+ls
+vi open.c 
+sudo apt-get install htop
+dmesg -c
+sudo dmesg -c
+dmesg
+sudo dmesg -c
+df
+dfd
+fd
+df
+ls
+cd /usr/src
+ls
+cd linux-3.18.21/
+vi arch/x86/syscalls/syscall_64.tbl
+vi arch/x86/syscalls/syscall_32.tbl
+vi arch/x86/syscalls/syscall_64.tbl
+dmesg
+ls
+sudo vi arch/x86/syscalls/syscall_64.tbl
+vi include/linux/syscalls.h 
+sudo vi include/linux/syscalls.h 
+mkdir lsproc
+sudo mkdir lsproc
+cd lsproc/
+ls
+vi Makefile
+sudo vi Makefile
+vi lsproc.c
+sudo vi lsproc.c
+cd ..
+ls
+vi Makefile
+cd kernel/
+ls
+cd ..
+cd fs
+ls
+sudo vi newfile.c
+cd ..
+sudo vi arch/x86/syscalls/syscall_64_tbl
+ls
+vi iter.sh 
+./iter.sh
+vi iter.sh 
+./iter.sh
+vi iter.sh 
+./iter.sh
+vi iter.sh 
+./iter.sh
+vi iter.sh 
+./iter.sh
+vi iter.sh 
+./iter.sh
+vi iter.sh 
+./iter.sh
+vi iter.sh 
+./iter.sh
+vi iter.sh 
+./iter.sh
+vi iter.sh 
+./iter.sh
+vi iter.sh 
+./test.txt
+cat test.txt
+cat tmp.txt 
+./test.txt
+vi iter.sh 
+./iter.sh
+vi iter.sh 
+./iter.sh
+vi iter.sh 
+cat tmp.txt 
+vi iter.sh 
+./iter.sh
+vi iter.sh 
+./iter.sh
+vi iter.sh 
+./iter.sh
+vi iter.sh 
+./iter.sh
+vi iter.sh 
+./iter.sh
+vi iter.sh 
+./iter.sh
+vi iter.sh 
+./iter.sh
+vi iter.sh 
+./iter.sh
+vi iter.sh 
+./iter.sh
+vi iter.sh 
+./iter.sh
+vi iter.sh 
+./iter.sh
+vi iter.sh 
+./iter.sh
+vi iter.sh 
+df
+dmesg
+uname -v
+cd /usr/src/linux-
+ls
+dmesg
+cat /proc/sys/kernel/printk
+sudo nano /proc/sys/kernel/printk
+dmesg
+cd /usr/src/linux-3.18.21/
+cd fs/
+ls
+vi read_write.c 
+cd ..
+dmesg
+ls
+df
+dmesg
+cd /home/haneul/
+ls
+sudo ./iter2
+sudo ./iter2.sh 
+dmesg
+sudo ./iter2.sh 
+dmesg
+cd /var/log/
+ls
+ls -al
+vi kern.log 
+rm kern.log 
+sudo rm kern.log 
+sudo rm syslog 
+ls -al
+sudo rm dmesg.0 
+vi dmesg 
+ls
+df
+ls
+ls -al
+rm udev 
+vi udev 
+sudo rm udev 
+sudo rm dmesg 
+sudo rm auth.log.1
+sudo rm auth.log.12
+ls -al
+sudo rm bootstrap.log 
+ls -al
+df
+ls -al
+sudo rm wtmp
+ls
+ls -al
+df
+fd
+ls
+cd ..
+ls
+tmux
+ls
+cd log/
+ls
+ls -al
+ls
+ls -al
+sudo rm dpkg.log 
+tmux a -t 0
+cd /proc/
+ls
+ls -al
+vi kcore 
+sudo vi kcore
+df
+du
+cd ..
+ls
+tmux a -t 0
+ls
+cat /proc/kmsg
+sudo cat /proc/kmsg
+cd /proc/
+ls -al
+df
+dfd
+df
+cd ..
+ls
+cd /var/log/
+ls
+ls -al
+ls
+ls -al
+df
+d
+dmesg
+df
+dfd
+df
+cd ..
+ls
+cd lo
+cd log
+ls -al
+cd ..
+ls
+ls -al
+cd ..
+l
+s
+cd ..
+sudo make-kpkg -j 4 --initrd --revision=1118 kernel_image kernel_headers linux_source modules_image && cd /usr/src &&sudo dpkg -i linux-headers-3.18.21+_1118_amd64.deb &&sudo dpkg -i linux-image-3.18.21+_1118_amd64.deb && reboot
+cd /usr/src &&sudo dpkg -i linux-headers-3.18.21+_1118_amd64.deb &&sudo dpkg -i linux-image-3.18.21+_1118_amd64.deb && reboot
+sudo reboot
+ls
+cd /usr/src/
+ls
+cd linux-3.18.21/
+ls
+vi arch/x86/syscalls/syscall_64.tbl
+sudo vi arch/x86/syscalls/syscall_64.tbl
+vi include/linux/syscalls.h 
+su
+sudo su
+ls
+df
+cd /usr/src/linux-3.18.21/
+ls
+cd fd
+cd fs/
+ls
+vi open.c 
+vi lock.
+vi lock.c
+vi locks.c 
+cd ext3/
+ls
+vi fsync.c 
+cd ..
+vi read_write.c 
+sudo vi read_write.c 
+dmesg
+ls
+cd ..
+ls
+cd fs/
+vi open.c 
+tmux
+vi open.c 
+tmux a -t 0
+vi open.c 
+sudo vi open.c 
+ls
+cd ..
+ls
+tmux a -t 0
+ls
+cd /home/haneul/
+ls
+vi iter2.sh 
+./iter2.sh 
+vi iter2.sh 
+./iter2.sh 
+vi iter2.sh 
+./iter2.sh v
+vi iter2.sh 
+tmux a -t 0
+ls
+vi iter2.sh 
+sqrt
+sqrt(4)
+vi iter2.sh 
+tmux a -t 0
+cd /usr/src/
+ls
+tmux a -t 0

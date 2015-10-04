@@ -42,9 +42,11 @@ int main(int argc, char* argv[])
 
     if(strcmp(argv[2],"open")==0)
     {
+        syscall(322);
         clock_gettime(CLOCK_MONOTONIC, &starts);
         open_fd=open(argv[1],O_WRONLY|O_CREAT,0644);
         clock_gettime(CLOCK_MONOTONIC, &ends);
+        syscall(322);
     }
     else
     {

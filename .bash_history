@@ -1,72 +1,3 @@
-cd ..
-ls
-cd ..
-cd mm
-sudo vi filemap.c 
-cd ..
-cd fs/
-ls
-cd ext3/
-ls
-cd ..
-vi buffer.c 
-cd ext3/
-ls
-vi fsync.c
-tmux a -t 0
-tmux
-tmux list-sessions
-tmux
-tmux list-sessions
-tmux a -t 1
-tmux list-sessions
-tmux a -t 0
-exit
-vi test.c 
-exit
-vi ~/.vimrc
-exit
-ls
-cd /tmp/
-ls
-cd prac/
-ls
-vi .prac.c.swp 
-vi prac.c
-vi Makefile
-make
-vi Makefile
-make
-vi Makefile
-make
-vi Makefile
-make
-vi Makefile
-make
-vi Makefile
-make
-vi Makefile
-make
-vi Makefile
-make
-ls
-vi prac.c
-rm .prac.c.swp 
-ls
-vi prac.c
-ls
-gcc -v -E -
-vi prac.c 
-make
-vi /usr/src/linux-3.18.21/include/linux/init.h
-cd ..
-ls
-mv prac /usr/src/linux-3.18.21/
-sudo mv prac /usr/src/linux-3.18.21/
-cd /usr/src/linux-3.18.21/prac
-ls
-make
-vi /usr/src/linux-3.18.21/include/linux/init.h
 vi Makefile
 vi prac.c
 vi Makefile
@@ -1998,3 +1929,72 @@ tmux a -t 0
 ls
 sudo su
 tmux a -t 0
+ls
+mv yashibal.c team14
+mv yashibal team14
+cd team14/
+ls
+ls -l
+cd ..
+ls
+vi syf.c 
+ls
+vi iter2.sh
+vi iter.sh 
+ls
+mv iter.sh team14/
+ls
+cd team14/
+ls
+mv yashibal wrtest
+ls
+mv yashibal.c wrtest.c
+ls
+vi iter.sh 
+./iter.sh 
+vi iter.sh 
+ls
+cd ..
+ls
+vi iter2.sh 
+cd team14/
+ls
+vi iter.sh 
+vi ~/iter2.sh 
+vi iter.sh 
+./iter.sh 
+vi iter.sh 
+./iter.sh 
+vi iter.sh 
+./iter.sh 
+vi iter.sh 
+./iter.sh 
+vi iter.sh 
+./iter.sh 
+vi iter.sh 
+./iter.sh 
+vi iter.sh 
+./iter.sh 
+vi iter.sh 
+./iter.sh 
+vi iter.sh 
+./iter.sh 
+dmesg
+sudo dmesg -c
+vi iter.sh 
+dmesg
+./iter.sh 
+dmesg
+sudo dmesg -c
+./iter.sh 
+dmesg
+vi iter.sh 
+ls
+cd ..
+ls
+cd namsup/
+ls
+cd ..
+ls
+cd team14/
+vi iter.sh 

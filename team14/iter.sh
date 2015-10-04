@@ -29,7 +29,7 @@ done
 for i in $(seq "$MAX")
 do
     temp="var$i"
-    echo ${!temp}
+    # echo ${!temp}
     let WRSUM=WRSUM+temp
     let DWR=DWR+\(temp\*temp\)
 done
@@ -38,8 +38,8 @@ let WRMEAN=WRSUM/MAX
 let DWRMEAN=DWR/MAX
 let WVAR=DWRMEAN-\(WRMEAN\*WRMEAN\)
 
-echo write mean=$WRMEAN
-echo write var=$WVAR
+echo short-input write mean=$WRMEAN
+echo short-input write var=$WVAR
 
 # phase 2 (long long string input)
 
@@ -59,7 +59,7 @@ done
 for i in $(seq "$MAX")
 do
     temp="var$i"
-    echo ${!temp}
+    # echo ${!temp}
     let WRSUM=WRSUM+temp
     let DWR=DWR+\(temp\*temp\)
 done
@@ -68,8 +68,8 @@ let WRMEAN=WRSUM/MAX
 let DWRMEAN=DWR/MAX
 let WVAR=DWRMEAN-\(WRMEAN\*WRMEAN\)
 
-echo write mean=$WRMEAN
-echo write var=$WVAR
+echo long-input write mean=$WRMEAN
+echo lont-input write var=$WVAR
 
 
 for i in $(seq "$MAX") 
@@ -101,6 +101,12 @@ do
     eval "readnum$i=`./test_read 30000`"
 done
 
+for i in $(seq "$MAX") 
+do
+    # echo "$i"
+    eval "mkdir$i=`./test_mkdir`"
+done
+
 opensum=0
 openwithwritesum=0
 readsum=0
@@ -110,6 +116,8 @@ dopenw=0
 dread=0
 dreadw=0
 bigread=0
+mkdirsum=0
+dmkdir=0
 for i in $(seq "$MAX")
 do
     temp="open$i"
@@ -142,6 +150,15 @@ do
     let bigread=bigread+temp
     let dbigread=dbigread+\(temp\*temp\)
 done
+
+for i in $(seq "$MAX")
+do
+    temp="mkdir$i"
+    echo mkdir=${!temp}
+    let mkdirsum=mkdirsum+temp
+    let dmkdir=dmkdir+\(temp\*temp\)
+done
+
 let openmean=opensum/MAX
 let dopenmean=dopen/MAX
 let openvar=dopenmean-\(openmean\*openmean\)
@@ -162,13 +179,24 @@ let bigreadmean=bigread/MAX
 let dbigread_mean=dbigread/MAX
 let bigreadvar=dbigread_mean-\(bigreadmean\*bigreadmean\)
 
+let mkdir_mean=mkdirsum/MAX
+let dmkdir_mean=dmkdir/MAX
+let mkdir_var=dmkdir_mean-\(mkdir_mean\*mkdir_mean\)
+
 echo open mean=${openmean}
 echo open var=${openvar}
+
 echo open with write mean=${open_writemean}
 echo open with write var=${wopenvar}
+
 echo read mean=${read_mean}
 echo read var=${readvar}
+
 echo read with write mean=${read_writemean}
 echo read with write var=${wreadvar}
+
 echo bigread mean=${bigreadmean}
 echo bigread var=${bigreadvar}
+
+echo mkdir mean=${mkdir_mean}
+echo mkdir var=${mkdir_var}

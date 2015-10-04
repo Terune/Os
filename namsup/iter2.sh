@@ -1,6 +1,6 @@
 #!/bin/bash
 
-MAX=3
+MAX=5
 
 for i in $(seq "$MAX") 
 do

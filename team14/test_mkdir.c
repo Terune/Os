@@ -6,7 +6,8 @@
 #include <string.h>
 #include <stdio.h>
 #include <sys/syscall.h>
-    
+#include <time.h>
+
 static inline void rdtsc(unsigned int* upper, unsigned int* lower){
     asm volatile("rdtsc"
             :"=a"(*lower), "=d"(*upper));

@@ -17,12 +17,12 @@
 $mkdir
 
 # Command Line History (newest to oldest):
+:wq!
+:q
 :q!
 :w
 :e ../namsup/iter2.sh
 :vs
-:q
-:wq!
 :e /usr/src/linux-3.18.21/fs/open.c
 :wq
 :.,.+1
@@ -211,44 +211,52 @@ $mkdir
 	    echo 4 4 1 6 > /proc/sys/kernel/printk 
 	done
 ""1	LINE	0
-	    echo 4 4 1 6 > /proc/sys/kernel/printk 
+	    echo mkdir=${!temp}
 "2	LINE	0
-	    echo 8 4 1 6 > /proc/sys/kernel/printk 
+	    echo 4 4 1 6 > /proc/sys/kernel/printk 
 "3	LINE	0
-	
+	    echo 8 4 1 6 > /proc/sys/kernel/printk 
 "4	LINE	0
+	
+"5	LINE	0
 	for i in $(seq "$MAX") 
 	do
 	    eval "mkdir$i=`./test_mkdir`"
 	done
-"5	LINE	0
-	    echo 4 4 1 6 > /proc/sys/kernel/printk 
 "6	LINE	0
-	    echo 8 4 1 6 > /proc/sys/kernel/printk 
+	    echo 4 4 1 6 > /proc/sys/kernel/printk 
 "7	LINE	0
-	    # echo "$i"
+	    echo 8 4 1 6 > /proc/sys/kernel/printk 
 "8	LINE	0
-	
+	    # echo "$i"
 "9	LINE	0
-	    echo readwithwrite=${!temp}
+	
 "-	CHAR	0
-	 
+	3
 
 # File marks:
-'0  166  0  ~/team14/iter.sh
-'1  5  0  ~/namsup/iter2.sh
-'2  690  8  /usr/src/linux-3.18.21/fs/open.c
-'3  159  11  /usr/src/linux-3.18.21/fs/namei.c
-'4  57  4  ~/team14/iter2.sh
-'5  81  13  /usr/src/linux-3.18.21/fs/open.c
-'6  6  1  ~/team14/NERD_tree_2
-'7  4  0  ~/team14/iter.sh
-'8  5  0  ~/team14/iter2.sh
-'9  679  26  /usr/src/linux-3.18.21/fs/open.c
+'0  157  4  ~/team14/iter.sh
+'1  33  2  ~/team14/test_mkdir.c
+'2  10  0  ~/team14/test_mkdir.c
+'3  56  4  ~/team14/iter.sh
+'4  28  0  ~/team14/iter.sh
+'5  3  4  ~/namsup/iter2.sh
+'6  165  0  ~/team14/iter.sh
+'7  5  0  ~/namsup/iter2.sh
+'8  690  8  /usr/src/linux-3.18.21/fs/open.c
+'9  159  11  /usr/src/linux-3.18.21/fs/namei.c
 
 # Jumplist (newest first):
--'  166  0  ~/team14/iter.sh
+-'  157  4  ~/team14/iter.sh
 -'  1  0  ~/team14/iter.sh
+-'  33  2  ~/team14/test_mkdir.c
+-'  1  0  ~/team14/test_mkdir.c
+-'  10  0  ~/team14/test_mkdir.c
+-'  56  4  ~/team14/iter.sh
+-'  28  0  ~/team14/iter.sh
+-'  3  4  ~/namsup/iter2.sh
+-'  1  0  ~/namsup/iter2.sh
+-'  165  0  ~/team14/iter.sh
 -'  5  0  ~/namsup/iter2.sh
 -'  15  0  ~/team14/iter.sh
 -'  690  8  /usr/src/linux-3.18.21/fs/open.c
@@ -329,7 +337,6 @@ $mkdir
 -'  14  0  ~/namsup/iter2.sh
 -'  15  0  ~/namsup/iter2.sh
 -'  9  11  ~/namsup/iter2.sh
--'  1  0  ~/namsup/iter2.sh
 -'  10  10  ~/namsup/iter2.sh
 -'  4  47  ~/namsup/iter2.sh
 -'  7  0  ~/team14/iter.sh
@@ -339,19 +346,12 @@ $mkdir
 -'  18  4  ~/namsup/test_mkdir.c
 -'  1  0  ~/namsup/test_mkdir.c
 -'  22  0  ~/iter.sh
--'  30  1  ~/iter.sh
--'  48  0  ~/yashibal.c
--'  1  0  ~/yashibal.c
--'  30  0  ~/team14/iter.sh
--'  690  8  /usr/src/linux-3.18.21/fs/open.c
--'  187  0  /usr/src/linux-3.18.21/debian/linux-headers-3.18.21+/usr/src/linux-headers-3.18.21+/include/linux/fsnotify.h
--'  5  0  ~/namsup/iter2.sh
 
 # History of marks within files (newest to oldest):
 
 > ~/team14/iter.sh
-	"	166	0
-	.	108	0
+	"	157	4
+	.	157	0
 	+	56	17
 	+	4	31190
 	+	6	0
@@ -401,9 +401,9 @@ $mkdir
 	+	131	0
 	+	131	0
 	+	131	0
-	+	196	36
-	+	196	0
-	+	196	0
+	+	195	36
+	+	195	0
+	+	195	0
 	+	32	5
 	+	62	5
 	+	71	9
@@ -414,23 +414,31 @@ $mkdir
 	+	36	0
 	+	37	0
 	+	37	0
-	+	182	0
-	+	185	0
-	+	200	0
-	+	197	0
-	+	194	0
-	+	191	0
-	+	188	0
+	+	181	0
+	+	184	0
+	+	199	0
+	+	196	0
+	+	193	0
+	+	190	0
+	+	187	0
 	+	153	0
-	+	161	0
+	+	160	0
 	+	119	0
 	+	103	0
 	+	107	0
 	+	108	0
+	+	157	0
+
+> ~/team14/test_mkdir.c
+	"	33	2
+	^	10	0
+	.	9	17
+	+	9	17
 
 > ~/namsup/iter2.sh
-	"	5	0
-	.	30	0
+	"	3	4
+	^	3	5
+	.	3	4
 	+	4	0
 	+	4	0
 	+	4	0
@@ -475,6 +483,7 @@ $mkdir
 	+	14	0
 	+	12	0
 	+	30	0
+	+	3	4
 
 > /usr/src/linux-3.18.21/fs/namei.c
 	"	3605	4
@@ -2036,6 +2045,3 @@ $mkdir
 
 > /usr/include/unistd.h
 	"	301	0
-
-> /usr/src/linux-3.18.21/fs/ext2/file.c
-	"	46	7

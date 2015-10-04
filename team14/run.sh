@@ -154,7 +154,6 @@ done
 for i in $(seq "$MAX")
 do
     temp="mkdir$i"
-    echo mkdir=${!temp}
     let mkdirsum=mkdirsum+temp
     let dmkdir=dmkdir+\(temp\*temp\)
 done

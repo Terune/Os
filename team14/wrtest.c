@@ -22,11 +22,17 @@ int main(int argc, char* argv[])
     fd = open("tmp.txt", O_WRONLY|O_APPEND|O_CREAT, 0644);
 
     syscall(323);
+    syscall(324);
+    syscall(325);
+    syscall(326);
     clock_gettime(CLOCK_MONOTONIC, &starts);
     // hell = fsync(fd);
     write( fd, argv[1], strlen(argv[1]));
     clock_gettime(CLOCK_MONOTONIC, &ends);
     syscall(323);
+    syscall(324);
+    syscall(325);
+    syscall(326);
 
     if ((ends.tv_nsec - starts.tv_nsec)<0){
       temps.tv_sec = ends.tv_sec - starts.tv_sec - 1;

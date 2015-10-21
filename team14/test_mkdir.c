@@ -13,14 +13,21 @@ static inline void rdtsc(unsigned int* upper, unsigned int* lower){
             :"=a"(*lower), "=d"(*upper));
 }
 
-int main(){
+int main(int argc, char* argv[]){
     struct timespec starts, ends, temps;
     long elapsed;
     int i=0;
 
-    clock_gettime(CLOCK_MONOTONIC, &starts);
-    syscall(SYS_mkdir);
-    clock_gettime(CLOCK_MONOTONIC, &ends);
+    if(argc == 1){
+        clock_gettime(CLOCK_MONOTONIC, &starts);
+        syscall(SYS_mkdir);
+        clock_gettime(CLOCK_MONOTONIC, &ends);
+    }
+    else if(argc == 2){
+        clock_gettime(CLOCK_MONOTONIC, &starts);
+        syscall(SYS_mkdir, argv[1]);
+        clock_gettime(CLOCK_MONOTONIC, &ends);
+    }
     if ((ends.tv_nsec - starts.tv_nsec)<0){
         temps.tv_sec = ends.tv_sec - starts.tv_sec - 1;
         temps.tv_nsec = 1000000000 + ends.tv_nsec - starts.tv_nsec;
